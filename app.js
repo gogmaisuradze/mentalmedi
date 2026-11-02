@@ -1078,7 +1078,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     row.innerHTML = `
-      <div class="msg-avatar"><img src="logo_emblem.png" alt="MentalBot" class="msg-avatar-img"></div>
+      <div class="msg-avatar"><img src="logo_emblem.png" alt="MentalBot" class="msg-avatar-img" width="24" height="24" style="width:24px;height:24px;max-width:24px;max-height:24px;object-fit:contain;display:block;"></div>
       <div class="msg-bubble">
         ${textHtml}
         ${actionsMarkup}

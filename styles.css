@@ -477,14 +477,6 @@ button {
   transform: translateY(-1px);
 }
 
-.bot-pill-icon {
-  width: 18px;
-  height: 18px;
-  object-fit: contain;
-  display: block;
-  flex-shrink: 0;
-}
-
 .bot-status-dot {
   width: 7px;
   height: 7px;
