@@ -1022,10 +1022,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeBreathingBtn = document.getElementById('closeBreathingBtn');
   const toggleBreathingBtn = document.getElementById('toggleBreathingBtn');
   const breathingCircle = document.getElementById('breathingCircle');
-  const breathingText = document.getElementById('breathingText');
+  const breathingPhaseTag = document.getElementById('breathingPhaseTag');
+  const breathingLiveNumber = document.getElementById('breathingLiveNumber');
   const breathingStepDesc = document.getElementById('breathingStepDesc');
-  let breathingInterval = null;
-  let isBreathingActive = false;
+  const clockProgressRing = document.getElementById('clockProgressRing');
+  let clockTicks = document.querySelectorAll('.b-tick');
 
   function openMentalBot() {
     mentalBotWindow.classList.add('open');
@@ -1191,58 +1192,115 @@ document.addEventListener('DOMContentLoaded', () => {
     askBot(question);
   }
 
-  // 4-7-8 Breathing Tool Controller
+  // 4-7-8 Breathing Tool Controller with Clock Ticks & Live Countdown
+  const BREATHING_PHASES = [
+    { key: 'inhale', name: 'ჩასუნთქვა', duration: 4, desc: 'შეისუნთქეთ ცხვირით ნელა და ღრმად...' },
+    { key: 'hold',   name: 'შეკავება',  duration: 7, desc: 'შეიკავეთ სუნთქვა მშვიდად...' },
+    { key: 'exhale', name: 'ამოსუნთქვა', duration: 8, desc: 'ამოისუნთქეთ პირით ნელა და ბოლომდე...' }
+  ];
+
+  let isBreathingActive = false;
+  let breathingAnimFrame = null;
+  let currentPhaseIndex = 0;
+  let phaseStartTime = 0;
+  let lastSecondDisplayed = -1;
+  const RING_CIRCUMFERENCE = 364.42;
+
+  function updateClockTicks(fraction) {
+    if (!clockTicks || clockTicks.length === 0) {
+      clockTicks = document.querySelectorAll('.b-tick');
+    }
+    const activeCount = Math.min(60, Math.floor(fraction * 60));
+    for (let i = 0; i < clockTicks.length; i++) {
+      if (i <= activeCount) {
+        clockTicks[i].classList.add('active');
+      } else {
+        clockTicks[i].classList.remove('active');
+      }
+    }
+  }
+
+  function resetClockTicks() {
+    if (!clockTicks || clockTicks.length === 0) {
+      clockTicks = document.querySelectorAll('.b-tick');
+    }
+    clockTicks.forEach(t => t.classList.remove('active'));
+    if (clockProgressRing) {
+      clockProgressRing.style.strokeDashoffset = RING_CIRCUMFERENCE;
+    }
+  }
+
+  function setBreathingPhase(index) {
+    currentPhaseIndex = index;
+    const phase = BREATHING_PHASES[currentPhaseIndex];
+    phaseStartTime = performance.now();
+    lastSecondDisplayed = -1;
+
+    if (breathingCard) breathingCard.dataset.phase = phase.key;
+    if (breathingPhaseTag) breathingPhaseTag.textContent = phase.name;
+    if (breathingStepDesc) breathingStepDesc.textContent = phase.desc;
+    if (breathingLiveNumber) {
+      breathingLiveNumber.textContent = phase.duration;
+      breathingLiveNumber.classList.remove('tick-pop');
+      void breathingLiveNumber.offsetWidth;
+      breathingLiveNumber.classList.add('tick-pop');
+    }
+  }
+
+  function breathingLoop(now) {
+    if (!isBreathingActive) return;
+
+    const phase = BREATHING_PHASES[currentPhaseIndex];
+    const elapsedSec = (now - phaseStartTime) / 1000;
+    const remainingSec = Math.max(1, Math.ceil(phase.duration - elapsedSec));
+    const fraction = Math.min(1, elapsedSec / phase.duration);
+
+    // Update countdown number on each full second tick
+    if (remainingSec !== lastSecondDisplayed) {
+      lastSecondDisplayed = remainingSec;
+      if (breathingLiveNumber) {
+        breathingLiveNumber.textContent = remainingSec;
+        breathingLiveNumber.classList.remove('tick-pop');
+        void breathingLiveNumber.offsetWidth;
+        breathingLiveNumber.classList.add('tick-pop');
+      }
+    }
+
+    // Update smooth SVG clock progress ring
+    if (clockProgressRing) {
+      const offset = RING_CIRCUMFERENCE * (1 - fraction);
+      clockProgressRing.style.strokeDashoffset = offset;
+    }
+
+    // Update clock tick marks (საათის წამების ტირეები)
+    updateClockTicks(fraction);
+
+    // Transition to next phase
+    if (elapsedSec >= phase.duration) {
+      setBreathingPhase((currentPhaseIndex + 1) % BREATHING_PHASES.length);
+    }
+
+    breathingAnimFrame = requestAnimationFrame(breathingLoop);
+  }
+
   function startBreathingExercise() {
-    breathingCard.style.display = 'block';
+    if (breathingCard) breathingCard.style.display = 'block';
     isBreathingActive = true;
-    toggleBreathingBtn.textContent = "სუნთქვის შეჩერება";
-    runBreathingCycle();
+    if (toggleBreathingBtn) toggleBreathingBtn.textContent = "სუნთქვის შეჩერება";
+    setBreathingPhase(0);
+    cancelAnimationFrame(breathingAnimFrame);
+    breathingAnimFrame = requestAnimationFrame(breathingLoop);
   }
 
   function stopBreathingExercise() {
     isBreathingActive = false;
-    clearTimeout(breathingInterval);
+    cancelAnimationFrame(breathingAnimFrame);
     if (toggleBreathingBtn) toggleBreathingBtn.textContent = "სუნთქვის დაწყება";
-    if (breathingCircle) {
-      breathingCircle.className = 'breathing-circle';
-      breathingText.textContent = "მზადება";
-    }
-    if (breathingStepDesc) breathingStepDesc.textContent = "დააჭირეთ დაწყებას";
-  }
-
-  function runBreathingCycle() {
-    if (!isBreathingActive) return;
-
-    // Phase 1: Inhale 4s
-    breathingCircle.className = 'breathing-circle inhale';
-    breathingText.textContent = "ჩასუნთქვა (4)";
-    breathingStepDesc.textContent = "შეისუნთქეთ ცხვირით ნელა და ღრმად...";
-
-    breathingInterval = setTimeout(() => {
-      if (!isBreathingActive) return;
-
-      // Phase 2: Hold 7s
-      breathingCircle.className = 'breathing-circle hold';
-      breathingText.textContent = "შეკავება (7)";
-      breathingStepDesc.textContent = "შეიკავეთ სუნთქვა მშვიდად...";
-
-      breathingInterval = setTimeout(() => {
-        if (!isBreathingActive) return;
-
-        // Phase 3: Exhale 8s
-        breathingCircle.className = 'breathing-circle exhale';
-        breathingText.textContent = "ამოსუნთქვა (8)";
-        breathingStepDesc.textContent = "ამოისუნთქეთ პირით სრულად...";
-
-        breathingInterval = setTimeout(() => {
-          if (isBreathingActive) {
-            runBreathingCycle();
-          }
-        }, 8000);
-
-      }, 7000);
-
-    }, 4000);
+    if (breathingCard) breathingCard.dataset.phase = 'ready';
+    if (breathingPhaseTag) breathingPhaseTag.textContent = "მზადება";
+    if (breathingLiveNumber) breathingLiveNumber.textContent = "4";
+    if (breathingStepDesc) breathingStepDesc.textContent = "დააჭირეთ „სუნთქვის დაწყებას“ მშვიდი რელაქსაციისთვის";
+    resetClockTicks();
   }
 
   if (toggleBreathingBtn) {
