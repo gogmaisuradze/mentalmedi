@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Georgian:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=2.5">
+  <link rel="stylesheet" href="styles.css?v=2.6">
 </head>
 <body>
 
@@ -1606,16 +1606,49 @@
 
   <!-- MentalBot AI Assistant Floating Widget -->
   <div class="mental-bot-widget" id="mentalBotWidget">
-    <!-- Floating Launcher Trigger Button -->
-    <button class="bot-launcher-btn" id="mentalBotLauncher" aria-label="გახსენი MentalBot">
-      <div class="launcher-pulse"></div>
-      <div class="launcher-icon">
-        <img src="logo_emblem.png" alt="MentalBot" class="launcher-emblem-img" width="30" height="30" style="width: 30px; height: 30px; max-width: 30px; max-height: 30px; object-fit: contain; display: block;">
+    <!-- 1. Floating Capsule / Pill Launcher (With Electric Lightning Sweep & Glow Pulse) -->
+    <div class="bot-launcher-wrapper" id="botLauncherWrapper">
+      <button class="bot-launcher-pill ai-lightning-btn" id="mentalBotLauncher" aria-label="გახსენი MentalBot" title="გახსენი MentalBot — ონლაინ AI კონსულტაცია">
+        <!-- Electric Lightning Sweep Beam -->
+        <div class="ai-lightning-flash"></div>
+
+        <div class="launcher-pill-content">
+          <div class="launcher-avatar-box">
+            <div class="launcher-avatar-circle">
+              <img src="logo_emblem.png" alt="MentalBot" class="launcher-emblem-img" width="22" height="22" style="width: 22px; height: 22px; max-width: 22px; max-height: 22px; object-fit: contain; display: block;">
+            </div>
+            <span class="launcher-status-dot"></span>
+            <span class="launcher-sparkle-dot">⚡</span>
+          </div>
+
+          <div class="launcher-text-box">
+            <div class="launcher-title-row">
+              <span class="launcher-bot-name">Mental<span>Bot</span></span>
+              <span class="launcher-zap-icon">⚡</span>
+              <span class="launcher-badge-tag">24/7</span>
+            </div>
+            <p class="launcher-status-text">⚡ ონლაინ AI კონსულტაცია</p>
+          </div>
+        </div>
+      </button>
+
+      <!-- Dismiss Mini Button (X) to collapse into round button -->
+      <button class="launcher-dismiss-btn" id="launcherDismissBtn" title="ჩაკეცვა / დამალვა" aria-label="ჩაკეცვა">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- 2. Mini Collapsed Button (When user dismissed pill) -->
+    <button class="bot-launcher-mini-btn ai-lightning-btn" id="mentalBotMiniLauncher" aria-label="გახსენი MentalBot" title="გახსენი MentalBot" style="display: none;">
+      <div class="ai-lightning-flash"></div>
+      <div class="launcher-mini-avatar">
+        <img src="logo_emblem.png" alt="MentalBot" class="launcher-emblem-img" width="24" height="24" style="width: 24px; height: 24px; max-width: 24px; max-height: 24px; object-fit: contain; display: block;">
       </div>
-      <div class="launcher-tag">
-        <span class="tag-dot"></span>
-        <span class="tag-title">MentalBot AI</span>
-      </div>
+      <span class="launcher-mini-status-dot"></span>
+      <span class="launcher-mini-zap">⚡</span>
     </button>
 
     <!-- MentalBot Chat Window -->
@@ -1702,6 +1735,6 @@
     </div>
   </div>
 
-  <script src="app.js?v=2.5"></script>
+  <script src="app.js?v=2.6"></script>
 </body>
 </html>

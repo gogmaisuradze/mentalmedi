@@ -1001,7 +1001,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // 11. MentalBot AI Assistant Controller
   // ==========================================
 
+  const mentalBotWidget = document.getElementById('mentalBotWidget');
   const mentalBotLauncher = document.getElementById('mentalBotLauncher');
+  const mentalBotMiniLauncher = document.getElementById('mentalBotMiniLauncher');
+  const launcherDismissBtn = document.getElementById('launcherDismissBtn');
+  const botLauncherWrapper = document.getElementById('botLauncherWrapper');
   const mentalBotWindow = document.getElementById('mentalBotWindow');
   const headerBotTrigger = document.getElementById('headerBotTrigger');
   const botCloseBtn = document.getElementById('botCloseBtn');
@@ -1010,6 +1014,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const botInputText = document.getElementById('botInputText');
   const botMessages = document.getElementById('botMessages');
   const botQuickChips = document.getElementById('botQuickChips');
+
+  let isLauncherDismissed = false;
 
   // Breathing tool elements
   const breathingCard = document.getElementById('breathingCard');
@@ -1024,6 +1030,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function openMentalBot() {
     mentalBotWindow.classList.add('open');
     mentalBotWindow.setAttribute('aria-hidden', 'false');
+    if (mentalBotWidget) mentalBotWidget.classList.add('chat-open');
     setTimeout(() => {
       botInputText.focus();
     }, 300);
@@ -1032,7 +1039,15 @@ document.addEventListener('DOMContentLoaded', () => {
   function closeMentalBot() {
     mentalBotWindow.classList.remove('open');
     mentalBotWindow.setAttribute('aria-hidden', 'true');
+    if (mentalBotWidget) mentalBotWidget.classList.remove('chat-open');
     stopBreathingExercise();
+    if (isLauncherDismissed) {
+      if (botLauncherWrapper) botLauncherWrapper.style.display = 'none';
+      if (mentalBotMiniLauncher) mentalBotMiniLauncher.style.display = 'flex';
+    } else {
+      if (botLauncherWrapper) botLauncherWrapper.style.display = 'inline-flex';
+      if (mentalBotMiniLauncher) mentalBotMiniLauncher.style.display = 'none';
+    }
   }
 
   function toggleMentalBot() {
@@ -1043,7 +1058,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  if (mentalBotLauncher) mentalBotLauncher.addEventListener('click', toggleMentalBot);
+  if (mentalBotLauncher) mentalBotLauncher.addEventListener('click', openMentalBot);
+  if (mentalBotMiniLauncher) {
+    mentalBotMiniLauncher.addEventListener('click', () => {
+      isLauncherDismissed = false;
+      openMentalBot();
+    });
+  }
+  if (launcherDismissBtn) {
+    launcherDismissBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      isLauncherDismissed = true;
+      if (botLauncherWrapper) botLauncherWrapper.style.display = 'none';
+      if (mentalBotMiniLauncher) mentalBotMiniLauncher.style.display = 'flex';
+    });
+  }
   if (headerBotTrigger) headerBotTrigger.addEventListener('click', openMentalBot);
   if (botCloseBtn) botCloseBtn.addEventListener('click', closeMentalBot);
 
@@ -1051,7 +1080,7 @@ document.addEventListener('DOMContentLoaded', () => {
     botResetBtn.addEventListener('click', () => {
       botMessages.innerHTML = `
         <div class="message-row bot-row">
-          <div class="msg-avatar">🌿</div>
+          <div class="msg-avatar"><img src="logo_emblem.png" alt="MentalBot" class="msg-avatar-img" width="24" height="24" style="width:24px;height:24px;max-width:24px;max-height:24px;object-fit:contain;display:block;"></div>
           <div class="msg-bubble">
             <p>გამარჯობა! მე ვარ <strong>MentalBot</strong> — თქვენი მენტალური ჯანმრთელობის AI ასისტენტი.</p>
             <p>როგორ გრძნობთ თავს დღეს? შემიძლია დაგეხმაროთ შფოთვის დაძლევაში, ექიმის შერჩევაში, ტესტის გავლასა ან ვიზიტის დაჯავშნაში.</p>
