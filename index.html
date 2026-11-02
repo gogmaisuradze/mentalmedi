@@ -591,7 +591,36 @@
       <div class="specialists-grid" id="specialistsGrid">
         
         <!-- Specialist 1 -->
-        <div class="specialist-card" data-category="psychiatry" data-id="1">
+        <div class="specialist-card" data-category="therapy" data-id="1">
+          <div class="specialist-img-wrapper">
+            <img src="team_lali.png" alt="ლალი ბადრიძე" class="specialist-img" onerror="this.src='https://idc.edu.ge/team_lali.png'">
+            <span class="specialist-badge badge-therapist">დამფუძნებელი • ფსიქოთერაპევტი</span>
+          </div>
+          <div class="specialist-content">
+            <div class="specialist-header">
+              <h3 class="specialist-name">ლალი ბადრიძე</h3>
+              <p class="specialist-role">დამფუძნებელი, წამყვანი ფსიქოთერაპევტი • WAPP ეროვნული ტრენერი</p>
+            </div>
+            <div class="specialist-meta">
+              <span class="meta-tag">
+                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                15+ წლიანი გამოცდილება
+              </span>
+              <span class="meta-tag">
+                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line></svg>
+                ქართ / ENG / RUS
+              </span>
+            </div>
+            <p class="specialist-focus">პოზიტიური ფსიქოთერაპია, ემოციური გადაწვა, შფოთვა, პიროვნული კრიზისები, ბალანსის მოდელი.</p>
+            <div class="specialist-card-bottom">
+              <button class="btn btn-outline-primary btn-sm view-profile-btn" data-id="1">პროფილის ნახვა</button>
+              <button class="btn btn-primary btn-sm open-booking-btn" data-specialist="ლალი ბადრიძე">დაჯავშნა</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Specialist 2 -->
+        <div class="specialist-card" data-category="psychiatry" data-id="2">
           <div class="specialist-img-wrapper">
             <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=700&h=800&q=85" alt="Dr. Nino Kalandadze" class="specialist-img">
             <span class="specialist-badge badge-psychiatrist">ფსიქიატრი</span>
@@ -613,37 +642,8 @@
             </div>
             <p class="specialist-focus">განწყობის აშლილობები, დეპრესია, ბიპოლარული სპექტრი, მედიკამენტური მონიტორინგი.</p>
             <div class="specialist-card-bottom">
-              <button class="btn btn-outline-primary btn-sm view-profile-btn" data-id="1">პროფილის ნახვა</button>
-              <button class="btn btn-primary btn-sm open-booking-btn" data-specialist="დოქტ. ნინო კალანდაძე">დაჯავშნა</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Specialist 2 -->
-        <div class="specialist-card" data-category="therapy" data-id="2">
-          <div class="specialist-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&h=800&q=85" alt="Ana Beridze" class="specialist-img">
-            <span class="specialist-badge badge-therapist">CBT თერაპევტი</span>
-          </div>
-          <div class="specialist-content">
-            <div class="specialist-header">
-              <h3 class="specialist-name">ანა ბერიძე</h3>
-              <p class="specialist-role">ფსიქოთერაპევტი, CBT სპეციალისტი</p>
-            </div>
-            <div class="specialist-meta">
-              <span class="meta-tag">
-                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                9 წლიანი გამოცდილება
-              </span>
-              <span class="meta-tag">
-                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line></svg>
-                ქართ / ENG / RUS
-              </span>
-            </div>
-            <p class="specialist-focus">გენერალიზებული შფოთვა, პანიკური შეტევები, სოციოფობია, პერფექციონიზმი.</p>
-            <div class="specialist-card-bottom">
               <button class="btn btn-outline-primary btn-sm view-profile-btn" data-id="2">პროფილის ნახვა</button>
-              <button class="btn btn-primary btn-sm open-booking-btn" data-specialist="ანა ბერიძე">დაჯავშნა</button>
+              <button class="btn btn-primary btn-sm open-booking-btn" data-specialist="დოქტ. ნინო კალანდაძე">დაჯავშნა</button>
             </div>
           </div>
         </div>
@@ -1341,6 +1341,17 @@
                 <div>
                   <strong>უახლოესი თავისუფალი სპეციალისტი</strong>
                   <p>კლინიკა შეგირჩევთ საუკეთესო პროფილის ექიმს</p>
+                </div>
+              </div>
+            </label>
+
+            <label class="spec-select-card">
+              <input type="radio" name="selectedSpecialist" value="ლალი ბადრიძე">
+              <div class="spec-card-content">
+                <img src="team_lali.png" alt="Lali Badridze" class="spec-thumb" onerror="this.src='https://idc.edu.ge/team_lali.png'">
+                <div>
+                  <strong>ლალი ბადრიძე</strong>
+                  <p>დამფუძნებელი • წამყვანი ფსიქოთერაპევტი (WAPP) • 15+ წელი</p>
                 </div>
               </div>
             </label>
