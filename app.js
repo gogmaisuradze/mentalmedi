@@ -1369,14 +1369,20 @@ document.addEventListener('DOMContentLoaded', () => {
     return botSessionId;
   }
 
-  // „წერს..." ინდიკატორი
+  // „წერს..." ინდიკატორი (მონაცვლეობით მოხტუნავე წერტილები)
   function appendBotTyping() {
     const row = document.createElement('div');
     row.className = 'message-row bot-row';
     row.id = 'botTypingRow';
     row.innerHTML = `
-      <div class="msg-avatar"><img src="logo_emblem.png" alt="MentalBot" class="msg-avatar-img"></div>
-      <div class="msg-bubble"><p class="bot-typing-dots">●&nbsp;●&nbsp;●</p></div>
+      <div class="msg-avatar"><img src="logo_emblem.png" alt="MentalBot" class="msg-avatar-img" width="24" height="24" style="width:24px;height:24px;max-width:24px;max-height:24px;object-fit:contain;display:block;"></div>
+      <div class="msg-bubble bot-typing-bubble">
+        <div class="typing-dots-wave">
+          <span class="typing-dot"></span>
+          <span class="typing-dot"></span>
+          <span class="typing-dot"></span>
+        </div>
+      </div>
     `;
     botMessages.appendChild(row);
     botMessages.scrollTop = botMessages.scrollHeight;
