@@ -3322,31 +3322,28 @@ button {
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 20px rgba(28, 78, 67, 0.25);
-  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), background 0.8s ease, box-shadow 0.8s ease;
+  transition: background 0.8s ease, box-shadow 0.8s ease;
   z-index: 5;
+  will-change: transform;
 }
 
-/* Scale & Color Morphing by Phase ("ათვლა მიდის ფერიდან ფერში") */
+/* Phase Colors ("ათვლა მიდის ფერიდან ფერში") - Scaling is dynamically controlled via requestAnimationFrame */
 .breathing-card[data-phase="ready"] .breathing-circle {
-  transform: scale(1.0);
   background: linear-gradient(135deg, #1C4E43 0%, #2A7E6F 100%);
   box-shadow: 0 0 20px rgba(28, 78, 67, 0.25);
 }
 
 .breathing-card[data-phase="inhale"] .breathing-circle {
-  transform: scale(1.15);
   background: radial-gradient(circle, #10B981 0%, #059669 100%);
   box-shadow: 0 0 28px rgba(16, 185, 129, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.4);
 }
 
 .breathing-card[data-phase="hold"] .breathing-circle {
-  transform: scale(1.15);
   background: radial-gradient(circle, #F59E0B 0%, #D97706 100%);
   box-shadow: 0 0 32px rgba(245, 158, 11, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.4);
 }
 
 .breathing-card[data-phase="exhale"] .breathing-circle {
-  transform: scale(0.85);
   background: radial-gradient(circle, #3B82F6 0%, #2563EB 100%);
   box-shadow: 0 0 24px rgba(59, 130, 246, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.4);
 }
@@ -3525,32 +3522,92 @@ button {
   color: #FFFFFF;
 }
 
-/* Quick Interactive Chips */
-.quick-chips-wrapper {
+/* Quick Interactive Widgets & Chips (2-Column Grid Layout) */
+.bot-quick-section {
+  margin: 0.65rem 0 0.5rem 0;
+  padding: 0.25rem 0;
+  animation: fadeInMsg 0.3s ease;
+}
+
+.quick-chips-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin-bottom: 0.45rem;
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  padding-left: 0.2rem;
+}
+
+.quick-chips-sparkle {
+  color: var(--secondary, #E58348);
+  font-size: 0.8rem;
+}
+
+.quick-chips-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.45rem;
-  padding: 0.35rem 0;
 }
 
 .quick-chip {
   background: #FFFFFF;
-  border: 1px solid var(--border-color);
-  padding: 0.35rem 0.75rem;
-  border-radius: var(--radius-full);
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--text-main);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(28, 78, 67, 0.12);
+  padding: 0.5rem 0.6rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(28, 78, 67, 0.04);
   cursor: pointer;
-  transition: var(--transition);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: left;
 }
 
 .quick-chip:hover {
-  background: var(--primary-light);
-  border-color: var(--primary);
-  color: var(--primary);
-  transform: translateY(-1px);
+  background: #F4F9F7;
+  border-color: rgba(229, 131, 72, 0.55);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(229, 131, 72, 0.15);
+}
+
+.quick-chip:active {
+  transform: translateY(0);
+}
+
+.chip-icon {
+  font-size: 1.15rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.chip-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  overflow: hidden;
+}
+
+.chip-text strong {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #1C4E43;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+.chip-text small {
+  font-size: 0.64rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1;
 }
 
 /* Chat Input Area */

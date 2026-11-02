@@ -25,7 +25,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   
-  <link rel="stylesheet" href="styles.css?v=3.5">
+  <link rel="stylesheet" href="styles.css?v=3.6">
 </head>
 <body>
 
@@ -1785,14 +1785,56 @@
           </div>
         </div>
 
-        <!-- Quick Interactive Chips -->
-        <div class="quick-chips-wrapper" id="botQuickChips">
-          <button class="quick-chip" data-action="anxiety">🧘 შფოთვის დაძლევა</button>
-          <button class="quick-chip" data-action="breathing">🫁 სუნთქვითი ვარჯიში</button>
-          <button class="quick-chip" data-action="doctor">👩‍⚕️ ექიმის შერჩევა</button>
-          <button class="quick-chip" data-action="quiz">📝 ტესტის გავლა</button>
-          <button class="quick-chip" data-action="booking">📅 ვიზიტის დაჯავშნა</button>
-          <button class="quick-chip" data-action="price">💳 ფასები & დაზღვევა</button>
+        <!-- Quick Interactive Widgets / Chips -->
+        <div class="bot-quick-section" id="botQuickSection">
+          <div class="quick-chips-title">
+            <span class="quick-chips-sparkle">✨</span>
+            <span>სწრაფი სერვისები & ხელსაწყოები</span>
+          </div>
+          <div class="quick-chips-wrapper" id="botQuickChips">
+            <button class="quick-chip" data-action="anxiety" title="შფოთვის დაძლევა">
+              <span class="chip-icon">🌿</span>
+              <span class="chip-text">
+                <strong>შფოთვის დაძლევა</strong>
+                <small>მშვიდი მართვა</small>
+              </span>
+            </button>
+            <button class="quick-chip" data-action="breathing" title="სუნთქვის ვარჯიში">
+              <span class="chip-icon">🫁</span>
+              <span class="chip-text">
+                <strong>სუნთქვის ვარჯიში</strong>
+                <small>4-7-8 ტექნიკა</small>
+              </span>
+            </button>
+            <button class="quick-chip" data-action="doctor" title="ექიმის შერჩევა">
+              <span class="chip-icon">👩‍⚕️</span>
+              <span class="chip-text">
+                <strong>ექიმის შერჩევა</strong>
+                <small>სპეციალისტები</small>
+              </span>
+            </button>
+            <button class="quick-chip" data-action="quiz" title="ტესტის გავლა">
+              <span class="chip-icon">📝</span>
+              <span class="chip-text">
+                <strong>ტესტის გავლა</strong>
+                <small>თვითშეფასება</small>
+              </span>
+            </button>
+            <button class="quick-chip" data-action="booking" title="ვიზიტის დაჯავშნა">
+              <span class="chip-icon">📅</span>
+              <span class="chip-text">
+                <strong>ვიზიტის დაჯავშნა</strong>
+                <small>ონლაინ ჩაწერა</small>
+              </span>
+            </button>
+            <button class="quick-chip" data-action="price" title="ფასები & დაზღვევა">
+              <span class="chip-icon">💳</span>
+              <span class="chip-text">
+                <strong>ფასები & დაზღვევა</strong>
+                <small>ტარიფები</small>
+              </span>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -1819,6 +1861,6 @@
     </div>
   </div>
 
-  <script src="app.js?v=3.5"></script>
+  <script src="app.js?v=3.6"></script>
 </body>
 </html>

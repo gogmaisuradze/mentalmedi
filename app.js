@@ -1014,6 +1014,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const botInputText = document.getElementById('botInputText');
   const botMessages = document.getElementById('botMessages');
   const botQuickChips = document.getElementById('botQuickChips');
+  const botQuickSection = document.getElementById('botQuickSection') || botQuickChips;
 
   let isLauncherDismissed = false;
 
@@ -1088,7 +1089,11 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
       `;
-      botMessages.appendChild(botQuickChips);
+      if (botQuickSection) {
+        botMessages.appendChild(botQuickSection);
+      } else if (botQuickChips) {
+        botMessages.appendChild(botQuickChips);
+      }
       stopBreathingExercise();
       showToast("ჩატი გასუფთავდა");
     });
@@ -1246,6 +1251,15 @@ document.addEventListener('DOMContentLoaded', () => {
       void breathingLiveNumber.offsetWidth;
       breathingLiveNumber.classList.add('tick-pop');
     }
+
+    // ფაზის საწყისი ზომა
+    if (breathingCircle) {
+      if (phase.key === 'inhale') {
+        breathingCircle.style.transform = 'scale(1.22)';
+      } else if (phase.key === 'hold' || phase.key === 'exhale') {
+        breathingCircle.style.transform = 'scale(0.78)';
+      }
+    }
   }
 
   function breathingLoop(now) {
@@ -1265,6 +1279,22 @@ document.addEventListener('DOMContentLoaded', () => {
         void breathingLiveNumber.offsetWidth;
         breathingLiveNumber.classList.add('tick-pop');
       }
+    }
+
+    // წრის დინამიკური მასშტაბირება მოთხოვნის შესაბამისად:
+    // • ჩასუნთქვა (inhale): პატარავდება (1.22 -> 0.78)
+    // • შეკავება (hold): დგას გაუნძრევლად (0.78)
+    // • ამოსუნთქვა (exhale): იზრდება (0.78 -> 1.22)
+    if (breathingCircle) {
+      let scale = 1.0;
+      if (phase.key === 'inhale') {
+        scale = 1.22 - (fraction * 0.44);
+      } else if (phase.key === 'hold') {
+        scale = 0.78;
+      } else if (phase.key === 'exhale') {
+        scale = 0.78 + (fraction * 0.44);
+      }
+      breathingCircle.style.transform = `scale(${scale.toFixed(3)})`;
     }
 
     // Update smooth SVG clock progress ring
@@ -1301,6 +1331,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (breathingPhaseTag) breathingPhaseTag.textContent = "მზადება";
     if (breathingLiveNumber) breathingLiveNumber.textContent = "4";
     if (breathingStepDesc) breathingStepDesc.textContent = "დააჭირეთ „სუნთქვის დაწყებას“ მშვიდი რელაქსაციისთვის";
+    if (breathingCircle) breathingCircle.style.transform = 'scale(1.0)';
     resetClockTicks();
   }
 
