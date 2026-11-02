@@ -1,22 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
     <linearGradient id="favBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1C4E43"/>
-      <stop offset="100%" stop-color="#286E60"/>
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F4F8F6"/>
+    </linearGradient>
+    <linearGradient id="emGradFav" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#286F62"/>
+      <stop offset="100%" stop-color="#144338"/>
+    </linearGradient>
+    <linearGradient id="orgGradFav" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2965B"/>
+      <stop offset="100%" stop-color="#D1692E"/>
     </linearGradient>
   </defs>
-  <!-- Rounded Base Background -->
-  <rect width="64" height="64" rx="16" fill="url(#favBg)"/>
-  
-  <!-- Subtle Glowing Aura -->
-  <circle cx="32" cy="32" r="24" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="3 3"/>
-  
-  <!-- Mental Mind / Growth Branch Symbol -->
-  <path d="M22 39C22 32.5 26.5 27 32 27C37.5 27 42 32.5 42 39" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round"/>
-  <path d="M32 27V17" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round"/>
-  
-  <!-- Warm Terracotta Neural Center & Nodes -->
-  <circle cx="32" cy="14" r="4.5" fill="#E58348"/>
-  <circle cx="21" cy="40.5" r="3" fill="#A8E0D2"/>
-  <circle cx="43" cy="40.5" r="3" fill="#A8E0D2"/>
+
+  <!-- Clean Rounded Base -->
+  <rect width="64" height="64" rx="18" fill="url(#favBg)" stroke="rgba(28,78,67,0.12)" stroke-width="1.5"/>
+
+  <!-- Left Hemisphere / 'Me' Profile (Emerald) -->
+  <path d="M29.5 12C20.5 12 12.5 18.5 11.8 28.5C11.3 36.5 17 43.5 22 49.5C25.5 53.5 29 54 29.5 54V47C27.5 47 26 45.5 25 43.5C24 41.5 25.5 39.5 24.5 38C23.5 36 26.5 34.5 26 32.5C25.5 30.5 27 29 27.5 27.5C28 25.5 25.5 24 26.5 21.5C27.5 19.5 29.5 19 29.5 12Z" fill="url(#emGradFav)"/>
+  <!-- Neural Ribs Left -->
+  <path d="M18 25C21 27 23 30.5 22.5 33.5" stroke="#8AE0CE" stroke-width="2.2" stroke-linecap="round" stroke-opacity="0.8"/>
+  <path d="M17.5 34.5C19 37.5 22 40.5 24 42" stroke="#8AE0CE" stroke-width="2" stroke-linecap="round" stroke-opacity="0.7"/>
+
+  <!-- Right Hemisphere / 'Me' Profile (Terracotta) -->
+  <path d="M34.5 12C43.5 12 51.5 18.5 52.2 28.5C52.7 36.5 47 43.5 42 49.5C38.5 53.5 35 54 34.5 54V47C36.5 47 38 45.5 39 43.5C40 41.5 38.5 39.5 39.5 38C40.5 36 37.5 34.5 38 32.5C38.5 30.5 37 29 36.5 27.5C36 25.5 38.5 24 37.5 21.5C36.5 19.5 34.5 19 34.5 12Z" fill="url(#orgGradFav)"/>
+  <!-- Neural Ribs Right -->
+  <path d="M46 25C43 27 41 30.5 41.5 33.5" stroke="#FFE1CD" stroke-width="2.2" stroke-linecap="round" stroke-opacity="0.9"/>
+  <path d="M46.5 34.5C45 37.5 42 40.5 40 42" stroke="#FFE1CD" stroke-width="2" stroke-linecap="round" stroke-opacity="0.8"/>
+
+  <!-- Golden Synaptic Connection Point -->
+  <circle cx="32" cy="32.5" r="3.5" fill="#FBBF24" stroke="#FFFFFF" stroke-width="1.2"/>
+  <circle cx="32" cy="20.5" r="1.8" fill="#79C7B4"/>
+  <circle cx="32" cy="44.5" r="1.8" fill="#F97316"/>
 </svg>

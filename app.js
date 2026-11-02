@@ -1,6 +1,6 @@
 /**
  * MentalMedi — Client-side Application Script
- * Architecture & Interactions inspired by MentalHub.ge with custom enhanced UX
+ * Modern Evidence-Based Mental Health & Therapy Platform
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -880,7 +880,7 @@ document.addEventListener('DOMContentLoaded', () => {
       feat_support_desc: "Appointments daily from 10:00 to 20:00, including weekends",
       services_tag: "Our Specialties",
       services_title: "Medical & Psychological Services",
-      services_subtitle: "Comprehensive spectrum based on MentalHub structure for your mental wellbeing",
+      services_subtitle: "Evidence-based comprehensive spectrum for your mental wellbeing",
       filter_all: "All Specialists",
       filter_psychiatry: "Psychiatry",
       filter_therapy: "Psychotherapy (CBT/Gestalt)",
@@ -906,7 +906,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     ka: {
       crisis_msg: "თუ გჭირდებათ გადაუდებელი დახმარება: კრიზისული ცხელი ხაზი: <strong>112</strong> ან <strong>116 006</strong>",
-      tagline: "მენტალური ჯანმრთელობის ცენტრი",
+      tagline: "მენტალური ცენტრი",
       nav_services: "სერვისები",
       nav_specialists: "სპეციალისტები",
       nav_tests: "ტესტები <span class='badge-mini'>Quiz</span>",
@@ -940,7 +940,7 @@ document.addEventListener('DOMContentLoaded', () => {
       feat_support_desc: "ვიზიტები ყოველდღე 10:00-დან 20:00-მდე, შაბათ-კვირის ჩათვლით",
       services_tag: "ჩვენი მიმართულებები",
       services_title: "სამედიცინო და ფსიქოლოგიური სერვისები",
-      services_subtitle: "Mental Hub-ის სტრუქტურაზე დაფუძნებული სრული სპექტრი თქვენი მენტალური კეთილდღეობისთვის",
+      services_subtitle: "მტკიცებულებებზე დაფუძნებული სრული სამედიცინო სპექტრი თქვენი მენტალური კეთილდღეობისთვის",
       filter_all: "ყველა სპეციალისტი",
       filter_psychiatry: "ფსიქიატრია",
       filter_therapy: "ფსიქოთერაპია (CBT/გეშტალტი)",
