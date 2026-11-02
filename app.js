@@ -1168,81 +1168,27 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function executeQuickAction(action) {
-    if (action === 'anxiety') {
-      appendUserMessage("🧘 როგორ დავძლიო შფოთვა და დაძაბულობა?");
-      setTimeout(() => {
-        appendBotMessage(`
-          <p><strong>შფოთვის მართვის 3 სწრაფი ნაბიჯი:</strong></p>
-          <p>1. <strong>5-4-3-2-1 დამიწება:</strong> იპოვეთ თქვენ გარშემო 5 საგანი, შეეხეთ 4-ს, მოუსმინეთ 3 ბგერას, იყნოსეთ 2 სუნი და შეიგრძენით 1 გემო.</p>
-          <p>2. <strong>ღრმა სუნთქვა:</strong> სუნთქვის შენელება ამცირებს კორტიზოლს.</p>
-          <p>3. <strong>ტესტის გავლა:</strong> შეამოწმეთ შფოთვის დონე ვალიდური GAD-7 კითხვარით.</p>
-        `, [
-          { action: 'start_breathing', label: '🫁 სუნთქვითი ვარჯიშის დაწყება' },
-          { action: 'open_tests', label: '📝 შფოთვის ტესტის გავლა' },
-          { action: 'open_booking', label: '👩‍⚕️ თერაპევტთან დაჯავშნა' }
-        ]);
-      }, 400);
-    } else if (action === 'breathing') {
+    // სუნთქვითი ვარჯიში რჩება ლოკალურ დამხმარე ხელსაწყოდ
+    if (action === 'breathing') {
       appendUserMessage("🫁 მინდა სუნთქვითი ვარჯიშის გაკეთება");
-      setTimeout(() => {
-        appendBotMessage(`
-          <p>გააქტიურდა <strong>4-7-8 დამამშვიდებელი სუნთქვის</strong> მოდული. დააჭირეთ „სუნთქვის დაწყებას“ და მიჰყევით ანიმაციურ წრეს:</p>
-        `);
-        startBreathingExercise();
-      }, 300);
-    } else if (action === 'doctor') {
-      appendUserMessage("👩‍⚕️ როგორ შევარჩიო შესაფერისი სპეციალისტი?");
-      setTimeout(() => {
-        appendBotMessage(`
-          <p>სპეციალისტის შერჩევა დამოკიდებულია თქვენს საჭიროებაზე:</p>
-          <p>• <strong>წამყვანი ფსიქოთერაპევტი (WAPP):</strong> პოზიტიური ფსიქოთერაპია, ემოციური გადაწვა, შფოთვა, ბალანსის მოდელი (ლალი ბადრიძე).</p>
-          <p>• <strong>კლინიკური ფსიქიატრი:</strong> მენტალური დიაგნოსტიკა, მედიკამენტური მკურნალობა, მძიმე უძილობა (დოქტ. ნინო კალანდაძე).</p>
-          <p>• <strong>წყვილების თერაპევტი:</strong> ურთიერთობის კრიზისები და კონფლიქტები (გიორგი თავაძე).</p>
-          <p>• <strong>სპორტის ფსიქოლოგი:</strong> მენტალური გამძლეობა და ფოკუსი (ლევან მაისურაძე).</p>
-        `, [
-          { action: 'view_specialists', label: 'სპეციალისტების სიის ნახვა' },
-          { action: 'open_booking', label: 'დაჯავშნე ვიზიტი ახლავე' }
-        ]);
-      }, 400);
-    } else if (action === 'quiz') {
-      appendUserMessage("📝 მინდა თვითშეფასების ტესტის გავლა");
-      setTimeout(() => {
-        appendBotMessage(`
-          <p>ჩვენს საიტზე ხელმისაწვდომია 3 მეცნიერულად ვალიდური ტესტი:</p>
-          <p>1. <strong>GAD-7</strong> — შფოთვის სკრინინგი</p>
-          <p>2. <strong>PHQ-9</strong> — დეპრესიის შეფასება</p>
-          <p>3. <strong>Burnout</strong> — ემოციური გადაწვის ტესტი</p>
-          <p>ტესტი ანონიმურია და გრძელდება სულ 2 წუთი.</p>
-        `, [
-          { action: 'open_tests', label: 'გადასვლა ტესტებზე →' }
-        ]);
-      }, 400);
-    } else if (action === 'booking') {
-      appendUserMessage("📅 როგორ დავჯავშნო ვიზიტი?");
-      setTimeout(() => {
-        appendBotMessage(`
-          <p>ვიზიტის დაჯავშნა ხდება 3 მარტივ ნაბიჯში:</p>
-          <p>1. ირჩევთ ფორმატს: <strong>კლინიკაში (ი. ჭავჭავაძის გამზ. 2)</strong> ან <strong>ონლაინ ვიდეოზარი</strong>.</p>
-          <p>2. ირჩევთ სპეციალისტს ან უახლოეს თავისუფალ დროს.</p>
-          <p>3. უთითებთ თარიღს და თქვენს ნომერს. ჩვენი ადმინისტრატორი 15 წუთში დაგიდასტურებთ ვიზიტს.</p>
-        `, [
-          { action: 'open_booking', label: 'ვიზიტის დაჯავშნის გახსნა' }
-        ]);
-      }, 400);
-    } else if (action === 'price') {
-      appendUserMessage("💳 რა ღირს მომსახურება და მოქმედებს თუ არა დაზღვევა?");
-      setTimeout(() => {
-        appendBotMessage(`
-          <p><strong>ტარიფები:</strong></p>
-          <p>• პირველადი კონსულტაცია: <strong>90 ₾</strong> (50 წთ)</p>
-          <p>• 5-სესიიანი თერაპიული პაკეტი: <strong>390 ₾</strong> (-15% ფასდაკლებით)</p>
-          <p>• ფსიქიატრიული შეფასება: <strong>130 ₾</strong> (ფორმა 100-ით)</p>
-          <p>🛡️ <strong>დაზღვევა:</strong> ჩვენი ექიმები გასცემენ ფორმა 100-ს, რომლითაც კერძო სადაზღვევოები (არდი, ჯიპიაი, იმედი L, ალდაგი, თიბისი) სრულად ან ნაწილობრივ ანაზღაურებენ თანხას.</p>
-        `, [
-          { action: 'open_booking', label: 'დაჯავშნე ვიზიტი' }
-        ]);
-      }, 400);
+      appendBotMessage(`
+        <p>გააქტიურდა <strong>4-7-8 დამამშვიდებელი სუნთქვის</strong> მოდული. დააჭირეთ „სუნთქვის დაწყებას“ და მიჰყევით ანიმაციურ წრეს:</p>
+      `);
+      startBreathingExercise();
+      return;
     }
+    // დანარჩენი ჩიპები კითხვას n8n-ს აგზავნიან — პასუხს AI აგენტი აგენერირებს
+    const chipQuestions = {
+      anxiety: "როგორ დავძლიო შფოთვა და დაძაბულობა?",
+      doctor: "როგორ შევარჩიო შესაფერისი სპეციალისტი?",
+      quiz: "მინდა თვითშეფასების ტესტის გავლა",
+      booking: "როგორ დავჯავშნო ვიზიტი?",
+      price: "რა ღირს მომსახურება და მოქმედებს თუ არა დაზღვევა?"
+    };
+    const question = chipQuestions[action];
+    if (!question) return;
+    appendUserMessage(question);
+    askBot(question);
   }
 
   // 4-7-8 Breathing Tool Controller
@@ -1316,6 +1262,64 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ==========================================
+  // MentalBot → n8n AI backend (webhook)
+  // ==========================================
+  const BOT_WEBHOOK_URL = 'https://meticulous-oyster.pikapod.net/webhook/mentalmedi-website-chat';
+  let botSessionId = null;
+
+  // მომხმარებლის სესიის ID — ბოტმა საუბრის კონტექსტი რომ დაიმახსოვროს
+  function getBotSessionId() {
+    if (botSessionId) return botSessionId;
+    try { botSessionId = localStorage.getItem('mm_bot_session'); } catch (e) {}
+    if (!botSessionId) {
+      botSessionId = 'web-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8);
+      try { localStorage.setItem('mm_bot_session', botSessionId); } catch (e) {}
+    }
+    return botSessionId;
+  }
+
+  // „წერს..." ინდიკატორი
+  function appendBotTyping() {
+    const row = document.createElement('div');
+    row.className = 'message-row bot-row';
+    row.id = 'botTypingRow';
+    row.innerHTML = `
+      <div class="msg-avatar"><img src="logo_emblem.png" alt="MentalBot" class="msg-avatar-img"></div>
+      <div class="msg-bubble"><p class="bot-typing-dots">●&nbsp;●&nbsp;●</p></div>
+    `;
+    botMessages.appendChild(row);
+    botMessages.scrollTop = botMessages.scrollHeight;
+  }
+
+  function removeBotTyping() {
+    const row = document.getElementById('botTypingRow');
+    if (row) row.remove();
+  }
+
+  // შეტყობინებას აგზავნის n8n-ში და AI აგენტის პასუხს აჩვენებს
+  async function askBot(text) {
+    appendBotTyping();
+    try {
+      const res = await fetch(BOT_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: text, sessionId: getBotSessionId() })
+      });
+      const data = await res.json();
+      removeBotTyping();
+      const reply = (data && data.output) ? String(data.output) : '';
+      if (reply.trim()) {
+        appendBotMessage('<p>' + escapeHtml(reply).replace(/\n/g, '<br>') + '</p>');
+      } else {
+        appendBotMessage('<p>ბოდიში, პასუხი ვერ მივიღე. გთხოვთ, სცადოთ ხელახლა ან დაგვიკავშირდით: 📞 +995 598 32 40 20</p>');
+      }
+    } catch (err) {
+      removeBotTyping();
+      appendBotMessage('<p>ბოდიში, დროებით კავშირი ვერ დამყარდა. გთხოვთ, სცადოთ ცოტა ხანში ან დაგვიკავშირდით: 📞 +995 598 32 40 20</p>');
+    }
+  }
+
   // Handle Free-text User Input Form
   if (botInputForm) {
     botInputForm.addEventListener('submit', (e) => {
@@ -1325,11 +1329,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       appendUserMessage(query);
       botInputText.value = '';
-
-      // Analyze Query and Provide Empathetic Intelligent Answer
-      setTimeout(() => {
-        respondToUserQuery(query);
-      }, 500);
+      respondToUserQuery(query);
     });
   }
 
@@ -1349,74 +1349,8 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    if (q.includes("გამარჯობა") || q.includes("სალამი") || q.includes("hello") || q.includes("hi")) {
-      appendBotMessage(`
-        <p>მოგესალმებით! მოხარული ვარ, რომ მომმართეთ. 🌿</p>
-        <p>როგორ გრძნობთ დღეს თავს? შემიძლია გაგიწიოთ კონსულტაცია ჩვენს სერვისებზე, დაგეხმაროთ შფოთვის შემცირებაში ან დაჯავშნოთ ვიზიტი.</p>
-      `, [
-        { action: 'open_tests', label: 'გაიარე ტესტი' },
-        { action: 'open_booking', label: 'დაჯავშნე ვიზიტი' }
-      ]);
-    } else if (q.includes("შფოთვ") || q.includes("ნერვ") || q.includes("პანიკ") || q.includes("anxiety") || q.includes("panic")) {
-      appendBotMessage(`
-        <p>შფოთვა და პანიკა არის სხეულის ბუნებრივი რეაქცია გადატვირთვაზე, თუმცა მისი მართვა სავსებით შესაძლებელია.</p>
-        <p>გირჩევთ სცადოთ ჩვენი <strong>4-7-8 სუნთქვის ტექნიკა</strong> ან გაიაროთ <strong>GAD-7 შფოთვის სკრინინგი</strong>, რის შემდეგაც ჩვენი CBT თერაპევტი დაგეხმარებათ.</p>
-      `, [
-        { action: 'start_breathing', label: '🫁 სუნთქვის დაწყება' },
-        { action: 'open_tests', label: 'ტესტის გავლა' },
-        { action: 'open_booking', label: 'სპეციალისტთან დაჯავშნა' }
-      ]);
-    } else if (q.includes("დეპრესი") || q.includes("მოწყენილ") || q.includes("უიმედო") || q.includes("depression")) {
-      appendBotMessage(`
-        <p>დეპრესია და ემოციური ენერგიის ნაკლებობა არ არის თქვენი სისუსტე — ეს არის მდგომარეობა, რომელსაც სჭირდება მხარდაჭერა და მზრუნველობა.</p>
-        <p>MentalMedi-ში გვყავს როგორც ფსიქოთერაპევტები, ასევე კლინიკური ფსიქიატრები, რომლებიც დაგეხმარებიან ძალების აღდგენაში.</p>
-      `, [
-        { action: 'open_tests', label: 'PHQ-9 დეპრესიის ტესტი' },
-        { action: 'open_booking', label: 'ვიზიტის დაჯავშნა' }
-      ]);
-    } else if (q.includes("ძილ") || q.includes("უძილობა") || q.includes("sleep") || q.includes("insomnia")) {
-      appendBotMessage(`
-        <p>უძილობა ხშირად შფოთვისა და გადაღლის მთავარი სიგნალია.</p>
-        <p>რეკომენდაცია: დაძინებამდე 1 საათით ადრე გამორთეთ ეკრანები, ოთახში შეინარჩუნეთ 18-20°C ტემპერატურა. თუ პრობლემა 2 კვირაზე მეტია გრძელდება, გაიარეთ კონსულტაცია ფსიქიატრთან მედიკამენტური ან რეჟიმული კორექციისთვის.</p>
-      `, [
-        { action: 'open_booking', label: 'ფსიქიატრთან დაჯავშნა' }
-      ]);
-    } else if (q.includes("ფას") || q.includes("ღირს") || q.includes("price") || q.includes("cost") || q.includes("დაზღვევა")) {
-      appendBotMessage(`
-        <p>პირველადი კონსულტაციის ფასი იწყება <strong>80-90 ₾</strong>-დან. 5 სესიიანი კურსი — <strong>390 ₾</strong> (-15%).</p>
-        <p>ჩვენი კლინიკა გასცემს ფორმა 100-ს, რომელსაც ანაზღაურებს ყველა კერძო სადაზღვევო კომპანია.</p>
-      `, [
-        { action: 'open_booking', label: 'ვიზიტის დაჯავშნა' }
-      ]);
-    } else if (q.includes("სად ხართ") || q.includes("მისამართი") || q.includes("location") || q.includes("address")) {
-      appendBotMessage(`
-        <p>📍 ჩვენი მისამართია: <strong>ქ. თბილისი, ი. ჭავჭავაძის გამზირი 2</strong>.</p>
-        <p>სამუშაო საათები: ორშაბათი - შაბათი: 10:00 – 20:00.</p>
-        <p>ტელეფონი: <strong>+995 598 32 40 20</strong></p>
-        <p>ასევე ხელმისაწვდომია <strong>ონლაინ ვიდეო-კონსულტაციები</strong> მსოფლიოს ნებისმიერი წერტილიდან!</p>
-      `, [
-        { action: 'open_booking', label: 'დაჯავშნე ვიზიტი' }
-      ]);
-    } else if (q.includes("დაჯავშნ") || q.includes("ვიზიტი") || q.includes("book") || q.includes("appointment")) {
-      appendBotMessage(`
-        <p>ვიზიტის დასაჯავშნად დააჭირეთ ქვემოთ მოცემულ ღილაკს, აირჩიეთ სასურველი დრო და ექიმი:</p>
-      `, [
-        { action: 'open_booking', label: '📅 დაჯავშნის ონლაინ ფორმა' }
-      ]);
-    } else if (q.includes("მადლობა") || q.includes("thanks") || q.includes("thank you")) {
-      appendBotMessage(`
-        <p>არაფრის! ყოველთვის თქვენს გვერდით ვარ. გაუფრთხილდით თქვენს მენტალურ სიმშვიდეს! 💚</p>
-      `);
-    } else {
-      appendBotMessage(`
-        <p>გმადლობთ შეკითხვისთვის. თქვენი შეტყობინება გადაეცა ჩვენს კლინიკურ კოორდინატორს.</p>
-        <p>რით შემიძლია ახლა დაგეხმაროთ?</p>
-      `, [
-        { action: 'start_breathing', label: '🫁 სუნთქვითი ვარჯიში' },
-        { action: 'open_tests', label: '📝 ტესტის გავლა' },
-        { action: 'open_booking', label: '📅 ვიზიტის დაჯავშნა' }
-      ]);
-    }
+    // ყველა სხვა შეტყობინებას n8n-ის AI აგენტი პასუხობს
+    askBot(text);
   }
 
   // ==========================================
