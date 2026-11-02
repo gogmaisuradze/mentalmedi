@@ -337,9 +337,11 @@ button {
   background: rgba(28, 78, 67, 0.08);
 }
 
-.logo-mark svg {
+.logo-mark svg,
+.brand-logo-img {
   width: 100%;
   height: 100%;
+  object-fit: contain;
   display: block;
 }
 
@@ -473,6 +475,14 @@ button {
 .header-bot-pill:hover {
   background: linear-gradient(135deg, rgba(28, 78, 67, 0.15) 0%, rgba(229, 131, 72, 0.2) 100%);
   transform: translateY(-1px);
+}
+
+.bot-pill-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
 }
 
 .bot-status-dot {
@@ -2829,9 +2839,20 @@ button {
   100% { transform: scale(1.45); opacity: 0; }
 }
 
-.launcher-icon svg {
-  width: 30px;
-  height: 30px;
+.launcher-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.launcher-icon svg,
+.launcher-emblem-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .launcher-tag {
@@ -2907,19 +2928,24 @@ button {
 
 .bot-avatar {
   position: relative;
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.2);
+  background: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 3px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
   color: #FFFFFF;
 }
 
-.bot-avatar svg {
-  width: 22px;
-  height: 22px;
+.bot-avatar svg,
+.bot-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .avatar-status-dot {
@@ -3083,12 +3109,22 @@ button {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: var(--primary-light);
+  background: #FFFFFF;
+  border: 1px solid rgba(28, 78, 67, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.85rem;
   flex-shrink: 0;
+  overflow: hidden;
+  padding: 2px;
+}
+
+.msg-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .msg-bubble {
