@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
       role: "კლინიკური ფსიქიატრი, მედიცინის დოქტორი",
       roleEn: "Clinical Psychiatrist, MD",
       exp: "14 წლიანი კლინიკური პრაქტიკა",
-      img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80",
+      img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=700&h=800&q=85",
       bio: "თბილისის სახელმწიფო სამედიცინო უნივერსიტეტის კურსდამთავრებული. სპეციალიზაცია გავლილი აქვს გერმანიასა და ავსტრიაში. ფლობს საერთაშორისო სერტიფიკატებს ფსიქოფარმაკოთერაპიაში.",
       focus: "დეპრესიული მდგომარეობები, ბიპოლარული აფექტური აშლილობა, პანიკური შეტევები, გენერალიზებული შფოთვა, ძილის ქრონიკული დარღვევები.",
       methods: ["კლინიკური ფსიქიატრია", "ფარმაკოთერაპია", "CBT ელემენტები", "დიაგნოსტიკური შეფასება"],
@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
       role: "ფსიქოთერაპევტი, სერტიფიცირებული CBT სპეციალისტი",
       roleEn: "Psychotherapist, Certified CBT Specialist",
       exp: "9 წლიანი გამოცდილება",
-      img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
+      img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&h=800&q=85",
       bio: "ევროპის კოგნიტურ-ბიჰევიორული თერაპიის ასოციაციის (EABCT) აკრედიტებული წევრი. მუშაობს ახალგაზრდებთან და მოზრდილებთან შფოთვითი სპექტრის დასაძლევად.",
       focus: "სოციოფობია, პერფექციონიზმი, დაბალი თვითშეფასება, ობსესიურ-კომპულსიური ქცევები, ცხოვრებისეული კრიზისები.",
       methods: ["კოგნიტურ-ბიჰევიორული თერაპია (CBT)", "Mindfulness", "აქცეპტაციისა და ვალდებულების თერაპია (ACT)"],
@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
       role: "სპორტისა და მაღალი შედეგების ფსიქოლოგი",
       roleEn: "Sports & High Performance Psychologist",
       exp: "11 წლიანი გამოცდილება",
-      img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
+      img: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=700&h=800&q=85",
       bio: "საქართველოს ოლიმპიური და ახალგაზრდული ნაკრებების მენტალური მწვრთნელი. დაეხმარა ასობით სპორტსმენსა და ბიზნეს ლიდერს სტრესის პირობებში უმაღლესი შედეგების მიღწევაში.",
       focus: "საშეჯიბრო შფოთვის მართვა, ფოკუსის კონტროლი, გამარჯვებულის მენტალიტეტი, ტრავმის შემდგომი ფსიქოლოგიური რეაბილიტაცია.",
       methods: ["მენტალური სიმტკიცის ტრენინგი", "ვიზუალიზაცია", "ბიოუკუკავშირი", "სტრესგამძლეობის სტრატეგიები"],
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
       role: "ბავშვთა და მოზარდთა კლინიკური ფსიქოლოგი",
       roleEn: "Child & Adolescent Psychologist",
       exp: "8 წლიანი გამოცდილება",
-      img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80",
+      img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=700&h=800&q=85",
       bio: "ბავშვთა ფსიქოლოგიის ექსპერტი. სპეციალიზებულია ქცევითი და ემოციური სირთულეების დიაგნოსტიკასა და მშობელთა საკონსულტაციო მხარდაჭერაში.",
       focus: "ADHD, აუტისტური სპექტრის ნიშნები, სასკოლო შფოთვა, ბულინგის შედეგები, მოზარდობის ასაკობრივი კრიზისი.",
       methods: ["არტ-თერაპია", "თამაშით თერაპია", "ქცევითი მოდიფიკაცია", "მშობელთა ქოუჩინგი"],
@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
       role: "ფსიქოთერაპევტი, EFT & გეშტალტ პრაქტიკოსი",
       roleEn: "Family & Couples Therapist",
       exp: "12 წლიანი გამოცდილება",
-      img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80",
+      img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=700&h=800&q=85",
       bio: "სერტიფიცირებული ოჯახისა და წყვილთა თერაპევტი. ეხმარება პარტნიორებს დაკარგული ემოციური კავშირისა და ნდობის აღდგენაში.",
       focus: "წყვილთა კონფლიქტები, ღალატის შემდგომი კრიზისი, განქორწინების პროცესი, კომუნიკაციური ბარიერები.",
       methods: ["ემოციურ-ფოკუსირებული თერაპია (EFT)", "გეშტალტ-თერაპია", "სისტემური ოჯახური მიდგომა"],
@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
       role: "ფსიქიატრი, ფსიქოფარმაკოლოგი",
       roleEn: "Psychiatrist & Psychopharmacologist",
       exp: "16 წლიანი გამოცდილება",
-      img: "https://images.unsplash.com/photo-1594824813591-5f216faee088?auto=format&fit=crop&w=600&q=80",
+      img: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=700&h=800&q=85",
       bio: "საქართველოს ფსიქიატრთა საზოგადოების წევრი. მრავალწლიანი გამოცდილება აქვს რთული და კომბინირებული ფსიქიკური აშლილობების მკურნალობაში.",
       focus: "ობსესიურ-კომპულსიური აშლილობა (OCD), პოსტტრავმული სტრესული აშლილობა (PTSD), ფსიქოზური რეგისტრის მდგომარეობები.",
       methods: ["თანამედროვე ფარმაკოთერაპია", "მულტიდისციპლინური მართვა", "სამედიცინო ექსპერტიზა"],
@@ -422,7 +422,10 @@ document.addEventListener('DOMContentLoaded', () => {
     testResultArea.style.display = 'block';
 
     document.getElementById('resultScoreNum').textContent = totalScore;
-    document.querySelector('.result-score-max').textContent = `/ ${maxScore}`;
+    const maxScoreEl = document.getElementById('resultScoreMax') || document.querySelector('.result-score-max');
+    if (maxScoreEl) {
+      maxScoreEl.textContent = maxScore;
+    }
     document.getElementById('resultTitle').textContent = resultObj.title;
     document.getElementById('resultDesc').textContent = resultObj.desc;
 
@@ -846,7 +849,8 @@ document.addEventListener('DOMContentLoaded', () => {
       tagline: "Mental Health & Therapy Center",
       nav_services: "Services",
       nav_specialists: "Specialists",
-      nav_tests: "Tests <span class='badge-mini'>AI / Quiz</span>",
+      nav_tests: "Tests <span class='badge-mini'>Quiz</span>",
+      score_label: "Score",
       nav_about: "About Us",
       nav_pricing: "Pricing",
       nav_blog: "Blog",
@@ -905,7 +909,8 @@ document.addEventListener('DOMContentLoaded', () => {
       tagline: "მენტალური ჯანმრთელობის ცენტრი",
       nav_services: "სერვისები",
       nav_specialists: "სპეციალისტები",
-      nav_tests: "ტესტები <span class='badge-mini'>AI / Quiz</span>",
+      nav_tests: "ტესტები <span class='badge-mini'>Quiz</span>",
+      score_label: "ქულა",
       nav_about: "ჩვენს შესახებ",
       nav_pricing: "ფასები",
       nav_blog: "ბლოგი",
