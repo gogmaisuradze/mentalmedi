@@ -428,6 +428,10 @@ button {
   letter-spacing: 0.02em;
 }
 
+.nav-mobile-footer {
+  display: none;
+}
+
 /* Header Action Controls */
 .header-actions {
   display: flex;
@@ -3269,6 +3273,13 @@ button {
     width: 100%;
     padding: 0.6rem 1rem;
   }
+  .nav-mobile-footer {
+    display: block;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border-light);
+    width: 100%;
+  }
   .mobile-drawer-backdrop {
     position: fixed;
     top: 70px;
@@ -3311,32 +3322,448 @@ button {
 }
 
 @media (max-width: 640px) {
+  /* Container & Global Spacing */
+  .container {
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
+  }
+  .section {
+    padding: 3.5rem 0;
+  }
+  .section-header {
+    margin-bottom: 2rem;
+  }
+  .section-title {
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+
+  /* Crisis Bar */
+  .crisis-bar {
+    padding: 0.4rem 0;
+  }
+  .crisis-inner {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    gap: 0.35rem;
+  }
+  .crisis-text {
+    font-size: 0.76rem;
+    justify-content: center;
+    line-height: 1.35;
+  }
+  .crisis-link {
+    font-size: 0.78rem;
+    padding: 0.15rem 0.65rem;
+  }
+
+  /* Header */
+  .header-inner {
+    height: 62px;
+  }
+  .brand-logo .logo-mark {
+    width: 32px;
+    height: 32px;
+  }
+  .brand-logo .logo-title {
+    font-size: 1.15rem;
+  }
+  .btn-header-cta {
+    display: none; /* Accessible via mobile drawer & floating bottom bar */
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding: 2.75rem 0 2rem 0;
+  }
   .hero-title {
-    font-size: 2.15rem;
+    font-size: 1.95rem;
+    line-height: 1.25;
+    margin-bottom: 1rem;
   }
-  .features-grid, .services-grid, .specialists-grid, .blog-grid, .testimonials-grid {
-    grid-template-columns: 1fr;
+  .hero-description {
+    font-size: 0.98rem;
+    line-height: 1.55;
+    margin-bottom: 1.75rem;
   }
-  .form-row, .format-toggle-cards {
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+  .hero-cta-group .btn {
+    width: 100%;
+    padding: 0.85rem 1.5rem;
+    font-size: 0.95rem;
+  }
+  .hero-metrics {
+    gap: 0.75rem;
+    justify-content: space-around;
+    padding-top: 1.25rem;
+  }
+  .metric-number {
+    font-size: 1.45rem;
+  }
+  .metric-label {
+    font-size: 0.72rem;
+  }
+  .metric-divider {
+    height: 28px;
+  }
+
+  /* Hero Visual Card */
+  .hero-main-card {
+    padding: 0.75rem;
+    border-radius: 18px;
+  }
+  .visual-portrait-wrapper {
+    height: 270px;
+  }
+  .floating-badge {
+    padding: 0.45rem 0.7rem;
+    gap: 0.5rem;
+  }
+  .badge-top-right {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+  .badge-bottom-left {
+    bottom: 0.75rem;
+    left: 0.75rem;
+  }
+  .floating-icon, .slot-circle {
+    width: 28px;
+    height: 28px;
+    font-size: 0.85rem;
+  }
+  .floating-icon svg {
+    width: 15px;
+    height: 15px;
+  }
+  .floating-title {
+    font-size: 0.74rem;
+  }
+  .floating-desc {
+    font-size: 0.65rem;
+  }
+
+  /* Features Bar */
+  .features-bar {
+    padding: 1rem 0 2rem 0;
+  }
+  .features-grid {
     grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+  .feature-card {
+    padding: 1.15rem;
+  }
+
+  /* Services Grid */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .service-card {
+    padding: 1.5rem;
+  }
+  .service-title {
+    font-size: 1.2rem;
+  }
+
+  /* Psychological Tests Quiz */
+  .test-tabs-wrapper {
+    margin-bottom: 1.5rem;
   }
   .test-tabs {
     flex-direction: column;
     width: 100%;
     border-radius: var(--radius-md);
+    gap: 0.25rem;
+    padding: 0.3rem;
   }
   .test-tab-btn {
     border-radius: var(--radius-sm);
     justify-content: center;
+    padding: 0.65rem 1rem;
+    font-size: 0.85rem;
   }
+  .test-header-bar {
+    padding: 1rem 1.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .test-question-area {
+    padding: 1.5rem 1.25rem;
+  }
+  .test-question-prompt {
+    font-size: 1.15rem;
+    line-height: 1.35;
+  }
+  .test-option-btn {
+    padding: 0.85rem 1rem;
+    font-size: 0.9rem;
+  }
+  .test-result-area {
+    padding: 2rem 1.25rem;
+  }
+  .result-title {
+    font-size: 1.45rem;
+  }
+  .result-explanation {
+    font-size: 0.92rem;
+  }
+  .result-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .result-actions .btn {
+    width: 100%;
+  }
+
+  /* Specialists */
+  .specialist-filter-bar {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    padding: 0.25rem 0.25rem 0.75rem 0.25rem;
+    scrollbar-width: none;
+    margin-bottom: 1.75rem;
+  }
+  .specialist-filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+  .filter-pill {
+    flex-shrink: 0;
+    padding: 0.45rem 1rem;
+    font-size: 0.82rem;
+  }
+  .specialists-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .specialist-img-wrapper {
+    height: 240px;
+  }
+  .specialist-content {
+    padding: 1.35rem;
+  }
+  .specialist-card-bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .specialist-card-bottom .btn {
+    width: 100%;
+  }
+
+  /* About Section */
+  .about-image-collage {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+  .collage-main-img {
+    height: 250px;
+    border-radius: 16px;
+  }
+  .collage-card {
+    position: static;
+    margin-top: 0.75rem;
+    max-width: 100%;
+    box-shadow: var(--shadow-sm);
+    padding: 1rem 1.25rem;
+  }
+  .about-lead {
+    font-size: 1rem;
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Pricing */
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .pricing-card {
+    padding: 1.75rem 1.35rem;
+  }
+  .pricing-rate .amount {
+    font-size: 2.6rem;
+  }
+  .insurance-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+
+  /* Blog & Testimonials */
+  .blog-grid, .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .blog-img-wrapper {
+    height: 180px;
+  }
+  .blog-body {
+    padding: 1.25rem;
+  }
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+
+  /* FAQ */
+  .faq-question {
+    padding: 1.15rem 1.25rem;
+    font-size: 0.95rem;
+  }
+  .faq-answer {
+    padding: 0 1.25rem;
+  }
+  .faq-item.active .faq-answer {
+    padding: 0 1.25rem 1.25rem 1.25rem;
+  }
+
+  /* Contact */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .contact-form-panel {
+    padding: 1.5rem 1.25rem;
+  }
+  .form-row, .format-toggle-cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* Modals on Mobile */
+  .modal-overlay {
+    padding: 0.5rem;
+    align-items: flex-end;
+  }
+  .modal-dialog {
+    max-height: 92vh;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+  }
+  .modal-header {
+    padding: 1.15rem 1.25rem;
+  }
+  .modal-title {
+    font-size: 1.15rem;
+  }
+  .modal-subtitle {
+    font-size: 0.78rem;
+  }
+  .modal-steps-indicator {
+    padding: 0.75rem 1rem;
+  }
+  .step-badge .step-name {
+    display: none; /* Show only circle numbers on mobile */
+  }
+  .modal-body {
+    padding: 1.25rem 1rem;
+  }
+  .wizard-footer {
+    margin-top: 1.25rem;
+  }
+  .spec-modal-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  .spec-modal-avatar {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
+  }
+  .specialist-modal-dialog, .article-modal-dialog {
+    padding: 1.5rem 1.25rem;
+  }
+
+  /* Footer */
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
   }
   .footer-bottom-inner {
     flex-direction: column;
     text-align: center;
+    gap: 0.75rem;
+  }
+
+  /* Mobile App-Style Bottom Action Bar (Zero Overlap!) */
+  .floating-quick-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    transform: none;
+    border-radius: 0;
+    padding: 0.65rem 1rem;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    gap: 0.6rem;
+    z-index: 1000;
+  }
+  .quick-call-btn {
+    flex: 0 0 auto;
+    padding: 0.65rem 1rem;
+    font-size: 0.82rem;
   }
   .quick-call-label {
-    display: none;
+    display: inline;
+  }
+  .quick-book-floating-btn {
+    flex: 1 1 auto;
+    justify-content: center;
+    padding: 0.65rem 1.2rem;
+    font-size: 0.86rem;
+  }
+
+  /* MentalBot Floating Above Bottom Bar on Mobile */
+  .mental-bot-widget {
+    bottom: 4.8rem;
+    right: 1rem;
+    z-index: 1010;
+  }
+  .bot-launcher-btn {
+    width: 52px;
+    height: 52px;
+  }
+  .launcher-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+  .launcher-tag {
+    display: none; /* Keep clean on small mobile screens */
+  }
+  .bot-window {
+    width: calc(100vw - 1.5rem);
+    right: -0.25rem;
+    height: calc(100vh - 120px);
+    max-height: 520px;
+    border-radius: 20px;
+  }
+  
+  /* Extra bottom padding on body so bottom bar doesn't cover footer content */
+  body {
+    padding-bottom: 60px;
   }
 }
