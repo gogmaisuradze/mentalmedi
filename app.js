@@ -1169,21 +1169,22 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function executeQuickAction(action) {
-    // სუნთქვითი ვარჯიში რჩება ლოკალურ დამხმარე ხელსაწყოდ
+    // სუნთქვითი ვარჯიში
     if (action === 'breathing') {
       appendUserMessage("🫁 მინდა სუნთქვითი ვარჯიშის გაკეთება");
       appendBotMessage(`
-        <p>გააქტიურდა <strong>4-7-8 დამამშვიდებელი სუნთქვის</strong> მოდული. დააჭირეთ „სუნთქვის დაწყებას“ და მიჰყევით ანიმაციურ წრეს:</p>
+        <p>გააქტიურდა <strong>4-7-8 დამამშვიდებელი სუნთქვის</strong> მოდული. დააჭირეთ „სუნთქვის დაწყებას“ და მიჰყევით საათის ციფერბლატს.</p>
+        <p>შეგიძლიათ აგრეთვე მომწეროთ ნებისმიერი კითხვა ან სიმპტომი, და დეტალურად გაგესაუბრებით!</p>
       `);
       startBreathingExercise();
       return;
     }
-    // დანარჩენი ჩიპები კითხვას n8n-ს აგზავნიან — პასუხს AI აგენტი აგენერირებს
+    // დანარჩენი ჩიპები კითხვას n8n-ს აგზავნიან — პასუხს AI აგენტი აგენერირებს დიალოგში
     const chipQuestions = {
       anxiety: "როგორ დავძლიო შფოთვა და დაძაბულობა?",
-      doctor: "როგორ შევარჩიო შესაფერისი სპეციალისტი?",
-      quiz: "მინდა თვითშეფასების ტესტის გავლა",
-      booking: "როგორ დავჯავშნო ვიზიტი?",
+      doctor: "როგორ შევარჩიო შესაფერისი სპეციალისტი MentalMedi-ში?",
+      quiz: "მინდა თვითშეფასების ტესტის გავლა (შფოთვა, დეპრესია, ბალანსი). მირჩიეთ",
+      booking: "როგორ დავჯავშნო ვიზიტი სპეციალისტთან?",
       price: "რა ღირს მომსახურება და მოქმედებს თუ არა დაზღვევა?"
     };
     const question = chipQuestions[action];
@@ -1355,26 +1356,65 @@ document.addEventListener('DOMContentLoaded', () => {
     if (row) row.remove();
   }
 
+  // AI პასუხის ლამაზად ფორმატირება (Markdown-ის მხარდაჭერით)
+  function formatBotReply(text) {
+    if (!text) return '';
+    let escaped = escapeHtml(text);
+    // **bold** -> <strong>bold</strong>
+    escaped = escaped.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    // *italic* -> <em>italic</em>
+    escaped = escaped.replace(/(^|[^*])\*(?!\*)([^*]+)\*(?!\*)/g, '$1<em>$2</em>');
+    // newlines -> <br>
+    escaped = escaped.replace(/\n/g, '<br>');
+    return '<p>' + escaped + '</p>';
+  }
+
   // შეტყობინებას აგზავნის n8n-ში და AI აგენტის პასუხს აჩვენებს
   async function askBot(text) {
     appendBotTyping();
     try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 25000);
+
       const res = await fetch(BOT_WEBHOOK_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: text, sessionId: getBotSessionId() })
+        body: JSON.stringify({ message: text, sessionId: getBotSessionId() }),
+        signal: controller.signal
       });
-      const data = await res.json();
+      clearTimeout(timeoutId);
+
+      const raw = await res.text();
       removeBotTyping();
-      const reply = (data && data.output) ? String(data.output) : '';
-      if (reply.trim()) {
-        appendBotMessage('<p>' + escapeHtml(reply).replace(/\n/g, '<br>') + '</p>');
+
+      let reply = '';
+      try {
+        const data = JSON.parse(raw);
+        if (typeof data === 'string') {
+          reply = data;
+        } else if (Array.isArray(data) && data.length > 0) {
+          const first = data[0];
+          if (typeof first === 'string') {
+            reply = first;
+          } else if (first && typeof first === 'object') {
+            reply = first.output || first.text || first.response || first.message || '';
+          }
+        } else if (data && typeof data === 'object') {
+          reply = data.output || data.text || data.response || data.message || '';
+        }
+      } catch (jsonErr) {
+        reply = raw;
+      }
+
+      if (reply && reply.trim()) {
+        appendBotMessage(formatBotReply(reply.trim()));
       } else {
-        appendBotMessage('<p>ბოდიში, პასუხი ვერ მივიღე. გთხოვთ, სცადოთ ხელახლა ან დაგვიკავშირდით: 📞 +995 598 32 40 20</p>');
+        appendBotMessage('<p>გმადლობთ შეტყობინებისთვის. პასუხის გენერირება ვერ მოხერხდა. შეგიძლიათ დაგვიკავშირდეთ: 📞 +995 598 32 40 20 ან მკითხოთ სხვა საკითხზე.</p>');
       }
     } catch (err) {
+      console.error('MentalBot AI error:', err);
       removeBotTyping();
-      appendBotMessage('<p>ბოდიში, დროებით კავშირი ვერ დამყარდა. გთხოვთ, სცადოთ ცოტა ხანში ან დაგვიკავშირდით: 📞 +995 598 32 40 20</p>');
+      appendBotMessage('<p>დროებით კავშირის შეფერხებაა. გთხოვთ, სცადოთ ხელახლა ან დაგვირეკოთ: 📞 +995 598 32 40 20</p>');
     }
   }
 
