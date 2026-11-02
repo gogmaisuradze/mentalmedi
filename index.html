@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html lang="ka" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MentalMedi — მენტალური ჯანმრთელობისა და ფსიქოთერაპიის ცენტრი</title>
+  <meta name="description" content="MentalMedi — პროფესიონალური ფსიქოლოგიური, ფსიქოთერაპიული და ფსიქიატრიული მომსახურება თბილისში. უსაფრთხო, კონფიდენციალური და მზრუნველი გარემო.">
+  
+  <!-- Georgian & Modern Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Georgian:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Emergency / Crisis Notification Bar -->
+  <aside class="crisis-bar">
+    <div class="container crisis-inner">
+      <div class="crisis-text">
+        <svg class="icon icon-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <span data-i18n="crisis_msg">თუ გჭირდებათ გადაუდებელი დახმარება: კრიზისული ცხელი ხაზი: <strong>112</strong> ან <strong>116 006</strong></span>
+      </div>
+      <div class="crisis-contacts">
+        <a href="tel:+995322051911" class="crisis-link">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          032 2 05 19 11
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Navigation Header (IDC Glass Style) -->
+  <header class="site-header idc-glass-header" id="header">
+    <div class="container header-inner">
+      <a href="#hero" class="brand-logo">
+        <div class="logo-mark">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="17" stroke="currentColor" stroke-width="2" stroke-dasharray="2 4"/>
+            <path d="M12 21C12 17.6863 14.6863 15 18 15C21.3137 15 24 17.6863 24 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M18 15V9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="18" cy="8" r="2" fill="currentColor"/>
+            <circle cx="12" cy="22" r="1.5" fill="currentColor"/>
+            <circle cx="24" cy="22" r="1.5" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">Mental<span>Medi</span></span>
+          <span class="logo-subtitle" data-i18n="tagline">მენტალური ცენტრი</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="main-nav" id="mainNav">
+        <ul class="nav-list">
+          <li><a href="#services" class="nav-link" data-i18n="nav_services">სერვისები</a></li>
+          <li><a href="#specialists" class="nav-link" data-i18n="nav_specialists">სპეციალისტები</a></li>
+          <li><a href="#tests" class="nav-link nav-highlight" data-i18n="nav_tests">ტესტები <span class="badge-mini">AI</span></a></li>
+          <li><a href="#about" class="nav-link" data-i18n="nav_about">ჩვენს შესახებ</a></li>
+          <li><a href="#pricing" class="nav-link" data-i18n="nav_pricing">ფასები</a></li>
+          <li><a href="#blog" class="nav-link" data-i18n="nav_blog">ბლოგი</a></li>
+          <li><a href="#contact" class="nav-link" data-i18n="nav_contact">კონტაქტი</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Action Controls -->
+      <div class="header-actions">
+        <!-- MentalBot Header Quick Trigger -->
+        <button class="header-bot-pill" id="headerBotTrigger" title="გახსენი MentalBot">
+          <span class="bot-status-dot"></span>
+          <span class="bot-pill-text">MentalBot</span>
+        </button>
+
+        <!-- Language Switcher -->
+        <button class="lang-switch-btn" id="langSwitchBtn" aria-label="შეცვალე ენა / Switch Language">
+          <span class="lang-current">GE</span>
+          <span class="lang-divider">/</span>
+          <span class="lang-alt">EN</span>
+        </button>
+
+        <!-- CTA Booking Button -->
+        <button class="btn btn-primary btn-header-cta open-booking-btn" data-specialist="ნებისმიერი">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span data-i18n="btn_book">დაჯავშნა</span>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="menu-toggle" id="menuToggle" aria-label="მენიუს გახსნა">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer Backdrop -->
+  <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-background-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          <span data-i18n="hero_badge">ლიცენზირებული კლინიკა & 100% კონფიდენციალურობა</span>
+        </div>
+
+        <h1 class="hero-title" data-i18n="hero_title">
+          შენი შინაგანი მშვიდობა და <span class="gradient-text">მენტალური სიმტკიცე</span>
+        </h1>
+
+        <p class="hero-description" data-i18n="hero_desc">
+          პროფესიონალური ფსიქოლოგიური, ფსიქოთერაპიული და ფსიქიატრიული მხარდაჭერა. მტკიცებულებებზე დაფუძნებული მეთოდები, უსაფრთხო გარემო და ინდივიდუალურად თქვენზე მორგებული თერაპია.
+        </p>
+
+        <div class="hero-cta-group">
+          <button class="btn btn-primary btn-lg open-booking-btn">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+              <path d="M12 2a10 10 0 0 1 10 10"></path>
+            </svg>
+            <span data-i18n="btn_book_now">დაჯავშნე კონსულტაცია</span>
+          </button>
+          
+          <a href="#tests" class="btn btn-secondary btn-lg">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+            <span data-i18n="btn_take_test">გაიარე თვითშეფასების ტესტი</span>
+          </a>
+        </div>
+
+        <!-- Trust Badges & Metrics -->
+        <div class="hero-metrics">
+          <div class="metric-item">
+            <span class="metric-number">18+</span>
+            <span class="metric-label" data-i18n="metric_experts">წამყვანი სპეციალისტი</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-number">12,500+</span>
+            <span class="metric-label" data-i18n="metric_sessions">ჩატარებული სესია</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-number">99%</span>
+            <span class="metric-label" data-i18n="metric_privacy">კონფიდენციალურობა</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Interactive Card -->
+      <div class="hero-visual">
+        <div class="hero-main-card">
+          <div class="card-status-pill">
+            <span class="status-indicator"></span>
+            <span data-i18n="now_accepting">ვიზიტები ხელმისაწვდომია: ონლაინ / კლინიკაში</span>
+          </div>
+
+          <div class="visual-portrait-wrapper">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Mental Healthcare Specialists" class="hero-portrait">
+            
+            <!-- Floating Badge: Therapist Info -->
+            <div class="floating-badge badge-top-right">
+              <div class="floating-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              </div>
+              <div class="floating-text">
+                <span class="floating-title" data-i18n="empathic_care">ემპათიური მიდგომა</span>
+                <span class="floating-desc" data-i18n="evidence_based">მტკიცებითი მედიცინა</span>
+              </div>
+            </div>
+
+            <!-- Floating Badge: Booking Slot -->
+            <div class="floating-badge badge-bottom-left">
+              <div class="slot-circle">✓</div>
+              <div class="floating-text">
+                <span class="floating-title" data-i18n="quick_booking">მარტივი დაჯავშნა</span>
+                <span class="floating-desc" data-i18n="same_day_slot">თავისუფალი დროები დღესვე</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer-action">
+            <div class="footer-avatars">
+              <div class="avatar-group">
+                <span class="avatar-circle av-1">EK</span>
+                <span class="avatar-circle av-2">GT</span>
+                <span class="avatar-circle av-3">NL</span>
+                <span class="avatar-circle av-more">+15</span>
+              </div>
+              <span class="avatar-group-text" data-i18n="certified_team">სერტიფიცირებული გუნდი მზადაა დასახმარებლად</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Feature Banners -->
+  <section class="features-bar">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <div class="feature-body">
+            <h4 data-i18n="feat_online_title">ონლაინ კონსულტაციები</h4>
+            <p data-i18n="feat_online_desc">თერაპია სახლიდან გაუსვლელად მსოფლიოს ნებისმიერი წერტილიდან</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <div class="feature-body">
+            <h4 data-i18n="feat_privacy_title">100% კონფიდენციალურობა</h4>
+            <p data-i18n="feat_privacy_desc">პაციენტის ეთიკური კოდექსისა და პირადი მონაცემების უმკაცრესი დაცვა</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <div class="feature-body">
+            <h4 data-i18n="feat_methods_title">მტკიცებითი მიდგომები</h4>
+            <p data-i18n="feat_methods_desc">CBT, გეშტალტი, ემოციურ-ფოკუსირებული და კლინიკური ფსიქიატრია</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <div class="feature-body">
+            <h4 data-i18n="feat_support_title">მოქნილი გრაფიკი</h4>
+            <p data-i18n="feat_support_desc">ვიზიტები ყოველდღე 10:00-დან 20:00-მდე, შაბათ-კვირის ჩათვლით</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section services-section" id="services">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag" data-i18n="services_tag">ჩვენი მიმართულებები</span>
+        <h2 class="section-title" data-i18n="services_title">სამედიცინო და ფსიქოლოგიური სერვისები</h2>
+        <p class="section-subtitle" data-i18n="services_subtitle">Mental Hub-ის სტრუქტურაზე დაფუძნებული სრული სპექტრი თქვენი მენტალური კეთილდღეობისთვის</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1: Individual Psychotherapy -->
+        <article class="service-card">
+          <div class="service-card-top">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <span class="service-pill" data-i18n="pill_popular">პოპულარული</span>
+          </div>
+          <h3 class="service-title" data-i18n="srv_psychotherapy_title">ინდივიდუალური ფსიქოთერაპია</h3>
+          <p class="service-desc" data-i18n="srv_psychotherapy_desc">
+            პირადი სესიები ლიცენზირებულ თერაპევტთან. შფოთვის, პანიკური შეტევების, დეპრესიის, ტრავმის (PTSD), თვითშეფასების და ემოციური გადაღლის დაძლევა.
+          </p>
+          <ul class="service-points">
+            <li data-i18n="srv_point_cbt">კოგნიტურ-ბიჰევიორული თერაპია (CBT)</li>
+            <li data-i18n="srv_point_gestalt">გეშტალტ-თერაპია და ეგზისტენციალური მიდგომა</li>
+            <li data-i18n="srv_point_dur50">ხანგრძლივობა: 50 წუთი (ონლაინ / კლინიკაში)</li>
+          </ul>
+          <div class="service-footer">
+            <span class="service-price" data-i18n="srv_price_1">80 ₾ - 140 ₾ / სესია</span>
+            <button class="btn btn-outline-primary btn-sm open-booking-btn" data-service="ინდივიდუალური ფსიქოთერაპია" data-i18n="btn_book_short">დაჯავშნა</button>
+          </div>
+        </article>
+
+        <!-- Service 2: Psychiatry -->
+        <article class="service-card highlight-card">
+          <div class="service-card-top">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+            </div>
+            <span class="service-pill pill-medical" data-i18n="pill_medical">კლინიკური</span>
+          </div>
+          <h3 class="service-title" data-i18n="srv_psychiatry_title">კლინიკური ფსიქიატრია</h3>
+          <p class="service-desc" data-i18n="srv_psychiatry_desc">
+            ფსიქიკური ჯანმრთელობის სამედიცინო შეფასება, ზუსტი დიაგნოსტიკა და თანამედროვე, უსაფრთხო ფარმაკოთერაპიის შერჩევა-მართვა გამოცდილი ფსიქიატრების მიერ.
+          </p>
+          <ul class="service-points">
+            <li data-i18n="srv_point_diag">განწყობის, ძილისა და ყურადღების აშლილობები</li>
+            <li data-i18n="srv_point_medmgmt">მედიკამენტური მონიტორინგი და კორექცია</li>
+            <li data-i18n="srv_point_care">მკურნალობის უსაფრთხო გეგმა</li>
+          </ul>
+          <div class="service-footer">
+            <span class="service-price" data-i18n="srv_price_2">100 ₾ - 160 ₾ / ვიზიტი</span>
+            <button class="btn btn-primary btn-sm open-booking-btn" data-service="კლინიკური ფსიქიატრია" data-i18n="btn_book_short">დაჯავშნა</button>
+          </div>
+        </article>
+
+        <!-- Service 3: Couples & Family Therapy -->
+        <article class="service-card">
+          <div class="service-card-top">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <span class="service-pill" data-i18n="pill_relation">ურთიერთობები</span>
+          </div>
+          <h3 class="service-title" data-i18n="srv_couples_title">წყვილებისა და ოჯახის თერაპია</h3>
+          <p class="service-desc" data-i18n="srv_couples_desc">
+            ურთიერთობებში კრიზისების გადალახვა, კონფლიქტების კონსტრუქციული მართვა, ემოციური სიახლოვისა და ჯანსაღი კომუნიკაციის აღდგენა.
+          </p>
+          <ul class="service-points">
+            <li data-i18n="srv_point_comm">კომუნიკაციის ბარიერების დაძლევა</li>
+            <li data-i18n="srv_point_eft">ემოციურ-ფოკუსირებული თერაპია (EFT)</li>
+            <li data-i18n="srv_point_dur80">ხანგრძლივობა: 80 წუთი (წყვილისთვის)</li>
+          </ul>
+          <div class="service-footer">
+            <span class="service-price" data-i18n="srv_price_3">130 ₾ - 190 ₾ / სესია</span>
+            <button class="btn btn-outline-primary btn-sm open-booking-btn" data-service="წყვილების თერაპია" data-i18n="btn_book_short">დაჯავშნა</button>
+          </div>
+        </article>
+
+        <!-- Service 4: Sports Psychology -->
+        <article class="service-card">
+          <div class="service-card-top">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+              </svg>
+            </div>
+            <span class="service-pill" data-i18n="pill_sport">Mental Hub სპეც</span>
+          </div>
+          <h3 class="service-title" data-i18n="srv_sports_title">სპორტის ფსიქოლოგია</h3>
+          <p class="service-desc" data-i18n="srv_sports_desc">
+            სპორტსმენებისა და მაღალი შედეგების მაძიებელთათვის: მენტალური მდგრადობა, კონცენტრაციის უნარი, საშეჯიბრო სტრესის მართვა და გამარჯვებულის მენტალიტეტი.
+          </p>
+          <ul class="service-points">
+            <li data-i18n="srv_point_mental_grit">მენტალური სიმტკიცე და ფოკუსი</li>
+            <li data-i18n="srv_point_precomp">შეჯიბრებამდე მზადყოფნის პროგრამა</li>
+            <li data-i18n="srv_point_rehab">ტრავმის შემდგომი ფსიქოლოგიური აღდგენა</li>
+          </ul>
+          <div class="service-footer">
+            <span class="service-price" data-i18n="srv_price_4">90 ₾ - 150 ₾ / სესია</span>
+            <button class="btn btn-outline-primary btn-sm open-booking-btn" data-service="სპორტის ფსიქოლოგია" data-i18n="btn_book_short">დაჯავშნა</button>
+          </div>
+        </article>
+
+        <!-- Service 5: Psychological Diagnostics & Testing -->
+        <article class="service-card">
+          <div class="service-card-top">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <span class="service-pill" data-i18n="pill_testing">დიაგნოსტიკა</span>
+          </div>
+          <h3 class="service-title" data-i18n="srv_testing_title">ფსიქოლოგიური ტესტირება და შეფასება</h3>
+          <p class="service-desc" data-i18n="srv_testing_desc">
+            კოგნიტური და პიროვნული პროფილირება საერთაშორისო ვალიდირებული ტესტებით (MMPI, Wechsler, ADHD სკრინინგი). ოფიციალური დასკვნა და რეკომენდაციები.
+          </p>
+          <ul class="service-points">
+            <li data-i18n="srv_point_tests">ADHD, აუტისტური სპექტრის და კოგნიტური შეფასება</li>
+            <li data-i18n="srv_point_report">სრული წერილობითი დასკვნა</li>
+            <li data-i18n="srv_point_feed">დეტალური ფიდბექ-სესია სპეციალისტთან</li>
+          </ul>
+          <div class="service-footer">
+            <span class="service-price" data-i18n="srv_price_5">150 ₾ - 280 ₾ / ტესტ-პაკეტი</span>
+            <button class="btn btn-outline-primary btn-sm open-booking-btn" data-service="ფსიქოლოგიური ტესტირება" data-i18n="btn_book_short">დაჯავშნა</button>
+          </div>
+        </article>
+
+        <!-- Service 6: Child & Adolescent Psychology -->
+        <article class="service-card">
+          <div class="service-card-top">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
+              </svg>
+            </div>
+            <span class="service-pill" data-i18n="pill_kids">ბავშვები & მოზარდები</span>
+          </div>
+          <h3 class="service-title" data-i18n="srv_child_title">ბავშვთა და მოზარდთა ფსიქოლოგია</h3>
+          <p class="service-desc" data-i18n="srv_child_desc">
+            ქცევითი სირთულეები, სასკოლო ადაპტაცია, მოზარდობის კრიზისი, ემოციური რეგულაცია და მშობელთა საკონსულტაციო მხარდაჭერა.
+          </p>
+          <ul class="service-points">
+            <li data-i18n="srv_point_art">არტ-თერაპია და თამაშით თერაპია</li>
+            <li data-i18n="srv_point_teens">მოზარდებთან ნდობითი მუშაობა</li>
+            <li data-i18n="srv_point_parenting">მშობელთა კონსულტაცია</li>
+          </ul>
+          <div class="service-footer">
+            <span class="service-price" data-i18n="srv_price_6">80 ₾ - 130 ₾ / სესია</span>
+            <button class="btn btn-outline-primary btn-sm open-booking-btn" data-service="ბავშვთა ფსიქოლოგია" data-i18n="btn_book_short">დაჯავშნა</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Psychological Self-Assessment Tests Section -->
+  <section class="section tests-section" id="tests">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag" data-i18n="tests_tag">ინტერაქტიული სკრინინგი</span>
+        <h2 class="section-title" data-i18n="tests_title">გაიარე მენტალური თვითშეფასების ტესტი</h2>
+        <p class="section-subtitle" data-i18n="tests_subtitle">ანონიმური, მეცნიერულ მეთოდებზე დაფუძნებული მოკლე ტესტები თქვენი ემოციური მდგომარეობის შესაფასებლად (2-3 წუთი)</p>
+      </div>
+
+      <!-- Test Selector Tabs -->
+      <div class="test-tabs-wrapper">
+        <div class="test-tabs">
+          <button class="test-tab-btn active" data-test="anxiety">
+            <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 14 14"></polyline>
+            </svg>
+            <span data-i18n="test_tab_anxiety">შფოთვის ტესტი (GAD-7)</span>
+          </button>
+          <button class="test-tab-btn" data-test="depression">
+            <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+            </svg>
+            <span data-i18n="test_tab_depression">დეპრესიის შეფასება (PHQ-9)</span>
+          </button>
+          <button class="test-tab-btn" data-test="burnout">
+            <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+            </svg>
+            <span data-i18n="test_tab_burnout">ემოციური გადაწვა (Burnout)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Interactive Test Box -->
+      <div class="test-app-card" id="testAppCard">
+        <div class="test-progress-bar">
+          <div class="progress-fill" id="testProgressFill" style="width: 20%;"></div>
+        </div>
+
+        <div class="test-header-bar">
+          <div class="test-category-info">
+            <span class="test-category-badge" id="testCategoryBadge">GAD-7 შფოთვის სკრინინგი</span>
+            <span class="test-time-est" data-i18n="test_duration">⏱ დაახლოებით 2 წუთი</span>
+          </div>
+          <span class="test-counter" id="testQuestionCounter">კითხვა 1 / 5</span>
+        </div>
+
+        <!-- Question Body Area -->
+        <div class="test-question-area" id="testQuestionArea">
+          <h3 class="test-question-prompt" id="testQuestionText">
+            ბოლო 2 კვირის განმავლობაში რამდენად ხშირად გაწუხებდათ: ნერვიულობა, შფოთვა ან დაძაბულობის შეგრძნება?
+          </h3>
+          <p class="test-question-subtext" data-i18n="test_subtext">აირჩიეთ ერთი პასუხი, რომელიც ყველაზე უკეთ აღწერს თქვენს მდგომარეობას:</p>
+
+          <div class="test-options-grid" id="testOptionsGrid">
+            <!-- Options dynamically injected by JS -->
+          </div>
+        </div>
+
+        <!-- Test Results Area (Initially Hidden) -->
+        <div class="test-result-area" id="testResultArea" style="display: none;">
+          <div class="result-badge-circle" id="resultScoreBadge">
+            <span class="result-score-num" id="resultScoreNum">8</span>
+            <span class="result-score-max">/ 15</span>
+          </div>
+          <h3 class="result-title" id="resultTitle">ზომიერი შფოთვის დონე</h3>
+          <p class="result-explanation" id="resultDesc">
+            თქვენი პასუხების მიხედვით შეინიშნება შფოთვისა და ემოციური დაძაბულობის სიმპტომები. რეკომენდებულია გაიაროთ პროფესიონალური კონსულტაცია ფსიქოთერაპევტთან მდგომარეობის ზუსტი შეფასებისა და რელაქსაციის ტექნიკების ასათვისებლად.
+          </p>
+
+          <div class="result-recommendation-box">
+            <h4 data-i18n="result_rec_title">ჩვენი რეკომენდაცია თქვენთვის:</h4>
+            <ul>
+              <li data-i18n="result_rec_1">სასარგებლო იქნება 1 ინდივიდუალური სესია CBT მიმართულების სპეციალისტთან</li>
+              <li data-i18n="result_rec_2">სუნთქვითი ვარჯიშები და ძილის ჰიგიენის მოწესრიგება</li>
+            </ul>
+          </div>
+
+          <div class="result-actions">
+            <button class="btn btn-primary open-booking-btn" data-service="ინდივიდუალური ფსიქოთერაპია">
+              <span data-i18n="btn_book_specialist">კონსულტაციის დაჯავშნა</span>
+            </button>
+            <button class="btn btn-secondary" id="restartTestBtn">
+              <span data-i18n="btn_restart_test">ტესტის თავიდან გავლა</span>
+            </button>
+          </div>
+
+          <p class="test-disclaimer" data-i18n="test_disclaimer">
+            * ყურადღება: ონლაინ ტესტი ატარებს მხოლოდ საინფორმაციო-სკრინინგულ ხასიათს და არ წარმოადგენს კლინიკურ დიაგნოზს.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specialists / Team Section -->
+  <section class="section specialists-section" id="specialists">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag" data-i18n="team_tag">ჩვენი გუნდი</span>
+        <h2 class="section-title" data-i18n="team_title">გაიცანით MentalMedi-ს სპეციალისტები</h2>
+        <p class="section-subtitle" data-i18n="team_subtitle">ლიცენზირებული ექიმები, ფსიქიატრები და ფსიქოთერაპევტები მრავალწლიანი კლინიკური გამოცდილებით</p>
+      </div>
+
+      <!-- Filter Categories -->
+      <div class="specialist-filter-bar">
+        <button class="filter-pill active" data-filter="all" data-i18n="filter_all">ყველა სპეციალისტი</button>
+        <button class="filter-pill" data-filter="psychiatry" data-i18n="filter_psychiatry">ფსიქიატრია</button>
+        <button class="filter-pill" data-filter="therapy" data-i18n="filter_therapy">ფსიქოთერაპია (CBT/გეშტალტი)</button>
+        <button class="filter-pill" data-filter="sports" data-i18n="filter_sports">სპორტის ფსიქოლოგია</button>
+        <button class="filter-pill" data-filter="child" data-i18n="filter_child">ბავშვები & მოზარდები</button>
+      </div>
+
+      <!-- Specialists Grid -->
+      <div class="specialists-grid" id="specialistsGrid">
+        
+        <!-- Specialist 1 -->
+        <div class="specialist-card" data-category="psychiatry" data-id="1">
+          <div class="specialist-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80" alt="Dr. Nino Kalandadze" class="specialist-img">
+            <span class="specialist-badge badge-psychiatrist">ფსიქიატრი</span>
+          </div>
+          <div class="specialist-content">
+            <div class="specialist-header">
+              <h3 class="specialist-name">დოქტ. ნინო კალანდაძე</h3>
+              <p class="specialist-role">კლინიკური ფსიქიატრი, მედიცინის დოქტორი</p>
+            </div>
+            <div class="specialist-meta">
+              <span class="meta-tag">
+                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                14 წლიანი გამოცდილება
+              </span>
+              <span class="meta-tag">
+                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line></svg>
+                ქართ / ENG
+              </span>
+            </div>
+            <p class="specialist-focus">განწყობის აშლილობები, დეპრესია, ბიპოლარული სპექტრი, მედიკამენტური მონიტორინგი.</p>
+            <div class="specialist-card-bottom">
+              <button class="btn btn-outline-primary btn-sm view-profile-btn" data-id="1">პროფილის ნახვა</button>
+              <button class="btn btn-primary btn-sm open-booking-btn" data-specialist="დოქტ. ნინო კალანდაძე">დაჯავშნა</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Specialist 2 -->
+        <div class="specialist-card" data-category="therapy" data-id="2">
+          <div class="specialist-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Ana Beridze" class="specialist-img">
+            <span class="specialist-badge badge-therapist">CBT თერაპევტი</span>
+          </div>
+          <div class="specialist-content">
+            <div class="specialist-header">
+              <h3 class="specialist-name">ანა ბერიძე</h3>
+              <p class="specialist-role">ფსიქოთერაპევტი, CBT სპეციალისტი</p>
+            </div>
+            <div class="specialist-meta">
+              <span class="meta-tag">
+                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                9 წლიანი გამოცდილება
+              </span>
+              <span class="meta-tag">
+                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line></svg>
+                ქართ / ENG / RUS
+              </span>
+            </div>
+            <p class="specialist-focus">გენერალიზებული შფოთვა, პანიკური შეტევები, სოციოფობია, პერფექციონიზმი.</p>
+            <div class="specialist-card-bottom">
+              <button class="btn btn-outline-primary btn-sm view-profile-btn" data-id="2">პროფილის ნახვა</button>
+              <button class="btn btn-primary btn-sm open-booking-btn" data-specialist="ანა ბერიძე">დაჯავშნა</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Specialist 3 -->
+        <div class="specialist-card" data-category="sports" data-id="3">
+          <div class="specialist-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Levan Maisuradze" class="specialist-img">
+            <span class="specialist-badge badge-sports">სპორტის ფსიქოლოგი</span>
+          </div>
+          <div class="specialist-content">
+            <div class="specialist-header">
+              <h3 class="specialist-name">ლევან მაისურაძე</h3>
+              <p class="specialist-role">სპორტისა და მაღალი შედეგების ფსიქოლოგი</p>
+            </div>
+            <div class="specialist-meta">
+              <span class="meta-tag">
+                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 16 14"></polyline></svg>
+                11 წლიანი გამოცდილება
+              </span>
+              <span class="meta-tag">
+                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line></svg>
+                ქართ / ENG
+              </span>
+            </div>
+            <p class="specialist-focus">ოლიმპიური და ეროვნული ნაკრებების კონსულტანტი, მენტალური გამძლეობა, სტრესგამძლეობა.</p>
+            <div class="specialist-card-bottom">
+              <button class="btn btn-outline-primary btn-sm view-profile-btn" data-id="3">პროფილის ნახვა</button>
+              <button class="btn btn-primary btn-sm open-booking-btn" data-specialist="ლევან მაისურაძე">დაჯავშნა</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Specialist 4 -->
+        <div class="specialist-card" data-category="child" data-id="4">
+          <div class="specialist-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80" alt="Salome Gelashvili" class="specialist-img">
+            <span class="specialist-badge badge-child">ბავშვთა ფსიქოლოგი</span>
+          </div>
+          <div class="specialist-content">
+            <div class="specialist-header">
+              <h3 class="specialist-name">სალომე გელაშვილი</h3>
+              <p class="specialist-role">ბავშვთა და მოზარდთა კლინიკური ფსიქოლოგი</p>
+            </div>
+            <div class="specialist-meta">
+              <span class="meta-tag">
+                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 16 14"></polyline></svg>
+                8 წლიანი გამოცდილება
+              </span>
+              <span class="meta-tag">
+                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line></svg>
+                ქართული
+              </span>
+            </div>
+            <p class="specialist-focus">ქცევითი სირთულეები, ADHD სკრინინგი, სასკოლო ადაპტაცია, მშობელთა კონსულტაცია.</p>
+            <div class="specialist-card-bottom">
+              <button class="btn btn-outline-primary btn-sm view-profile-btn" data-id="4">პროფილის ნახვა</button>
+              <button class="btn btn-primary btn-sm open-booking-btn" data-specialist="სალომე გელაშვილი">დაჯავშნა</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Specialist 5 -->
+        <div class="specialist-card" data-category="therapy" data-id="5">
+          <div class="specialist-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Giorgi Tavadze" class="specialist-img">
+            <span class="specialist-badge badge-therapist">წყვილების თერაპევტი</span>
+          </div>
+          <div class="specialist-content">
+            <div class="specialist-header">
+              <h3 class="specialist-name">გიორგი თავაძე</h3>
+              <p class="specialist-role">ფსიქოთერაპევტი, EFT & გეშტალტ პრაქტიკოსი</p>
+            </div>
+            <div class="specialist-meta">
+              <span class="meta-tag">
+                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 16 14"></polyline></svg>
+                12 წლიანი გამოცდილება
+              </span>
+              <span class="meta-tag">
+                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line></svg>
+                ქართ / ENG
+              </span>
+            </div>
+            <p class="specialist-focus">წყვილთა ურთიერთობის კრიზისები, ღალატის შემდგომი აღდგენა, ეგზისტენციალური კრიზისი.</p>
+            <div class="specialist-card-bottom">
+              <button class="btn btn-outline-primary btn-sm view-profile-btn" data-id="5">პროფილის ნახვა</button>
+              <button class="btn btn-primary btn-sm open-booking-btn" data-specialist="გიორგი თავაძე">დაჯავშნა</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Specialist 6 -->
+        <div class="specialist-card" data-category="psychiatry" data-id="6">
+          <div class="specialist-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1594824813591-5f216faee088?auto=format&fit=crop&w=600&q=80" alt="Tamar Chkheidze" class="specialist-img">
+            <span class="specialist-badge badge-psychiatrist">ფსიქიატრ-ნარკოლოგი</span>
+          </div>
+          <div class="specialist-content">
+            <div class="specialist-header">
+              <h3 class="specialist-name">თამარ ჩხეიძე</h3>
+              <p class="specialist-role">ფსიქიატრი, ფსიქოფარმაკოლოგი</p>
+            </div>
+            <div class="specialist-meta">
+              <span class="meta-tag">
+                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 16 14"></polyline></svg>
+                16 წლიანი გამოცდილება
+              </span>
+              <span class="meta-tag">
+                <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line></svg>
+                ქართ / ENG / GER
+              </span>
+            </div>
+            <p class="specialist-focus">პანიკური აშლილობა, ობსესიურ-კომპულსიური აშლილობა (OCD), უძილობის მართვა.</p>
+            <div class="specialist-card-bottom">
+              <button class="btn btn-outline-primary btn-sm view-profile-btn" data-id="6">პროფილის ნახვა</button>
+              <button class="btn btn-primary btn-sm open-booking-btn" data-specialist="თამარ ჩხეიძე">დაჯავშნა</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us & Clinical Philosophy Section -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="about-image-collage">
+            <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=800&q=80" alt="MentalMedi Clinic Atmosphere" class="collage-main-img">
+            <div class="collage-card experience-card">
+              <span class="exp-number">100%</span>
+              <span class="exp-label" data-i18n="exp_label">უსაფრთხო & კონფიდენციალური სივრცე</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <span class="section-tag" data-i18n="about_tag">ჩვენს შესახებ</span>
+          <h2 class="section-title" data-i18n="about_title">MentalMedi — მენტალური კეთილდღეობის ახალი სტანდარტი</h2>
+          <p class="about-lead" data-i18n="about_lead">
+            ჩვენ შევქმენით სივრცე, სადაც ფსიქიკური ჯანმრთელობა სტიგმის გარეშე აღიქმება. აქ თითოეულ ადამიანს ხვდება ღრმა ემპათია, პროფესიონალიზმი და თანამედროვე ევროპული სტანდარტების მომსახურება.
+          </p>
+
+          <div class="values-list">
+            <div class="value-item">
+              <div class="value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <div class="value-text">
+                <h4 data-i18n="val_1_title">მკაცრი კონფიდენციალურობა</h4>
+                <p data-i18n="val_1_desc">თქვენი მონაცემები და სესიის შინაარსი დაცულია საერთაშორისო სამედიცინო ეთიკის სტანდარტებით.</p>
+              </div>
+            </div>
+
+            <div class="value-item">
+              <div class="value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                  <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                  <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                </svg>
+              </div>
+              <div class="value-text">
+                <h4 data-i18n="val_2_title">მტკიცებითი მედიცინა (Evidence-Based)</h4>
+                <p data-i18n="val_2_desc">ვიყენებთ მხოლოდ მეცნიერულად დადასტურებულ თერაპიულ მეთოდებსა და უახლეს პროტოკოლებს.</p>
+              </div>
+            </div>
+
+            <div class="value-item">
+              <div class="value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="8.5" cy="7" r="4"></circle>
+                  <line x1="20" y1="8" x2="20" y2="14"></line>
+                  <line x1="23" y1="11" x2="17" y2="11"></line>
+                </svg>
+              </div>
+              <div class="value-text">
+                <h4 data-i18n="val_3_title">მულტიდისციპლინური მიდგომა</h4>
+                <p data-i18n="val_3_desc">საჭიროების შემთხვევაში ფსიქოთერაპევტი და ფსიქიატრი ერთობლივად მართავენ პაციენტის გეგმას.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing & Insurance Section -->
+  <section class="section pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag" data-i18n="pricing_tag">გამჭვირვალე ფასები</span>
+        <h2 class="section-title" data-i18n="pricing_title">ტარიფები და მომსახურების პაკეტები</h2>
+        <p class="section-subtitle" data-i18n="pricing_subtitle">არანაირი ფარული გადასახადი. შესაძლებელია კერძო დაზღვევის ანაზღაურებით სარგებლობა</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Plan 1 -->
+        <div class="pricing-card">
+          <div class="pricing-card-header">
+            <span class="plan-label" data-i18n="plan_1_label">საბაზისო</span>
+            <h3 class="plan-name" data-i18n="plan_1_name">პირველადი კონსულტაცია</h3>
+            <p class="plan-desc" data-i18n="plan_1_desc">მდგომარეობის შეფასება, პრობლემის იდენტიფიცირება და თერაპიული გეგმის შედგენა</p>
+          </div>
+          <div class="pricing-rate">
+            <span class="currency">₾</span>
+            <span class="amount">90</span>
+            <span class="period">/ 50 წუთი</span>
+          </div>
+          <ul class="plan-features">
+            <li>✓ პირისპირ ან ონლაინ ვიზიტი</li>
+            <li>✓ პირველადი შეფასების ანკეტა</li>
+            <li>✓ რეკომენდაციები და სამოქმედო გეგმა</li>
+            <li>✓ სპეციალისტის შერჩევა</li>
+          </ul>
+          <button class="btn btn-outline-primary btn-block open-booking-btn" data-service="პირველადი კონსულტაცია" data-i18n="btn_choose_plan">დაჯავშნა</button>
+        </div>
+
+        <!-- Plan 2 (Popular) -->
+        <div class="pricing-card popular-plan">
+          <div class="popular-ribbon" data-i18n="most_popular">რეკომენდებული</div>
+          <div class="pricing-card-header">
+            <span class="plan-label" data-i18n="plan_2_label">კურსი</span>
+            <h3 class="plan-name" data-i18n="plan_2_name">თერაპიული პაკეტი (5 სესია)</h3>
+            <p class="plan-desc" data-i18n="plan_2_desc">შედეგზე ორიენტირებული რეგულარული ფსიქოთერაპიული კურსი ფასდაკლებით</p>
+          </div>
+          <div class="pricing-rate">
+            <span class="currency">₾</span>
+            <span class="amount">390</span>
+            <span class="period">/ 5 სესია <small>(-15%)</small></span>
+          </div>
+          <ul class="plan-features">
+            <li>✓ 5 ინდივიდუალური სესია</li>
+            <li>✓ უწყვეტი მონიტორინგი სესიებს შორის</li>
+            <li>✓ პრაქტიკული სავარჯიშოები და მასალები</li>
+            <li>✓ მოქნილი გადაჯავშნის პირობები</li>
+            <li>✓ სადაზღვევო ფორმების მომზადება</li>
+          </ul>
+          <button class="btn btn-primary btn-block open-booking-btn" data-service="თერაპიული პაკეტი (5 სესია)" data-i18n="btn_choose_plan">დაჯავშნა</button>
+        </div>
+
+        <!-- Plan 3 -->
+        <div class="pricing-card">
+          <div class="pricing-card-header">
+            <span class="plan-label" data-i18n="plan_3_label">სპეციალური</span>
+            <h3 class="plan-name" data-i18n="plan_3_name">ფსიქიატრიული შეფასება</h3>
+            <p class="plan-desc" data-i18n="plan_3_desc">კლინიკური ფსიქიატრის სრული გამოკვლევა და რეცეპტების გაცემა</p>
+          </div>
+          <div class="pricing-rate">
+            <span class="currency">₾</span>
+            <span class="amount">130</span>
+            <span class="period">/ ვიზიტი</span>
+          </div>
+          <ul class="plan-features">
+            <li>✓ სამედიცინო დიაგნოსტიკა</li>
+            <li>✓ ფარმაკოთერაპიული რეცეპტი (ფორმა 100)</li>
+            <li>✓ 30-დღიანი შემდგომი შემოწმება</li>
+            <li>✓ ანალიზების დანიშვნა საჭიროებისამებრ</li>
+          </ul>
+          <button class="btn btn-outline-primary btn-block open-booking-btn" data-service="ფსიქიატრიული შეფასება" data-i18n="btn_choose_plan">დაჯავშნა</button>
+        </div>
+      </div>
+
+      <!-- Insurance Notice -->
+      <div class="insurance-banner">
+        <div class="insurance-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <div class="insurance-text">
+          <h4 data-i18n="ins_title">თანამშრომლობა სადაზღვევო კომპანიებთან</h4>
+          <p data-i18n="ins_desc">ჩვენი ექიმები გასცემენ ფორმა 100-ს და ყველა საჭირო დოკუმენტაციას კერძო სადაზღვევო კომპანიებში თანხის ასანაზღაურებლად (არდი, ჯიპიაი, იმედი L, ალდაგი, თიბისი დაზღვევა და სხვა).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Psychoeducation / Blog Section -->
+  <section class="section blog-section" id="blog">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag" data-i18n="blog_tag">ფსიქოგანათლება & სიახლეები</span>
+        <h2 class="section-title" data-i18n="blog_title">სასარგებლო სტატიები და რჩევები</h2>
+        <p class="section-subtitle" data-i18n="blog_subtitle">Mental Hub-ის მსგავსად, ჩვენი ექსპერტები რეგულარულად უზიარებენ ცოდნას საზოგადოებას</p>
+      </div>
+
+      <div class="blog-grid">
+        <!-- Article 1 -->
+        <article class="blog-card" data-article-id="1">
+          <div class="blog-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=700&q=80" alt="Anxiety Coping" class="blog-img">
+            <span class="blog-tag">შფოთვა</span>
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span>📅 28 ოქტომბერი</span>
+              <span>• 5 წთ საკითხავი</span>
+            </div>
+            <h3 class="blog-card-title">როგორ გავუმკლავდეთ პანიკურ შეტევას: 5-4-3-2-1 დამიწების მეთოდი</h3>
+            <p class="blog-excerpt">
+              რა ხდება ჩვენს სხეულში პანიკური შეტევის დროს და როგორ შეიძლება სუნთქვისა და გრძნობის ორგანოების კონცენტრაციით სიმპტომების მყისიერი განეიტრალება...
+            </p>
+            <button class="read-more-btn" data-article="1">სრულად წაკითხვა →</button>
+          </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="blog-card" data-article-id="2">
+          <div class="blog-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1541199249251-f713e6145474?auto=format&fit=crop&w=700&q=80" alt="Sleep Hygiene" class="blog-img">
+            <span class="blog-tag">ძილი & ენერგია</span>
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span>📅 22 ოქტომბერი</span>
+              <span>• 4 წთ საკითხავი</span>
+            </div>
+            <h3 class="blog-card-title">ჯანსაღი ძილის ჰიგიენა: რატომ არის უძილობა მენტალური სტრესის პირველი ნიშანი</h3>
+            <p class="blog-excerpt">
+              როგორ მოქმედებს ცისფერი ეკრანები მელატონინზე და რა მარტივი წესების დაცვით შეგვიძლია ღრმა, აღმდგენი ძილის დაბრუნება...
+            </p>
+            <button class="read-more-btn" data-article="2">სრულად წაკითხვა →</button>
+          </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="blog-card" data-article-id="3">
+          <div class="blog-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=80" alt="Burnout at Work" class="blog-img">
+            <span class="blog-tag">გადაწვა</span>
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span>📅 15 ოქტომბერი</span>
+              <span>• 6 წთ საკითხავი</span>
+            </div>
+            <h3 class="blog-card-title">ემოციური გადაწვა (Burnout) სამსახურში: სიმპტომები და საზღვრების დაწესება</h3>
+            <p class="blog-excerpt">
+              როდის ხდება ჩვეულებრივი დაღლილობა ქრონიკული გადაწვა და როგორ ვისწავლოთ „არა“-ს თქმა საკუთარი ფსიქიკური ჯანმრთელობის დასაცავად...
+            </p>
+            <button class="read-more-btn" data-article="3">სრულად წაკითხვა →</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section testimonials-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag" data-i18n="reviews_tag">გამოხმაურებები</span>
+        <h2 class="section-title" data-i18n="reviews_title">რას ამბობენ ჩვენი პაციენტები</h2>
+        <p class="section-subtitle" data-i18n="reviews_subtitle">კონფიდენციალურობის სრული დაცვით გაზიარებული რეალური ისტორიები</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="rating-stars">★★★★★</div>
+          <p class="testimonial-quote">
+            „MentalMedi-ში მოსვლა იყო საუკეთესო გადაწყვეტილება. წლების განმავლობაში მქონდა პანიკური შეტევები და მეგონა ვერასდროს დავაღწევდი თავს. ანა ბერიძესთან 8 სესიის შემდეგ ჩემი ცხოვრების ხარისხი რადიკალურად შეიცვალა.“
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">მ.კ.</div>
+            <div class="author-info">
+              <span class="author-name">მარიამ კ.</span>
+              <span class="author-tag">პაციენტი (ფსიქოთერაპია)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="rating-stars">★★★★★</div>
+          <p class="testimonial-quote">
+            „როგორც პროფესიონალ სპორტსმენს, უდიდესი წნეხი მქონდა შეჯიბრებების წინ. ლევან მაისურაძესთან მუშაობამ მასწავლა, როგორ ვაკონტროლო ადრენალინი და ვიყო მაქსიმალურად ფოკუსირებული გადამწყვეტ წუთებში.“
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">დ.გ.</div>
+            <div class="author-info">
+              <span class="author-name">დავით გ.</span>
+              <span class="author-tag">სპორტსმენი (სპორტის ფსიქოლოგია)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="rating-stars">★★★★★</div>
+          <p class="testimonial-quote">
+            „ჩვენი ურთიერთობა დაშლის პირას იყო. წყვილების თერაპიამ მოგვცა უსაფრთხო სივრცე, სადაც ვისწავლეთ ერთმანეთის მოსმენა თავდაცვისა და ბრალდებების გარეშე. მადლობა გუნდს უდიდესი გულისხმიერებისთვის.“
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">თ&ლ</div>
+            <div class="author-info">
+              <span class="author-name">თორნიკე & ლიკა</span>
+              <span class="author-tag">წყვილების თერაპია</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section faq-section" id="faq">
+    <div class="container faq-container">
+      <div class="section-header text-center">
+        <span class="section-tag" data-i18n="faq_tag">კითხვა-პასუხი</span>
+        <h2 class="section-title" data-i18n="faq_title">ხშირად დასმული კითხვები</h2>
+        <p class="section-subtitle" data-i18n="faq_subtitle">ყველაფერი, რაც უნდა იცოდეთ ვიზიტამდე</p>
+      </div>
+
+      <div class="faq-accordion" id="faqAccordion">
+        <!-- Item 1 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>როგორ ავარჩიო, ფსიქიატრთან მჭირდება ვიზიტი თუ ფსიქოთერაპევტთან?</span>
+            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>ფსიქოთერაპევტი მუშაობს საუბრითი თერაპიის მეთოდებით (ემოციების რეგულაცია, შფოთვა, ურთიერთობები, ტრავმა). ფსიქიატრი კი არის სამედიცინო განათლების მქონე ექიმი, რომელიც აფასებს ბიოლოგიურ და კლინიკურ სიმპტომებს და საჭიროების შემთხვევაში ნიშნავს მედიკამენტებს. თუ არ ხართ დარწმუნებული, გაიარეთ პირველადი კონსულტაცია ან დაუკავშირდით ჩვენს კოორდინატორს, რომელიც სწორად გადაგამისამართებთ.</p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>რამდენად დაცულია ჩემი კონფიდენციალურობა?</span>
+            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>100%-ით. თერაპევტის ეთიკური კოდექსისა და კანონმდებლობის თანახმად, სესიაზე ნათქვამი ნებისმიერი დეტალი მკაცრად კონფიდენციალურია და მესამე პირებს (მათ შორის ოჯახის წევრებს ან დამსაქმებელს) არ გადაეცემათ თქვენი წერილობითი თანხმობის გარეშე.</p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>შესაძლებელია თუ არა ონლაინ ვიზიტის გავლა საზღვარგარეთიდან?</span>
+            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>დიახ! ჩვენი პაციენტების დიდი ნაწილი ქართველი ემიგრანტი ან უცხოეთში მყოფი მოქალაქეა. ონლაინ ვიზიტები ტარდება უსაფრთხო ვიდეო პლატფორმით (Google Meet / Zoom), ხოლო ანგარიშსწორება შესაძლებელია საერთაშორისო საბანკო ბარათებით.</p>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>ანაზღაურებს თუ არა კერძო დაზღვევა ვიზიტებს?</span>
+            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>კლინიკური ფსიქიატრის კონსულტაციას და ფსიქოდიაგნოსტიკას სადაზღვევო კომპანიების უმრავლესობა (ჯიპიაი, იმედი L, ალდაგი, არდი და სხვა) ანაზღაურებს ფორმა 100-ის საფუძველზე. ჩვენი ადმინისტრაცია მოგიმზადებთ ყველა საჭირო საბუთს.</p>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>რამდენ ხანს გრძელდება ერთი სესია და რა სიხშირით ტარდება?</span>
+            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>ინდივიდუალური სესიის სტანდარტული ხანგრძლივობაა 50 წუთი, ხოლო წყვილების თერაპიის — 80 წუთი. ჩვეულებრივ, სესიები ტარდება კვირაში ერთხელ, თუმცა სიხშირე ინდივიდუალურად განისაზღვრება თქვენს თერაპევტთან ერთად.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Location Section -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Info Box -->
+        <div class="contact-info-panel">
+          <span class="section-tag" data-i18n="contact_tag">დაგვიკავშირდით</span>
+          <h2 class="section-title" data-i18n="contact_title">ჩვენ მზად ვართ თქვენს დასახმარებლად</h2>
+          <p class="contact-desc" data-i18n="contact_desc">
+            მობრძანდით ჩვენს მყუდრო კლინიკაში ან დაგვიკავშირდით ნებისმიერი შეკითხვის შემთხვევაში.
+          </p>
+
+          <div class="contact-details-list">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="contact-text">
+                <span class="contact-label" data-i18n="lbl_address">მისამართი</span>
+                <span class="contact-val">ქ. თბილისი, ლევან გოთუას ქ. 18ე (საბურთალო)</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div class="contact-text">
+                <span class="contact-label" data-i18n="lbl_phone">ტელეფონი / ცხელი ხაზი</span>
+                <span class="contact-val"><a href="tel:+995322051911">032 2 05 19 11</a> / <a href="tel:+995596111912">+995 596 11 19 12</a></span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="contact-text">
+                <span class="contact-label" data-i18n="lbl_email">ელ-ფოსტა</span>
+                <span class="contact-val"><a href="mailto:info@mentalmedi.ge">info@mentalmedi.ge</a></span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div class="contact-text">
+                <span class="contact-label" data-i18n="lbl_hours">სამუშაო საათები</span>
+                <span class="contact-val">ორშაბათი - კვირა: 10:00 – 20:00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Message Contact Form -->
+        <div class="contact-form-panel">
+          <h3 class="form-title" data-i18n="send_msg_title">მოგვწერეთ შეტყობინება</h3>
+          <p class="form-subtext" data-i18n="send_msg_sub">ჩვენი ადმინისტრატორი დაგიკავშირდებათ 15 წუთში</p>
+
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <label for="contactName" data-i18n="field_name">სახელი და გვარი *</label>
+              <input type="text" id="contactName" name="name" required placeholder="მაგ: გიორგი ბერიძე">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactPhone" data-i18n="field_phone">ტელეფონის ნომერი *</label>
+                <input type="tel" id="contactPhone" name="phone" required placeholder="+995 5__ __ __ __">
+              </div>
+              <div class="form-group">
+                <label for="contactEmail" data-i18n="field_email">ელ-ფოსტა</label>
+                <input type="email" id="contactEmail" name="email" placeholder="example@mail.com">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contactTopic" data-i18n="field_topic">ინტერესის სფერო</label>
+              <select id="contactTopic" name="topic">
+                <option value="psychotherapy">ინდივიდუალური ფსიქოთერაპია</option>
+                <option value="psychiatry">კლინიკური ფსიქიატრია</option>
+                <option value="couples">წყვილების თერაპია</option>
+                <option value="sports">სპორტის ფსიქოლოგია</option>
+                <option value="diagnostics">ტესტირება და შეფასება</option>
+                <option value="other">სხვა კითხვა</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contactMsg" data-i18n="field_msg">შეტყობინება / კითხვა</label>
+              <textarea id="contactMsg" name="message" rows="3" placeholder="მოკლედ აღწერეთ თქვენი საჭიროება..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+              <span data-i18n="btn_send_msg">შეტყობინების გაგზავნა</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Modal: Multi-Step Appointment Booking System -->
+  <div class="modal-overlay" id="bookingModal" aria-hidden="true" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title-box">
+          <div class="modal-title-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </div>
+          <div>
+            <h3 class="modal-title" data-i18n="modal_book_title">ვიზიტის ონლაინ დაჯავშნა</h3>
+            <p class="modal-subtitle" data-i18n="modal_book_subtitle">შეარჩიეთ თქვენთვის სასურველი სპეციალისტი და დრო</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" id="closeBookingModal" aria-label="დახურვა">&times;</button>
+      </div>
+
+      <!-- Step Indicator -->
+      <div class="modal-steps-indicator">
+        <div class="step-badge active" data-step="1">
+          <span class="step-num">1</span>
+          <span class="step-name">სერვისი & ფორმატი</span>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-badge" data-step="2">
+          <span class="step-num">2</span>
+          <span class="step-name">სპეციალისტი</span>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-badge" data-step="3">
+          <span class="step-num">3</span>
+          <span class="step-name">დრო & კონტაქტი</span>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <!-- Step 1: Format & Service -->
+        <div class="wizard-step active" id="wizardStep1">
+          <h4 class="step-heading" data-i18n="wiz_step1_head">აირჩიეთ ვიზიტის ფორმატი და მომსახურება:</h4>
+          
+          <div class="format-toggle-cards">
+            <label class="format-card selected">
+              <input type="radio" name="visitFormat" value="clinic" checked>
+              <div class="format-card-content">
+                <div class="format-icon">🏥</div>
+                <div>
+                  <strong>კლინიკაში ვიზიტი</strong>
+                  <p>ლევან გოთუას ქ. 18ე, თბილისი</p>
+                </div>
+              </div>
+            </label>
+
+            <label class="format-card">
+              <input type="radio" name="visitFormat" value="online">
+              <div class="format-card-content">
+                <div class="format-icon">💻</div>
+                <div>
+                  <strong>ონლაინ კონსულტაცია</strong>
+                  <p>ვიდეო ზარი (Google Meet / Zoom)</p>
+                </div>
+              </div>
+            </label>
+          </div>
+
+          <div class="form-group" style="margin-top: 1.5rem;">
+            <label data-i18n="lbl_select_service">სერვისის ტიპი:</label>
+            <select id="modalServiceSelect" class="form-control">
+              <option value="ინდივიდუალური ფსიქოთერაპია">ინდივიდუალური ფსიქოთერაპია (50 წთ)</option>
+              <option value="კლინიკური ფსიქიატრია">კლინიკური ფსიქიატრია (დიაგნოსტიკა / რეცეპტი)</option>
+              <option value="წყვილების თერაპია">წყვილებისა და ოჯახის თერაპია (80 წთ)</option>
+              <option value="სპორტის ფსიქოლოგია">სპორტის ფსიქოლოგია & მენტალური მდგრადობა</option>
+              <option value="ფსიქოლოგიური ტესტირება">ფსიქოდიაგნოსტიკა & ტესტირება</option>
+              <option value="ბავშვთა ფსიქოლოგია">ბავშვთა და მოზარდთა ფსიქოლოგია</option>
+            </select>
+          </div>
+
+          <div class="wizard-footer">
+            <div></div>
+            <button class="btn btn-primary" id="wizardNext1">
+              <span>გაგრძელება</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2: Specialist -->
+        <div class="wizard-step" id="wizardStep2">
+          <h4 class="step-heading" data-i18n="wiz_step2_head">აირჩიეთ სასურველი სპეციალისტი:</h4>
+          
+          <div class="specialist-select-list" id="specialistRadioList">
+            <!-- Dynamically populated or static items -->
+            <label class="spec-select-card selected">
+              <input type="radio" name="selectedSpecialist" value="ნებისმიერი თავისუფალი" checked>
+              <div class="spec-card-content">
+                <span class="spec-avatar-dot">⚡</span>
+                <div>
+                  <strong>უახლოესი თავისუფალი სპეციალისტი</strong>
+                  <p>კლინიკა შეგირჩევთ საუკეთესო პროფილის ექიმს</p>
+                </div>
+              </div>
+            </label>
+
+            <label class="spec-select-card">
+              <input type="radio" name="selectedSpecialist" value="დოქტ. ნინო კალანდაძე">
+              <div class="spec-card-content">
+                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=100&q=80" alt="Nino" class="spec-thumb">
+                <div>
+                  <strong>დოქტ. ნინო კალანდაძე</strong>
+                  <p>კლინიკური ფსიქიატრი • 14 წლიანი გამოცდილება</p>
+                </div>
+              </div>
+            </label>
+
+            <label class="spec-select-card">
+              <input type="radio" name="selectedSpecialist" value="ანა ბერიძე">
+              <div class="spec-card-content">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Ana" class="spec-thumb">
+                <div>
+                  <strong>ანა ბერიძე</strong>
+                  <p>CBT ფსიქოთერაპევტი • 9 წლიანი გამოცდილება</p>
+                </div>
+              </div>
+            </label>
+
+            <label class="spec-select-card">
+              <input type="radio" name="selectedSpecialist" value="ლევან მაისურაძე">
+              <div class="spec-card-content">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Levan" class="spec-thumb">
+                <div>
+                  <strong>ლევან მაისურაძე</strong>
+                  <p>სპორტის ფსიქოლოგი • 11 წლიანი გამოცდილება</p>
+                </div>
+              </div>
+            </label>
+
+            <label class="spec-select-card">
+              <input type="radio" name="selectedSpecialist" value="გიორგი თავაძე">
+              <div class="spec-card-content">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&q=80" alt="Giorgi" class="spec-thumb">
+                <div>
+                  <strong>გიორგი თავაძე</strong>
+                  <p>წყვილების თერაპევტი • 12 წლიანი გამოცდილება</p>
+                </div>
+              </div>
+            </label>
+          </div>
+
+          <div class="wizard-footer">
+            <button class="btn btn-secondary" id="wizardBack1">← უკან</button>
+            <button class="btn btn-primary" id="wizardNext2">
+              <span>გაგრძელება</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 3: Date, Time & Contact -->
+        <div class="wizard-step" id="wizardStep3">
+          <h4 class="step-heading" data-i18n="wiz_step3_head">შეარჩიეთ დრო და შეავსეთ საკონტაქტო მონაცემები:</h4>
+
+          <div class="booking-date-slots">
+            <div class="form-row">
+              <div class="form-group">
+                <label>თარიღი *</label>
+                <input type="date" id="bookDateInput" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label>დროის მონაკვეთი *</label>
+                <select id="bookTimeSelect" class="form-control">
+                  <option value="11:00">11:00 - 12:00</option>
+                  <option value="13:00">13:00 - 14:00</option>
+                  <option value="15:00">15:00 - 16:00</option>
+                  <option value="17:00">17:00 - 18:00</option>
+                  <option value="19:00">19:00 - 20:00</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>სრული სახელი და გვარი *</label>
+              <input type="text" id="bookFullName" class="form-control" placeholder="თქვენი სახელი და გვარი" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>მობილურის ნომერი *</label>
+                <input type="tel" id="bookPhone" class="form-control" placeholder="+995 5__ __ __ __" required>
+              </div>
+              <div class="form-group">
+                <label>ელ-ფოსტა</label>
+                <input type="email" id="bookEmail" class="form-control" placeholder="name@email.com">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>დამატებითი შენიშვნა ან ჩივილი (არასავალდებულო)</label>
+              <textarea id="bookNotes" class="form-control" rows="2" placeholder="მოკლედ რა გაწუხებთ..."></textarea>
+            </div>
+          </div>
+
+          <div class="wizard-footer">
+            <button class="btn btn-secondary" id="wizardBack2">← უკან</button>
+            <button class="btn btn-primary" id="submitBookingBtn">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>ვიზიტის დადასტურება</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Success Confirmation View -->
+        <div class="wizard-step" id="wizardStepSuccess" style="display: none; text-align: center; padding: 2rem 1rem;">
+          <div class="success-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <h3 class="success-title" data-i18n="booking_success_title">ვიზიტი წარმატებით დაიჯავშნა!</h3>
+          <p class="success-desc" id="bookingSuccessSummary">
+            თქვენი განაცხადი მიღებულია. ჩვენი კლინიკის ადმინისტრატორი დაგიკავშირდებათ მითითებულ ნომერზე დეტალების დასადასტურებლად.
+          </p>
+          <div class="booking-receipt-box" id="bookingReceiptBox">
+            <!-- Summary will be injected -->
+          </div>
+          <button class="btn btn-primary" id="finishBookingBtn" style="margin-top: 1.5rem;">დასრულება</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Specialist Bio Profile Modal -->
+  <div class="modal-overlay" id="specialistModal" aria-hidden="true" role="dialog">
+    <div class="modal-dialog specialist-modal-dialog">
+      <button class="modal-close-btn" id="closeSpecialistModal" aria-label="დახურვა">&times;</button>
+      <div class="spec-modal-content" id="specialistModalBody">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Article Reader Modal -->
+  <div class="modal-overlay" id="articleModal" aria-hidden="true" role="dialog">
+    <div class="modal-dialog article-modal-dialog">
+      <button class="modal-close-btn" id="closeArticleModal" aria-label="დახურვა">&times;</button>
+      <div class="article-modal-content" id="articleModalBody">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <!-- Col 1: Brand Info -->
+      <div class="footer-col footer-brand">
+        <a href="#hero" class="brand-logo footer-logo">
+          <div class="logo-mark">
+            <svg viewBox="0 0 36 36" fill="none">
+              <circle cx="18" cy="18" r="17" stroke="currentColor" stroke-width="2" stroke-dasharray="2 4"/>
+              <path d="M12 21C12 17.6863 14.6863 15 18 15C21.3137 15 24 17.6863 24 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+              <path d="M18 15V9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+              <circle cx="18" cy="8" r="2" fill="currentColor"/>
+              <circle cx="12" cy="22" r="1.5" fill="currentColor"/>
+              <circle cx="24" cy="22" r="1.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <span class="logo-title">Mental<span>Medi</span></span>
+        </a>
+        <p class="footer-tagline" data-i18n="footer_desc">
+          თანამედროვე მენტალური ჯანმრთელობის, ფსიქოთერაპიისა და კლინიკური ფსიქიატრიის ცენტრი. უსაფრთხო გარემო, მზრუნველი სპეციალისტები და მტკიცებულებებზე დაფუძნებული მედიცინა.
+        </p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook" class="social-link">FB</a>
+          <a href="#" aria-label="Instagram" class="social-link">IG</a>
+          <a href="#" aria-label="LinkedIn" class="social-link">IN</a>
+          <a href="#" aria-label="Telegram" class="social-link">TG</a>
+        </div>
+      </div>
+
+      <!-- Col 2: Navigation Links -->
+      <div class="footer-col">
+        <h4 class="footer-heading" data-i18n="footer_services">სერვისები</h4>
+        <ul class="footer-links">
+          <li><a href="#services">ინდივიდუალური ფსიქოთერაპია</a></li>
+          <li><a href="#services">კლინიკური ფსიქიატრია</a></li>
+          <li><a href="#services">წყვილებისა და ოჯახის თერაპია</a></li>
+          <li><a href="#services">სპორტის ფსიქოლოგია</a></li>
+          <li><a href="#services">ფსიქოდიაგნოსტიკა და ტესტები</a></li>
+          <li><a href="#services">ბავშვთა და მოზარდთა ფსიქოლოგია</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Navigation Links -->
+      <div class="footer-col">
+        <h4 class="footer-heading" data-i18n="footer_nav">ნავიგაცია</h4>
+        <ul class="footer-links">
+          <li><a href="#about">ჩვენს შესახებ</a></li>
+          <li><a href="#specialists">სპეციალისტების გუნდი</a></li>
+          <li><a href="#tests">თვითშეფასების ტესტები</a></li>
+          <li><a href="#pricing">ფასები და პაკეტები</a></li>
+          <li><a href="#blog">ბლოგი & ფსიქოგანათლება</a></li>
+          <li><a href="#faq">ხშირად დასმული კითხვები</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Contact & Emergency -->
+      <div class="footer-col footer-contact-col">
+        <h4 class="footer-heading" data-i18n="footer_contact">კონტაქტი & მისამართი</h4>
+        <p class="footer-contact-row">
+          📍 ლევან გოთუას ქ. 18ე, თბილისი (საბურთალო)
+        </p>
+        <p class="footer-contact-row">
+          📞 <a href="tel:+995322051911">032 2 05 19 11</a>
+        </p>
+        <p class="footer-contact-row">
+          📱 <a href="tel:+995596111912">+995 596 11 19 12</a>
+        </p>
+        <p class="footer-contact-row">
+          ✉️ <a href="mailto:info@mentalmedi.ge">info@mentalmedi.ge</a>
+        </p>
+
+        <div class="crisis-card-mini">
+          <strong>კრიზისული ცხელი ხაზი:</strong>
+          <p>გადაუდებელ შემთხვევაში დარეკეთ: <span>112</span> ან <span>116 006</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2026 MentalMedi. ყველა უფლება დაცულია.</p>
+        <div class="footer-legal">
+          <a href="#">კონფიდენციალურობის პოლიტიკა</a>
+          <span>•</span>
+          <a href="#">მომსახურების პირობები</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Quick Booking Action for Mobile & Desktop -->
+  <div class="floating-quick-bar">
+    <a href="tel:+995322051911" class="quick-call-btn" title="დარეკვა">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+      </svg>
+      <span class="quick-call-label">დარეკვა</span>
+    </a>
+    <button class="quick-book-floating-btn open-booking-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+        <line x1="16" y1="2" x2="16" y2="6"></line>
+        <line x1="8" y1="2" x2="8" y2="6"></line>
+        <line x1="3" y1="10" x2="21" y2="10"></line>
+      </svg>
+      <span>ვიზიტის დაჯავშნა</span>
+    </button>
+  </div>
+
+  <!-- MentalBot AI Assistant Floating Widget -->
+  <div class="mental-bot-widget" id="mentalBotWidget">
+    <!-- Floating Launcher Trigger Button -->
+    <button class="bot-launcher-btn" id="mentalBotLauncher" aria-label="გახსენი MentalBot">
+      <div class="launcher-pulse"></div>
+      <div class="launcher-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <!-- Brain / AI Chat Hybrid Icon -->
+          <path d="M12 2a4 4 0 0 0-4 4v1a4 4 0 0 0-2 3.46c0 1.5.8 2.83 2 3.54V16a4 4 0 0 0 4 4h0a4 4 0 0 0 4-4v-2c1.2-.71 2-2.04 2-3.54A4 4 0 0 0 16 7V6a4 4 0 0 0-4-4z"></path>
+          <path d="M9 10h.01"></path>
+          <path d="M15 10h.01"></path>
+          <path d="M10 14a2 2 0 0 0 4 0"></path>
+        </svg>
+      </div>
+      <div class="launcher-tag">
+        <span class="tag-dot"></span>
+        <span class="tag-title">MentalBot AI</span>
+      </div>
+    </button>
+
+    <!-- MentalBot Chat Window -->
+    <div class="bot-window" id="mentalBotWindow" aria-hidden="true">
+      <!-- Window Header -->
+      <div class="bot-header">
+        <div class="bot-header-info">
+          <div class="bot-avatar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2a4 4 0 0 0-4 4v1a4 4 0 0 0-2 3.46c0 1.5.8 2.83 2 3.54V16a4 4 0 0 0 4 4h0a4 4 0 0 0 4-4v-2c1.2-.71 2-2.04 2-3.54A4 4 0 0 0 16 7V6a4 4 0 0 0-4-4z"></path>
+              <circle cx="9" cy="10" r="1" fill="currentColor"></circle>
+              <circle cx="15" cy="10" r="1" fill="currentColor"></circle>
+            </svg>
+            <span class="avatar-status-dot"></span>
+          </div>
+          <div>
+            <div class="bot-title-row">
+              <span class="bot-name">MentalBot</span>
+              <span class="bot-ai-badge">AI 2.0</span>
+            </div>
+            <div class="bot-status" data-i18n="bot_status">ონლაინ • მენტალური მხარდაჭერა</div>
+          </div>
+        </div>
+
+        <div class="bot-header-actions">
+          <button class="bot-header-btn" id="botResetBtn" title="ჩატის გასუფთავება">↺</button>
+          <button class="bot-header-btn" id="botCloseBtn" title="დახურვა">✕</button>
+        </div>
+      </div>
+
+      <!-- Guided Breathing Exercise Card (Toggled Inside Chat) -->
+      <div class="breathing-card" id="breathingCard" style="display: none;">
+        <div class="breathing-header">
+          <span>🫁 4-7-8 დამამშვიდებელი სუნთქვა</span>
+          <button class="breathing-close" id="closeBreathingBtn">✕</button>
+        </div>
+        <div class="breathing-visual">
+          <div class="breathing-circle" id="breathingCircle">
+            <span class="breathing-text" id="breathingText">ჩასუნთქვა (4)</span>
+          </div>
+        </div>
+        <p class="breathing-sub" id="breathingStepDesc">შეისუნთქეთ ცხვირით 4 წამის განმავლობაში...</p>
+        <button class="btn btn-sm btn-outline-primary" id="toggleBreathingBtn">სუნთქვის დაწყება</button>
+      </div>
+
+      <!-- Chat Messages Scroll Container -->
+      <div class="bot-messages" id="botMessages">
+        <!-- Initial Welcome Message from Bot -->
+        <div class="message-row bot-row">
+          <div class="msg-avatar">🌿</div>
+          <div class="msg-bubble">
+            <p>გამარჯობა! მე ვარ <strong>MentalBot</strong> — თქვენი მენტალური ჯანმრთელობის AI ასისტენტი.</p>
+            <p>როგორ გრძნობთ თავს დღეს? შემიძლია დაგეხმაროთ შფოთვის დაძლევაში, ექიმის შერჩევაში, ტესტის გავლასა ან ვიზიტის დაჯავშნაში.</p>
+          </div>
+        </div>
+
+        <!-- Quick Interactive Chips -->
+        <div class="quick-chips-wrapper" id="botQuickChips">
+          <button class="quick-chip" data-action="anxiety">🧘 შფოთვის დაძლევა</button>
+          <button class="quick-chip" data-action="breathing">🫁 სუნთქვითი ვარჯიში</button>
+          <button class="quick-chip" data-action="doctor">👩‍⚕️ ექიმის შერჩევა</button>
+          <button class="quick-chip" data-action="quiz">📝 ტესტის გავლა</button>
+          <button class="quick-chip" data-action="booking">📅 ვიზიტის დაჯავშნა</button>
+          <button class="quick-chip" data-action="price">💳 ფასები & დაზღვევა</button>
+        </div>
+      </div>
+
+      <!-- Chat Input Area -->
+      <form class="bot-input-area" id="botInputForm">
+        <input 
+          type="text" 
+          id="botInputText" 
+          placeholder="დასვით კითხვა ან აღწერეთ რას გრძნობთ..." 
+          autocomplete="off"
+        >
+        <button type="submit" class="bot-send-btn" id="botSendBtn" aria-label="გაგზავნა">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
+
+      <!-- Bot Disclaimer -->
+      <div class="bot-disclaimer">
+        <span>* MentalBot არ ცვლის ექიმს. გადაუდებელ შემთხვევაში დარეკეთ: 112</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
