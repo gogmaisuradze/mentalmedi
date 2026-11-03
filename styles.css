@@ -488,17 +488,48 @@ button {
 .lang-switch-btn {
   display: inline-flex;
   align-items: center;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: var(--text-secondary);
-  background: var(--bg-subtle);
-  padding: 0.42rem 0.75rem;
+  background: #FFFFFF;
+  border: 1px solid rgba(28, 78, 67, 0.18);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  padding: 0.42rem 0.8rem;
   border-radius: var(--radius-full);
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 15;
 }
 
 .lang-switch-btn:hover {
   background: var(--primary-light);
+  border-color: var(--primary);
   color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.lang-switch-btn:active {
+  transform: translateY(0);
+}
+
+.nav-mobile-lang {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0.85rem;
+  margin-bottom: 0.85rem;
+  background: #F4F9F7;
+  border-radius: 12px;
+  border: 1px solid rgba(28, 78, 67, 0.1);
+}
+
+.mobile-lang-label {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-main);
 }
 
 .btn-header-cta {

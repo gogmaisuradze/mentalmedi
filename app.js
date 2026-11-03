@@ -844,158 +844,418 @@ document.addEventListener('DOMContentLoaded', () => {
   const langSwitchBtn = document.getElementById('langSwitchBtn');
 
   const translations = {
-    en: {
-      crisis_msg: "If you need immediate emergency help: Crisis Hotline: <strong>112</strong> or <strong>116 006</strong>",
-      tagline: "Mental Health & Therapy Center",
-      nav_services: "Services",
-      nav_specialists: "Specialists",
-      nav_tests: "Tests <span class='badge-mini'>Quiz</span>",
-      score_label: "Score",
-      nav_about: "About Us",
-      nav_pricing: "Pricing",
-      nav_blog: "Blog",
-      nav_contact: "Contact",
-      btn_book: "Book Visit",
-      hero_badge: "Licensed Clinic & 100% Confidentiality",
-      hero_title: "Your Inner Peace & <span class='gradient-text'>Mental Resilience</span>",
-      hero_desc: "Professional psychological, psychotherapeutic and psychiatric care. Evidence-based methods, compassionate environment, and therapy tailored to you.",
-      btn_book_now: "Book Consultation",
-      btn_take_test: "Take Self-Assessment Test",
-      metric_experts: "Leading Specialists",
-      metric_sessions: "Sessions Conducted",
-      metric_privacy: "Confidentiality",
-      now_accepting: "Appointments available: Online / In-Clinic",
-      empathic_care: "Compassionate Care",
-      evidence_based: "Evidence-Based",
-      quick_booking: "Easy Booking",
-      same_day_slot: "Available slots today",
-      certified_team: "Certified team ready to help",
-      feat_online_title: "Online Consultations",
-      feat_online_desc: "Therapy from the comfort of home, anywhere in the world",
-      feat_privacy_title: "100% Confidentiality",
-      feat_privacy_desc: "Strict adherence to medical ethics and data privacy",
-      feat_methods_title: "Evidence-Based Care",
-      feat_methods_desc: "CBT, Gestalt, Emotion-Focused & Clinical Psychiatry",
-      feat_support_title: "Flexible Schedule",
-      feat_support_desc: "Appointments daily from 10:00 to 20:00, including weekends",
-      services_tag: "Our Specialties",
-      services_title: "Medical & Psychological Services",
-      services_subtitle: "Evidence-based comprehensive spectrum for your mental wellbeing",
-      filter_all: "All Specialists",
-      filter_psychiatry: "Psychiatry",
-      filter_therapy: "Psychotherapy (CBT/Gestalt)",
-      filter_sports: "Sports Psychology",
-      filter_child: "Children & Teens",
-      about_tag: "About Us",
-      about_title: "MentalMedi — The New Standard in Mental Wellbeing",
-      about_lead: "We created a space where mental health is embraced without stigma, with deep empathy and European clinical excellence.",
-      pricing_tag: "Transparent Pricing",
-      pricing_title: "Rates & Treatment Packages",
-      pricing_subtitle: "No hidden fees. Reimbursable by private health insurances",
-      blog_tag: "Psychoeducation & News",
-      blog_title: "Helpful Articles & Insights",
-      reviews_tag: "Testimonials",
-      reviews_title: "What Our Patients Say",
-      faq_tag: "FAQ",
-      faq_title: "Frequently Asked Questions",
-      contact_tag: "Get in Touch",
-      contact_title: "We Are Ready to Support You",
-      send_msg_title: "Send Us a Message",
-      send_msg_sub: "Our coordinator will reply within 15 minutes",
-      btn_send_msg: "Send Message"
+    "ka": {
+        "crisis_msg": "თუ გჭირდებათ გადაუდებელი დახმარება: კრიზისული ცხელი ხაზი: <strong>112</strong> ან <strong>116 006</strong>",
+        "tagline": "მენტალური ცენტრი",
+        "nav_services": "სერვისები",
+        "nav_specialists": "სპეციალისტები",
+        "nav_tests": "ტესტები <span class=\"badge-mini\">Quiz</span>",
+        "nav_about": "ჩვენს შესახებ",
+        "nav_pricing": "ფასები",
+        "nav_blog": "ბლოგი",
+        "nav_contact": "კონტაქტი",
+        "btn_book_now": "დაჯავშნე კონსულტაცია",
+        "btn_book": "დაჯავშნა",
+        "hero_badge": "ლიცენზირებული კლინიკა & 100% კონფიდენციალურობა",
+        "hero_title": "შენი შინაგანი მშვიდობა და <span class=\"gradient-text\">მენტალური სიმტკიცე</span>",
+        "hero_desc": "პროფესიონალური ფსიქოლოგიური, ფსიქოთერაპიული და ფსიქიატრიული მხარდაჭერა. მტკიცებულებებზე დაფუძნებული მეთოდები, უსაფრთხო გარემო და ინდივიდუალურად თქვენზე მორგებული თერაპია.",
+        "btn_take_test": "გაიარე თვითშეფასების ტესტი",
+        "metric_experts": "წამყვანი სპეციალისტი",
+        "metric_sessions": "ჩატარებული სესია",
+        "metric_privacy": "კონფიდენციალურობა",
+        "now_accepting": "ვიზიტები ხელმისაწვდომია: ონლაინ / კლინიკაში",
+        "empathic_care": "ემპათიური მიდგომა",
+        "evidence_based": "მტკიცებითი მედიცინა",
+        "quick_booking": "მარტივი დაჯავშნა",
+        "same_day_slot": "თავისუფალი დროები დღესვე",
+        "certified_team": "სერტიფიცირებული გუნდი მზადაა დასახმარებლად",
+        "feat_online_title": "ონლაინ კონსულტაციები",
+        "feat_online_desc": "თერაპია სახლიდან გაუსვლელად მსოფლიოს ნებისმიერი წერტილიდან",
+        "feat_privacy_title": "100% კონფიდენციალურობა",
+        "feat_privacy_desc": "პაციენტის ეთიკური კოდექსისა და პირადი მონაცემების უმკაცრესი დაცვა",
+        "feat_methods_title": "მტკიცებითი მიდგომები",
+        "feat_methods_desc": "CBT, გეშტალტი, ემოციურ-ფოკუსირებული და კლინიკური ფსიქიატრია",
+        "feat_support_title": "მოქნილი გრაფიკი",
+        "feat_support_desc": "ვიზიტები ყოველდღე 10:00-დან 20:00-მდე, შაბათ-კვირის ჩათვლით",
+        "services_tag": "ჩვენი მიმართულებები",
+        "services_title": "მენტალური და ფსიქოლოგიური სერვისები",
+        "services_subtitle": "მტკიცებულებებზე დაფუძნებული სრული მენტალური სპექტრი თქვენი კეთილდღეობისთვის",
+        "pill_popular": "პოპულარული",
+        "srv_psychotherapy_title": "ინდივიდუალური ფსიქოთერაპია",
+        "srv_psychotherapy_desc": "პირადი სესიები ლიცენზირებულ თერაპევტთან. შფოთვის, პანიკური შეტევების, დეპრესიის, ტრავმის (PTSD), თვითშეფასების და ემოციური გადაღლის დაძლევა.",
+        "srv_point_cbt": "კოგნიტურ-ბიჰევიორული თერაპია (CBT)",
+        "srv_point_gestalt": "გეშტალტ-თერაპია და ეგზისტენციალური მიდგომა",
+        "srv_point_dur50": "ხანგრძლივობა: 50 წუთი (ონლაინ / კლინიკაში)",
+        "srv_price_1": "80 ₾ - 140 ₾ / სესია",
+        "btn_book_short": "დაჯავშნა",
+        "pill_medical": "კლინიკური",
+        "srv_psychiatry_title": "კლინიკური ფსიქიატრია",
+        "srv_psychiatry_desc": "ფსიქიკური ჯანმრთელობის მენტალური შეფასება, ზუსტი დიაგნოსტიკა და თანამედროვე, უსაფრთხო ფარმაკოთერაპიის შერჩევა-მართვა გამოცდილი ფსიქიატრების მიერ.",
+        "srv_point_diag": "განწყობის, ძილისა და ყურადღების აშლილობები",
+        "srv_point_medmgmt": "მედიკამენტური მონიტორინგი და კორექცია",
+        "srv_point_care": "მკურნალობის უსაფრთხო გეგმა",
+        "srv_price_2": "100 ₾ - 160 ₾ / ვიზიტი",
+        "pill_relation": "ურთიერთობები",
+        "srv_couples_title": "წყვილებისა და ოჯახის თერაპია",
+        "srv_couples_desc": "ურთიერთობებში კრიზისების გადალახვა, კონფლიქტების კონსტრუქციული მართვა, ემოციური სიახლოვისა და ჯანსაღი კომუნიკაციის აღდგენა.",
+        "srv_point_comm": "კომუნიკაციის ბარიერების დაძლევა",
+        "srv_point_eft": "ემოციურ-ფოკუსირებული თერაპია (EFT)",
+        "srv_point_dur80": "ხანგრძლივობა: 80 წუთი (წყვილისთვის)",
+        "srv_price_3": "130 ₾ - 190 ₾ / სესია",
+        "pill_sport": "სპეციალური პროგრამა",
+        "srv_sports_title": "სპორტის ფსიქოლოგია",
+        "srv_sports_desc": "სპორტსმენებისა და მაღალი შედეგების მაძიებელთათვის: მენტალური მდგრადობა, კონცენტრაციის უნარი, საშეჯიბრო სტრესის მართვა და გამარჯვებულის მენტალიტეტი.",
+        "srv_point_mental_grit": "მენტალური სიმტკიცე და ფოკუსი",
+        "srv_point_precomp": "შეჯიბრებამდე მზადყოფნის პროგრამა",
+        "srv_point_rehab": "ტრავმის შემდგომი ფსიქოლოგიური აღდგენა",
+        "srv_price_4": "90 ₾ - 150 ₾ / სესია",
+        "pill_testing": "დიაგნოსტიკა",
+        "srv_testing_title": "ფსიქოლოგიური ტესტირება და შეფასება",
+        "srv_testing_desc": "კოგნიტური და პიროვნული პროფილირება საერთაშორისო ვალიდირებული ტესტებით (MMPI, Wechsler, ADHD სკრინინგი). ოფიციალური დასკვნა და რეკომენდაციები.",
+        "srv_point_tests": "ADHD, აუტისტური სპექტრის და კოგნიტური შეფასება",
+        "srv_point_report": "სრული წერილობითი დასკვნა",
+        "srv_point_feed": "დეტალური ფიდბექ-სესია სპეციალისტთან",
+        "srv_price_5": "150 ₾ - 280 ₾ / ტესტ-პაკეტი",
+        "pill_kids": "ბავშვები & მოზარდები",
+        "srv_child_title": "ბავშვთა და მოზარდთა ფსიქოლოგია",
+        "srv_child_desc": "ქცევითი სირთულეები, სასკოლო ადაპტაცია, მოზარდობის კრიზისი, ემოციური რეგულაცია და მშობელთა საკონსულტაციო მხარდაჭერა.",
+        "srv_point_art": "არტ-თერაპია და თამაშით თერაპია",
+        "srv_point_teens": "მოზარდებთან ნდობითი მუშაობა",
+        "srv_point_parenting": "მშობელთა კონსულტაცია",
+        "srv_price_6": "80 ₾ - 130 ₾ / სესია",
+        "tests_tag": "ინტერაქტიული სკრინინგი",
+        "tests_title": "გაიარე მენტალური თვითშეფასების ტესტი",
+        "tests_subtitle": "ანონიმური, მეცნიერულ მეთოდებზე დაფუძნებული მოკლე ტესტები თქვენი ემოციური მდგომარეობის შესაფასებლად (2-3 წუთი)",
+        "test_tab_anxiety": "შფოთვის ტესტი (GAD-7)",
+        "test_tab_depression": "დეპრესიის შეფასება (PHQ-9)",
+        "test_tab_burnout": "ემოციური გადაწვა (Burnout)",
+        "test_duration": "⏱ დაახლოებით 2 წუთი",
+        "test_subtext": "აირჩიეთ ერთი პასუხი, რომელიც ყველაზე უკეთ აღწერს თქვენს მდგომარეობას:",
+        "score_label": "ქულა",
+        "result_rec_title": "ჩვენი რეკომენდაცია თქვენთვის:",
+        "result_rec_1": "სასარგებლო იქნება 1 ინდივიდუალური სესია CBT მიმართულების სპეციალისტთან",
+        "result_rec_2": "სუნთქვითი ვარჯიშები და ძილის ჰიგიენის მოწესრიგება",
+        "btn_book_specialist": "კონსულტაციის დაჯავშნა",
+        "btn_restart_test": "ტესტის თავიდან გავლა",
+        "test_disclaimer": "* ყურადღება: ონლაინ ტესტი ატარებს მხოლოდ საინფორმაციო-სკრინინგულ ხასიათს და არ წარმოადგენს კლინიკურ დიაგნოზს.",
+        "team_tag": "ჩვენი გუნდი",
+        "team_title": "გაიცანით MentalMedi-ს სპეციალისტები",
+        "team_subtitle": "ლიცენზირებული ექიმები, ფსიქიატრები და ფსიქოთერაპევტები მრავალწლიანი კლინიკური გამოცდილებით",
+        "filter_all": "ყველა სპეციალისტი",
+        "filter_psychiatry": "ფსიქიატრია",
+        "filter_therapy": "ფსიქოთერაპია (CBT/გეშტალტი)",
+        "filter_sports": "სპორტის ფსიქოლოგია",
+        "filter_child": "ბავშვები & მოზარდები",
+        "exp_label": "უსაფრთხო & კონფიდენციალური სივრცე",
+        "about_tag": "ჩვენს შესახებ",
+        "about_title": "MentalMedi — მენტალური კეთილდღეობის ახალი სტანდარტი",
+        "about_lead": "ჩვენ შევქმენით სივრცე, სადაც ფსიქიკური ჯანმრთელობა სტიგმის გარეშე აღიქმება. აქ თითოეულ ადამიანს ხვდება ღრმა ემპათია, პროფესიონალიზმი და თანამედროვე ევროპული სტანდარტების მომსახურება.",
+        "val_1_title": "მკაცრი კონფიდენციალურობა",
+        "val_1_desc": "თქვენი მონაცემები და სესიის შინაარსი დაცულია საერთაშორისო მენტალური და პროფესიული ეთიკის სტანდარტებით.",
+        "val_2_title": "მტკიცებითი მედიცინა (Evidence-Based)",
+        "val_2_desc": "ვიყენებთ მხოლოდ მეცნიერულად დადასტურებულ თერაპიულ მეთოდებსა და უახლეს პროტოკოლებს.",
+        "val_3_title": "მულტიდისციპლინური მიდგომა",
+        "val_3_desc": "საჭიროების შემთხვევაში ფსიქოთერაპევტი და ფსიქიატრი ერთობლივად მართავენ პაციენტის გეგმას.",
+        "pricing_tag": "გამჭვირვალე ფასები",
+        "pricing_title": "ტარიფები და მომსახურების პაკეტები",
+        "pricing_subtitle": "არანაირი ფარული გადასახადი. შესაძლებელია კერძო დაზღვევის ანაზღაურებით სარგებლობა",
+        "plan_1_label": "საბაზისო",
+        "plan_1_name": "პირველადი კონსულტაცია",
+        "plan_1_desc": "მდგომარეობის შეფასება, პრობლემის იდენტიფიცირება და თერაპიული გეგმის შედგენა",
+        "btn_choose_plan": "დაჯავშნა",
+        "most_popular": "რეკომენდებული",
+        "plan_2_label": "კურსი",
+        "plan_2_name": "თერაპიული პაკეტი (5 სესია)",
+        "plan_2_desc": "შედეგზე ორიენტირებული რეგულარული ფსიქოთერაპიული კურსი ფასდაკლებით",
+        "plan_3_label": "სპეციალური",
+        "plan_3_name": "ფსიქიატრიული შეფასება",
+        "plan_3_desc": "კლინიკური ფსიქიატრის სრული გამოკვლევა და რეცეპტების გაცემა",
+        "ins_title": "თანამშრომლობა სადაზღვევო კომპანიებთან",
+        "ins_desc": "ჩვენი ექიმები გასცემენ ფორმა 100-ს და ყველა საჭირო დოკუმენტაციას კერძო სადაზღვევო კომპანიებში თანხის ასანაზღაურებლად (არდი, ჯიპიაი, იმედი L, ალდაგი, თიბისი დაზღვევა და სხვა).",
+        "blog_tag": "ფსიქოგანათლება & სიახლეები",
+        "blog_title": "სასარგებლო სტატიები და რჩევები",
+        "blog_subtitle": "ჩვენი კლინიკის ექსპერტები რეგულარულად უზიარებენ ცოდნასა და პრაქტიკულ რჩევებს საზოგადოებას",
+        "reviews_tag": "გამოხმაურებები",
+        "reviews_title": "რას ამბობენ ჩვენი პაციენტები",
+        "reviews_subtitle": "კონფიდენციალურობის სრული დაცვით გაზიარებული რეალური ისტორიები",
+        "faq_tag": "კითხვა-პასუხი",
+        "faq_title": "ხშირად დასმული კითხვები",
+        "faq_subtitle": "ყველაფერი, რაც უნდა იცოდეთ ვიზიტამდე",
+        "contact_tag": "დაგვიკავშირდით",
+        "contact_title": "ჩვენ მზად ვართ თქვენს დასახმარებლად",
+        "contact_desc": "მობრძანდით ჩვენს მყუდრო კლინიკაში ან დაგვიკავშირდით ნებისმიერი შეკითხვის შემთხვევაში.",
+        "lbl_address": "მისამართი",
+        "lbl_phone": "ტელეფონი / ცხელი ხაზი",
+        "lbl_email": "ელ-ფოსტა",
+        "lbl_hours": "სამუშაო საათები",
+        "send_msg_title": "მოგვწერეთ შეტყობინება",
+        "send_msg_sub": "ჩვენი ადმინისტრატორი დაგიკავშირდებათ 15 წუთში",
+        "field_name": "სახელი და გვარი *",
+        "field_phone": "ტელეფონის ნომერი *",
+        "field_email": "ელ-ფოსტა",
+        "field_topic": "ინტერესის სფერო",
+        "field_msg": "შეტყობინება / კითხვა",
+        "btn_send_msg": "შეტყობინების გაგზავნა",
+        "modal_book_title": "ვიზიტის ონლაინ დაჯავშნა",
+        "modal_book_subtitle": "შეარჩიეთ თქვენთვის სასურველი სპეციალისტი და დრო",
+        "wiz_step1_head": "აირჩიეთ ვიზიტის ფორმატი და მომსახურება:",
+        "lbl_select_service": "სერვისის ტიპი:",
+        "wiz_step2_head": "აირჩიეთ სასურველი სპეციალისტი:",
+        "wiz_step3_head": "შეარჩიეთ დრო და შეავსეთ საკონტაქტო მონაცემები:",
+        "booking_success_title": "ვიზიტი წარმატებით დაიჯავშნა!",
+        "footer_desc": "თანამედროვე მენტალური ჯანმრთელობის, ფსიქოთერაპიისა და კლინიკური ფსიქიატრიის ცენტრი. უსაფრთხო გარემო, მზრუნველი სპეციალისტები და მტკიცებულებებზე დაფუძნებული მედიცინა.",
+        "footer_services": "სერვისები",
+        "footer_nav": "ნავიგაცია",
+        "footer_contact": "კონტაქტი & მისამართი",
+        "bot_status": "ონლაინ • მენტალური მხარდაჭერა"
     },
-    ka: {
-      crisis_msg: "თუ გჭირდებათ გადაუდებელი დახმარება: კრიზისული ცხელი ხაზი: <strong>112</strong> ან <strong>116 006</strong>",
-      tagline: "მენტალური ცენტრი",
-      nav_services: "სერვისები",
-      nav_specialists: "სპეციალისტები",
-      nav_tests: "ტესტები <span class='badge-mini'>Quiz</span>",
-      score_label: "ქულა",
-      nav_about: "ჩვენს შესახებ",
-      nav_pricing: "ფასები",
-      nav_blog: "ბლოგი",
-      nav_contact: "კონტაქტი",
-      btn_book: "ვიზიტის დაჯავშნა",
-      hero_badge: "ლიცენზირებული კლინიკა & 100% კონფიდენციალურობა",
-      hero_title: "შენი შინაგანი მშვიდობა და <span class='gradient-text'>მენტალური სიმტკიცე</span>",
-      hero_desc: "პროფესიონალური ფსიქოლოგიური, ფსიქოთერაპიული და ფსიქიატრიული მხარდაჭერა. მტკიცებულებებზე დაფუძნებული მეთოდები, უსაფრთხო გარემო და ინდივიდუალურად თქვენზე მორგებული თერაპია.",
-      btn_book_now: "დაჯავშნე კონსულტაცია",
-      btn_take_test: "გაიარე თვითშეფასების ტესტი",
-      metric_experts: "წამყვანი სპეციალისტი",
-      metric_sessions: "ჩატარებული სესია",
-      metric_privacy: "კონფიდენციალურობა",
-      now_accepting: "ვიზიტები ხელმისაწვდომია: ონლაინ / კლინიკაში",
-      empathic_care: "ემპათიური მიდგომა",
-      evidence_based: "მტკიცებითი მედიცინა",
-      quick_booking: "მარტივი დაჯავშნა",
-      same_day_slot: "თავისუფალი დროები დღესვე",
-      certified_team: "სერტიფიცირებული გუნდი მზადაა დასახმარებლად",
-      feat_online_title: "ონლაინ კონსულტაციები",
-      feat_online_desc: "თერაპია სახლიდან გაუსვლელად მსოფლიოს ნებისმიერი წერტილიდან",
-      feat_privacy_title: "100% კონფიდენციალურობა",
-      feat_privacy_desc: "პაციენტის ეთიკური კოდექსისა და პირადი მონაცემების უმკაცრესი დაცვა",
-      feat_methods_title: "მტკიცებითი მიდგომები",
-      feat_methods_desc: "CBT, გეშტალტი, ემოციურ-ფოკუსირებული და კლინიკური ფსიქიატრია",
-      feat_support_title: "მოქნილი გრაფიკი",
-      feat_support_desc: "ვიზიტები ყოველდღე 10:00-დან 20:00-მდე, შაბათ-კვირის ჩათვლით",
-      services_tag: "ჩვენი მიმართულებები",
-      services_title: "მენტალური და ფსიქოლოგიური სერვისები",
-      services_subtitle: "მტკიცებულებებზე დაფუძნებული სრული მენტალური სპექტრი თქვენი კეთილდღეობისთვის",
-      filter_all: "ყველა სპეციალისტი",
-      filter_psychiatry: "ფსიქიატრია",
-      filter_therapy: "ფსიქოთერაპია (CBT/გეშტალტი)",
-      filter_sports: "სპორტის ფსიქოლოგია",
-      filter_child: "ბავშვები & მოზარდები",
-      about_tag: "ჩვენს შესახებ",
-      about_title: "MentalMedi — მენტალური კეთილდღეობის ახალი სტანდარტი",
-      about_lead: "ჩვენ შევქმენით სივრცე, სადაც ფსიქიკური ჯანმრთელობა სტიგმის გარეშე აღიქმება. აქ თითოეულ ადამიანს ხვდება ღრმა ემპათია, პროფესიონალიზმი და თანამედროვე ევროპული სტანდარტების მომსახურება.",
-      pricing_tag: "გამჭვირვალე ფასები",
-      pricing_title: "ტარიფები და მომსახურების პაკეტები",
-      pricing_subtitle: "არანაირი ფარული გადასახადი. შესაძლებელია კერძო დაზღვევის ანაზღაურებით სარგებლობა",
-      blog_tag: "ფსიქოგანათლება & სიახლეები",
-      blog_title: "სასარგებლო სტატიები და რჩევები",
-      reviews_tag: "გამოხმაურებები",
-      reviews_title: "რას ამბობენ ჩვენი პაციენტები",
-      faq_tag: "კითხვა-პასუხი",
-      faq_title: "ხშირად დასმული კითხვები",
-      contact_tag: "დაგვიკავშირდით",
-      contact_title: "ჩვენ მზად ვართ თქვენს დასახმარებლად",
-      send_msg_title: "მოგვწერეთ შეტყობინება",
-      send_msg_sub: "ჩვენი ადმინისტრატორი დაგიკავშირდებათ 15 წუთში",
-      btn_send_msg: "შეტყობინების გაგზავნა"
+    "en": {
+        "crisis_msg": "If you need immediate emergency help: Crisis Hotline: <strong>112</strong> or <strong>116 006</strong>",
+        "tagline": "Mental Health Center",
+        "nav_services": "Services",
+        "nav_specialists": "Specialists",
+        "nav_tests": "Tests <span class=\"badge-mini\">Quiz</span>",
+        "nav_about": "About Us",
+        "nav_pricing": "Pricing",
+        "nav_blog": "Blog",
+        "nav_contact": "Contact",
+        "btn_book_now": "Book Consultation",
+        "btn_book": "Book Visit",
+        "hero_badge": "Licensed Clinic & 100% Confidentiality",
+        "hero_title": "Your Inner Peace & <span class=\"gradient-text\">Mental Resilience</span>",
+        "hero_desc": "Professional psychological, psychotherapeutic and psychiatric support. Evidence-based methods, safe environment, and personalized therapy.",
+        "btn_take_test": "Take Self-Assessment Test",
+        "metric_experts": "Leading Specialists",
+        "metric_sessions": "Sessions Conducted",
+        "metric_privacy": "Confidentiality",
+        "now_accepting": "Appointments available: Online / In-Clinic",
+        "empathic_care": "Compassionate Care",
+        "evidence_based": "Evidence-Based",
+        "quick_booking": "Easy Booking",
+        "same_day_slot": "Available slots today",
+        "certified_team": "Certified team ready to help",
+        "feat_online_title": "Online Consultations",
+        "feat_online_desc": "Therapy from the comfort of home, anywhere in the world",
+        "feat_privacy_title": "100% Confidentiality",
+        "feat_privacy_desc": "Strict adherence to medical ethics and data privacy",
+        "feat_methods_title": "Evidence-Based Care",
+        "feat_methods_desc": "CBT, Gestalt, Emotion-Focused & Clinical Psychiatry",
+        "feat_support_title": "Flexible Schedule",
+        "feat_support_desc": "Appointments daily from 10:00 to 20:00, including weekends",
+        "services_tag": "Our Specialties",
+        "services_title": "Mental & Psychological Services",
+        "services_subtitle": "Evidence-based comprehensive spectrum for your mental wellbeing",
+        "pill_popular": "Popular",
+        "pill_medical": "Medical",
+        "pill_sport": "Sports",
+        "pill_relation": "Relationships",
+        "pill_testing": "Diagnostics",
+        "pill_kids": "Children",
+        "srv_psychotherapy_title": "Individual Psychotherapy",
+        "srv_psychotherapy_desc": "Private sessions with licensed psychotherapists. Overcoming anxiety, panic attacks, depression, trauma (PTSD), low self-esteem, and emotional burnout.",
+        "srv_point_cbt": "Cognitive Behavioral Therapy (CBT)",
+        "srv_point_gestalt": "Gestalt Therapy & Existential Approach",
+        "srv_point_dur50": "Duration: 50 minutes • In-clinic / Online",
+        "srv_price_1": "From 80 ₾ / session",
+        "btn_book_short": "Book",
+        "srv_psychiatry_title": "Clinical Psychiatry & Diagnostics",
+        "srv_psychiatry_desc": "Doctor of Medicine consultation, comprehensive psychiatric assessment, modern psychopharmacotherapy, and ongoing medical monitoring.",
+        "srv_point_diag": "International ICD-11 & DSM-5 diagnostics",
+        "srv_point_medmgmt": "Medication prescription & therapeutic monitoring",
+        "srv_point_care": "Bipolar, chronic insomnia, clinical anxiety",
+        "srv_price_2": "From 120 ₾ / consultation",
+        "srv_sports_title": "Sports & High Performance Psychology",
+        "srv_sports_desc": "Mental coaching for athletes, business leaders, and teams. Stress resilience, peak focus, and pre-competition mental readiness.",
+        "srv_point_mental_grit": "Mental resilience & focus control",
+        "srv_point_precomp": "Pre-competition stress & anxiety management",
+        "srv_point_rehab": "Psychological recovery after physical injuries",
+        "srv_price_3": "From 100 ₾ / session",
+        "srv_couples_title": "Couples & Family Therapy",
+        "srv_couples_desc": "Resolving partnership crises, rebuilding trust, improving communication, and navigating emotional challenges together.",
+        "srv_point_eft": "Emotionally Focused Therapy (EFT)",
+        "srv_point_comm": "De-escalating conflicts & communication skills",
+        "srv_point_dur80": "Duration: 80 minutes • For Couples",
+        "srv_price_4": "From 130 ₾ / session",
+        "srv_testing_title": "Psychological Diagnostics & Testing",
+        "srv_testing_desc": "Validated psychometric testing, cognitive profiling, personality questionnaires, and clinical reports with formal recommendations.",
+        "srv_point_tests": "Validated psychometric test batteries",
+        "srv_point_report": "Written psychological evaluation report",
+        "srv_point_feed": "Detailed feedback session with psychologist",
+        "srv_price_5": "150 ₾ - 280 ₾ / battery",
+        "srv_child_title": "Child & Adolescent Psychology",
+        "srv_child_desc": "Support for children and teenagers facing behavioral difficulties, ADHD, school anxiety, peer conflicts, and parental guidance.",
+        "srv_point_art": "Art & Play Therapy methods",
+        "srv_point_teens": "Adolescent identity & emotional crises",
+        "srv_point_parenting": "Parent counseling & developmental guidance",
+        "srv_price_6": "From 90 ₾ / session",
+        "team_tag": "Our Team",
+        "team_title": "Leading Psychotherapists & Doctors",
+        "team_subtitle": "Certified specialists with European accreditations and extensive clinical experience",
+        "filter_all": "All Specialists",
+        "filter_psychiatry": "Psychiatry",
+        "filter_therapy": "Psychotherapy (CBT/Gestalt)",
+        "filter_sports": "Sports Psychology",
+        "filter_child": "Children & Teens",
+        "exp_label": "Experience",
+        "btn_book_specialist": "Book Specialist",
+        "tests_tag": "Self-Assessment",
+        "tests_title": "Validated Mental Health Screenings",
+        "tests_subtitle": "Scientifically validated clinical screening tools to evaluate your anxiety, depression, and burnout levels",
+        "test_tab_anxiety": "GAD-7 Anxiety",
+        "test_tab_depression": "PHQ-9 Depression",
+        "test_tab_burnout": "Burnout Test",
+        "test_duration": "Takes only 2-3 minutes",
+        "test_disclaimer": "Confidential • Not a formal medical diagnosis",
+        "test_subtext": "Answer truthfully based on how you felt over the past 2 weeks:",
+        "score_label": "Score",
+        "btn_restart_test": "Take Another Test",
+        "result_rec_title": "Recommended Next Steps:",
+        "result_rec_1": "Schedule a preliminary consultation with a clinical therapist",
+        "result_rec_2": "Practice daily grounding & breathing exercises",
+        "about_tag": "About Us",
+        "about_title": "MentalMedi — The New Standard in Mental Wellbeing",
+        "about_lead": "We created a space where mental health is embraced without stigma, with deep empathy, European clinical standards, and full confidentiality.",
+        "val_1_title": "Evidence-Based Practice",
+        "val_1_desc": "We apply only internationally validated therapeutic methods with proven clinical efficacy.",
+        "val_2_title": "Absolute Confidentiality",
+        "val_2_desc": "Your medical data and personal conversations are protected with the highest privacy standards.",
+        "val_3_title": "Holistic Patient Care",
+        "val_3_desc": "Individualized, compassionate treatment tailored to your unique psychological goals and pace.",
+        "pricing_tag": "Transparent Pricing",
+        "pricing_title": "Rates & Care Packages",
+        "pricing_subtitle": "No hidden fees. Covered by private health insurances via Form 100",
+        "plan_1_label": "Individual",
+        "plan_1_name": "Single Session",
+        "plan_1_desc": "Initial consultation and customized therapeutic plan",
+        "plan_2_label": "Recommended",
+        "plan_2_name": "5-Session Package",
+        "plan_2_desc": "Structured therapy course with a 15% discount",
+        "most_popular": "Most Popular",
+        "plan_3_label": "Specialized",
+        "plan_3_name": "Psychiatric Evaluation",
+        "plan_3_desc": "Complete assessment by MD psychiatrist and medication management",
+        "btn_choose_plan": "Choose Plan",
+        "ins_title": "Insurance Reimbursement Coverage",
+        "ins_desc": "Our physicians provide Form 100 and all clinical documentation for reimbursement across all private insurance providers (Ardi, GPI, Imedi L, Aldagi, TBC Insurance, etc.).",
+        "blog_tag": "Psychoeducation & Articles",
+        "blog_title": "Insightful Articles & Resources",
+        "blog_subtitle": "Our clinic experts share psychoeducational insights, coping mechanisms, and mental wellbeing advice",
+        "reviews_tag": "Testimonials",
+        "reviews_title": "What Our Patients Say",
+        "reviews_subtitle": "Real patient feedback shared with full privacy protection",
+        "faq_tag": "FAQ",
+        "faq_title": "Frequently Asked Questions",
+        "faq_subtitle": "Everything you need to know before your appointment",
+        "contact_tag": "Get in Touch",
+        "contact_title": "We Are Ready to Support You",
+        "contact_desc": "Visit our modern clinic in central Tbilisi or reach out with any question.",
+        "lbl_address": "Address",
+        "lbl_phone": "Phone / Hotline",
+        "lbl_email": "Email",
+        "lbl_hours": "Working Hours",
+        "send_msg_title": "Send Us a Message",
+        "send_msg_sub": "Our clinic administrator will respond within 15 minutes",
+        "field_name": "Full Name *",
+        "field_phone": "Phone Number *",
+        "field_email": "Email Address",
+        "field_topic": "Area of Interest",
+        "field_msg": "Message / Inquiry",
+        "btn_send_msg": "Send Message",
+        "modal_book_title": "Book Appointment Online",
+        "modal_book_subtitle": "Select your specialist, service format, and convenient time slot",
+        "wiz_step1_head": "Choose consultation format and service:",
+        "lbl_select_service": "Service Type:",
+        "wiz_step2_head": "Select your preferred specialist:",
+        "wiz_step3_head": "Pick a time and enter your contact details:",
+        "booking_success_title": "Appointment Successfully Booked!",
+        "footer_desc": "Modern mental health, psychotherapy, and psychiatry center in Tbilisi. Compassionate care, safe environment, and evidence-based clinical excellence.",
+        "footer_services": "Services",
+        "footer_nav": "Navigation",
+        "footer_contact": "Contact & Address",
+        "bot_status": "Online • Mental Support"
     }
-  };
+};
 
-  if (langSwitchBtn) {
-    langSwitchBtn.addEventListener('click', () => {
-      currentLanguage = (currentLanguage === 'ka') ? 'en' : 'ka';
-      document.documentElement.lang = currentLanguage;
+  function setLanguage(lang) {
+    currentLanguage = (lang === 'en') ? 'en' : 'ka';
+    document.documentElement.lang = currentLanguage;
 
-      const langCurrent = langSwitchBtn.querySelector('.lang-current');
-      const langAlt = langSwitchBtn.querySelector('.lang-alt');
+    try {
+      localStorage.setItem('mm_lang', currentLanguage);
+    } catch (e) {}
 
-      if (currentLanguage === 'en') {
-        langCurrent.textContent = 'EN';
-        langAlt.textContent = 'GE';
-      } else {
-        langCurrent.textContent = 'GE';
-        langAlt.textContent = 'EN';
-      }
-
-      // Update text nodes with data-i18n
-      const dict = translations[currentLanguage];
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.dataset.i18n;
-        if (dict[key]) {
-          el.innerHTML = dict[key];
+    // Update all language toggle buttons on the page (header & mobile drawer)
+    document.querySelectorAll('.lang-switch-btn').forEach(btn => {
+      const langCurrent = btn.querySelector('.lang-current');
+      const langAlt = btn.querySelector('.lang-alt');
+      if (langCurrent && langAlt) {
+        if (currentLanguage === 'en') {
+          langCurrent.textContent = 'EN';
+          langAlt.textContent = 'GE';
+        } else {
+          langCurrent.textContent = 'GE';
+          langAlt.textContent = 'EN';
         }
-      });
-
-      // Re-render current test
-      renderCurrentQuestion();
-      showToast(currentLanguage === 'en' ? "Language changed to English" : "ენა შეიცვალა ქართულზე");
+      }
     });
+
+    // Update all text nodes with data-i18n
+    const dict = translations[currentLanguage];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (dict && dict[key]) {
+        el.innerHTML = dict[key];
+      }
+    });
+
+    // Update specialist cards on homepage
+    document.querySelectorAll('.specialist-card[data-id]').forEach(card => {
+      const id = card.dataset.id;
+      const spec = specialistsData[id];
+      if (!spec) return;
+      const nameEl = card.querySelector('.specialist-name');
+      const roleEl = card.querySelector('.specialist-role');
+      if (nameEl) nameEl.textContent = currentLanguage === 'en' ? spec.nameEn : spec.name;
+      if (roleEl) roleEl.textContent = currentLanguage === 'en' ? spec.roleEn : spec.role;
+    });
+
+    // Update specialist cards in booking modal
+    document.querySelectorAll('.spec-select-card').forEach(label => {
+      const strong = label.querySelector('strong');
+      if (strong) {
+        for (const [id, spec] of Object.entries(specialistsData)) {
+          if (strong.textContent === spec.name || strong.textContent === spec.nameEn) {
+            strong.textContent = currentLanguage === 'en' ? spec.nameEn : spec.name;
+            break;
+          }
+        }
+      }
+    });
+
+    // Re-render current interactive test if active
+    if (typeof renderCurrentQuestion === 'function') {
+      try { renderCurrentQuestion(); } catch (e) {}
+    }
+
+    showToast(currentLanguage === 'en' ? "Language changed to English" : "ენა შეიცვალა ქართულზე");
   }
+
+  // Bind click event to all language switch buttons (header & mobile menu)
+  document.querySelectorAll('.lang-switch-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      setLanguage(currentLanguage === 'ka' ? 'en' : 'ka');
+    });
+  });
+
+  // Check saved language on initial load
+  try {
+    const savedLang = localStorage.getItem('mm_lang');
+    if (savedLang === 'en') {
+      setTimeout(() => setLanguage('en'), 50);
+    }
+  } catch (e) {}
 
   // ==========================================
   // 11. MentalBot AI Assistant Controller
