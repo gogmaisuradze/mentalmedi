@@ -203,8 +203,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }    },
     balance: {
-      name: "ბალანსის მოდელი (4 სფერო)",
-      nameEn: "Balance Model (4 Dimensions)",
+      name: "ბალანსის მოდელი",
+      nameEn: "Balance Model",
       questions: [
         // Block 0: სხეული და ჯანმრთელობა (Body & Health)
         {
@@ -1207,10 +1207,10 @@ document.addEventListener('DOMContentLoaded', () => {
         "tests_tag": "ინტერაქტიული სკრინინგი",
         "tests_title": "გაიარე მენტალური თვითშეფასების ტესტი",
         "tests_subtitle": "ანონიმური, მეცნიერულ მეთოდებზე დაფუძნებული მოკლე ტესტები თქვენი ემოციური მდგომარეობის შესაფასებლად (2-3 წუთი)",
-        "test_tab_anxiety": "შფოთვის ტესტი (GAD-7)",
-        "test_tab_depression": "დეპრესიის შეფასება (PHQ-9)",
-        "test_tab_burnout": "ემოციური გადაწვა (Burnout)",
-        "test_tab_balance": "ბალანსის მოდელი (4 სფერო)",
+        "test_tab_anxiety": "შფოთვა (GAD-7)",
+        "test_tab_depression": "დეპრესია (PHQ-9)",
+        "test_tab_burnout": "გადაწვა (Burnout)",
+        "test_tab_balance": "ბალანსის მოდელი",
         "test_duration": "⏱ დაახლოებით 2 წუთი",
         "test_subtext": "აირჩიეთ ერთი პასუხი, რომელიც ყველაზე უკეთ აღწერს თქვენს მდგომარეობას:",
         "score_label": "ქულა",
@@ -1383,10 +1383,10 @@ document.addEventListener('DOMContentLoaded', () => {
         "tests_tag": "Self-Assessment",
         "tests_title": "Validated Mental Health Screenings",
         "tests_subtitle": "Scientifically validated clinical screening tools to evaluate your anxiety, depression, and burnout levels",
-        "test_tab_anxiety": "GAD-7 Anxiety",
-        "test_tab_depression": "PHQ-9 Depression",
+        "test_tab_anxiety": "Anxiety (GAD-7)",
+        "test_tab_depression": "Depression (PHQ-9)",
         "test_tab_burnout": "Burnout Test",
-        "test_tab_balance": "Balance Model (4 Dimensions)",
+        "test_tab_balance": "Balance Model",
         "test_duration": "Takes only 2-3 minutes",
         "test_disclaimer": "Confidential • Not a formal medical diagnosis",
         "test_subtext": "Answer truthfully based on how you felt over the past 2 weeks:",

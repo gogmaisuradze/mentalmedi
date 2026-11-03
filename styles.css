@@ -1084,30 +1084,40 @@ button {
 .test-tabs-wrapper {
   display: flex;
   justify-content: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
 }
 
 .test-tabs {
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 800px;
+  width: 100%;
   background: #FFFFFF;
-  padding: 0.4rem;
+  padding: 0.35rem;
   border-radius: var(--radius-full);
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
   gap: 0.35rem;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 .test-tab-btn {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.4rem;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.75rem 0.6rem;
   border-radius: var(--radius-full);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--text-secondary);
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.test-tab-btn:hover {
+  color: var(--primary);
+  background: var(--primary-light);
 }
 
 .test-tab-btn.active {
@@ -1117,8 +1127,9 @@ button {
 }
 
 .tab-icon {
-  width: 18px;
-  height: 18px;
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
 }
 
 .test-app-card {
@@ -4151,17 +4162,24 @@ button {
     margin-bottom: 1.5rem;
   }
   .test-tabs {
-    flex-direction: column;
+    grid-template-columns: repeat(2, 1fr);
     width: 100%;
-    border-radius: var(--radius-md);
-    gap: 0.25rem;
-    padding: 0.3rem;
+    border-radius: var(--radius-lg);
+    gap: 0.35rem;
+    padding: 0.35rem;
   }
   .test-tab-btn {
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
     justify-content: center;
-    padding: 0.65rem 1rem;
+    padding: 0.65rem 0.75rem;
     font-size: 0.85rem;
+  }
+
+  @media (max-width: 520px) {
+    .test-tabs {
+      grid-template-columns: 1fr;
+      border-radius: var(--radius-md);
+    }
   }
   .test-header-bar {
     padding: 1rem 1.25rem;
