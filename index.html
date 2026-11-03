@@ -25,7 +25,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   
-  <link rel="stylesheet" href="styles.css?v=3.9">
+  <link rel="stylesheet" href="styles.css?v=4.0">
 </head>
 <body>
 
@@ -509,6 +509,12 @@
             </svg>
             <span data-i18n="test_tab_burnout">ემოციური გადაწვა (Burnout)</span>
           </button>
+          <button class="test-tab-btn" data-test="balance">
+            <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3v18M3 8l9-5 9 5M6 16l-3-8h6l-3 8zm12 0l-3-8h6l-3 8z"></path>
+            </svg>
+            <span data-i18n="test_tab_balance">ბალანსის მოდელი (4 სფერო)</span>
+          </button>
         </div>
       </div>
 
@@ -552,6 +558,8 @@
           <p class="result-explanation" id="resultDesc">
             თქვენი პასუხების მიხედვით შეინიშნება შფოთვისა და ემოციური დაძაბულობის სიმპტომები. რეკომენდებულია გაიაროთ პროფესიონალური კონსულტაცია ფსიქოთერაპევტთან მდგომარეობის ზუსტი შეფასებისა და რელაქსაციის ტექნიკების ასათვისებლად.
           </p>
+
+          <div id="balanceVisualArea" style="display: none;"></div>
 
           <div class="result-recommendation-box">
             <h4 data-i18n="result_rec_title">ჩვენი რეკომენდაცია თქვენთვის:</h4>
@@ -1869,6 +1877,6 @@
     </div>
   </div>
 
-  <script src="app.js?v=3.9"></script>
+  <script src="app.js?v=4.0"></script>
 </body>
 </html>

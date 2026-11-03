@@ -201,6 +201,217 @@ document.addEventListener('DOMContentLoaded', () => {
               : ["ფსიქოთერაპიული სესიები გადაწვის მართვაზე", "გადაუდებელი დასვენება და რეკონფიგურაცია"]
           };
         }
+      }    },
+    balance: {
+      name: "ბალანსის მოდელი (4 სფერო)",
+      nameEn: "Balance Model (4 Dimensions)",
+      questions: [
+        // Block 0: სხეული და ჯანმრთელობა (Body & Health)
+        {
+          block: 0,
+          blockKa: "სხეული და ჯანმრთელობა",
+          blockEn: "Body & Health",
+          ka: "ყოველდღიურად მძინავს საკმარისად (7-8 საათი) და გაღვიძებისას თავს დასვენებულად ვგრძნობ.",
+          en: "I get adequate sleep (7-8 hours) daily and wake up feeling refreshed and rested."
+        },
+        {
+          block: 0,
+          blockKa: "სხეული და ჯანმრთელობა",
+          blockEn: "Body & Health",
+          ka: "რეგულარულად ვუთმობ დროს ფიზიკურ აქტივობას, სპორტს ან ფეხით სიარულს.",
+          en: "I regularly dedicate time to physical activity, sports, or active walking."
+        },
+        {
+          block: 0,
+          blockKa: "სხეული და ჯანმრთელობა",
+          blockEn: "Body & Health",
+          ka: "ვაკონტროლებ ჩემს კვებას და ვცდილობ მივიღო ჩემი ორგანიზმისთვის ჯანსაღი პროდუქტები.",
+          en: "I monitor my nutrition and try to consume foods that nourish and energize my body."
+        },
+        {
+          block: 0,
+          blockKa: "სხეული და ჯანმრთელობა",
+          blockEn: "Body & Health",
+          ka: "სამუშაო დღის განმავლობაშიც კი ვპოულობ დროს სრულფასოვანი დასვენებისა და განტვირთვისთვის.",
+          en: "Even during busy workdays, I find moments for restorative breaks and relaxation."
+        },
+        {
+          block: 0,
+          blockKa: "სხეული და ჯანმრთელობა",
+          blockEn: "Body & Health",
+          ka: "აქტიურად ვზრუნავ ჩემს გარეგნობაზე, სხეულის მოვლასა და ჯანმრთელობის პრევენციაზე.",
+          en: "I actively care for my physical well-being, personal grooming, and preventive health."
+        },
+
+        // Block 1: საქმიანობა და მიღწევა (Work & Achievement)
+        {
+          block: 1,
+          blockKa: "საქმიანობა და მიღწევა",
+          blockEn: "Work & Achievement",
+          ka: "ჩემი პროფესიული საქმიანობა, სამსახური ან სწავლა ჩემი ცხოვრების უმნიშვნელოვანესი ნაწილია.",
+          en: "My profession, work, or studies represent a vital and fulfilling cornerstone of my life."
+        },
+        {
+          block: 1,
+          blockKa: "საქმიანობა და მიღწევა",
+          blockEn: "Work & Achievement",
+          ka: "ყოველთვის ვცდილობ დასახულ მიზნებს მივაღწიო და მუდმივად ორიენტირებული ვარ წარმატებაზე.",
+          en: "I consistently strive to achieve my goals and remain focused on progress and success."
+        },
+        {
+          block: 1,
+          blockKa: "საქმიანობა და მიღწევა",
+          blockEn: "Work & Achievement",
+          ka: "აქტიურად ვხარჯავ ენერგიას ახალი ცოდნის მისაღებად, წიგნების საკითხავად ან კვალიფიკაციის ასამაღლებლად.",
+          en: "I actively invest energy in gaining new knowledge, reading, or advancing my skills."
+        },
+        {
+          block: 1,
+          blockKa: "საქმიანობა და მიღწევა",
+          blockEn: "Work & Achievement",
+          ka: "ეფექტურად ვმართავ ჩემს ფინანსებს, ბიუჯეტს და მუდმივად ვზრუნავ მატერიალურ წინსვლაზე.",
+          en: "I manage my personal finances wisely and consistently pursue financial stability."
+        },
+        {
+          block: 1,
+          blockKa: "საქმიანობა და მიღწევა",
+          blockEn: "Work & Achievement",
+          ka: "დიდ ენერგიასა და დროს ვუთმობ საოჯახო საქმეების მოწესრიგებასა და ყოველდღიურ ვალდებულებებს.",
+          en: "I dedicate meaningful time and effort to organizing domestic tasks and responsibilities."
+        },
+
+        // Block 2: კონტაქტები და ურთიერთობები (Contacts & Relationships)
+        {
+          block: 2,
+          blockKa: "კონტაქტები და ურთიერთობები",
+          blockEn: "Contacts & Relationships",
+          ka: "მაქვს მჭიდრო, ხარისხიანი და ემოციურად თბილი ურთიერთობა ჩემს ოჯახის წევრებთან ან პარტნიორთან.",
+          en: "I maintain deep, supportive, and emotionally warm relationships with family or partner."
+        },
+        {
+          block: 2,
+          blockKa: "კონტაქტები და ურთიერთობები",
+          blockEn: "Contacts & Relationships",
+          ka: "რეგულარულად ვხვდები მეგობრებს და მათთან ერთად დროს აქტიურად ვატარებ.",
+          en: "I regularly spend quality, engaging time with my close friends and social circle."
+        },
+        {
+          block: 2,
+          blockKa: "კონტაქტები და ურთიერთობები",
+          blockEn: "Contacts & Relationships",
+          ka: "მარტივად შევდივარ ახალ სოციალურ კონტაქტებში და აქტიურად ვმონაწილეობ საზოგადოებრივ ცხოვრებაში.",
+          en: "I connect with new people easily and participate actively in social and community life."
+        },
+        {
+          block: 2,
+          blockKa: "კონტაქტები და ურთიერთობები",
+          blockEn: "Contacts & Relationships",
+          ka: "ახლობელ ადამიანებს ყოველთვის შეუძლიათ ჩემი ემოციური მხარდაჭერისა და თანაგრძნობის იმედი ჰქონდეთ.",
+          en: "Loved ones can consistently rely on my emotional empathy, listening, and support."
+        },
+        {
+          block: 2,
+          blockKa: "კონტაქტები და ურთიერთობები",
+          blockEn: "Contacts & Relationships",
+          ka: "ადამიანებთან კომუნიკაცია და სოციალური კონტაქტები მმატებს ენერგიასა და სიხარულს.",
+          en: "Socializing and sincere interpersonal communication energizes and inspires me."
+        },
+
+        // Block 3: მომავალი და ფანტაზია / საზრისი (Future & Meaning)
+        {
+          block: 3,
+          blockKa: "მომავალი და ფანტაზია",
+          blockEn: "Future & Meaning",
+          ka: "ხშირად ვფიქრობ ჩემს სამომავლო გეგმებზე, მიზნებსა და გრძელვადიან პერსპექტივებზე.",
+          en: "I frequently envision my future, long-term aspirations, and life trajectory."
+        },
+        {
+          block: 3,
+          blockKa: "მომავალი და ფანტაზია",
+          blockEn: "Future & Meaning",
+          ka: "ვუთმობ დროს მედიტაციას, სულიერ პრაქტიკას ან უბრალოდ საკუთარ ფიქრებთან მარტო დარჩენას.",
+          en: "I carve out space for meditation, spiritual reflection, or quiet mindfulness."
+        },
+        {
+          block: 3,
+          blockKa: "მომავალი და ფანტაზია",
+          blockEn: "Future & Meaning",
+          ka: "მაქვს შემოქმედებითი ჰობი (ხატვა, წერა, მუსიკა, იდეების გენერირება) ან მიყვარს ოცნება.",
+          en: "I practice creative pursuits (art, writing, music, innovation) and cherish dreaming."
+        },
+        {
+          block: 3,
+          blockKa: "მომავალი და ფანტაზია",
+          blockEn: "Future & Meaning",
+          ka: "ხშირად ვუღრმავდები ფილოსოფიურ კითხვებს, ცხოვრების საზრისსა და ჩემს შინაგან მისიას.",
+          en: "I contemplate deeper questions about life purpose, personal philosophy, and values."
+        },
+        {
+          block: 3,
+          blockKa: "მომავალი და ფანტაზია",
+          blockEn: "Future & Meaning",
+          ka: "კრიზისულ მომენტებშიც კი მაქვს იმედი და რწმენა, რომ მომავალი უკეთესი იქნება.",
+          en: "Even in challenging times, I hold a resilient sense of hope and faith in the future."
+        }
+      ],
+      options: [
+        { ka: "საერთოდ არ ვეთანხმები", en: "Strongly disagree", score: 1 },
+        { ka: "ნაწილობრივ არ ვეთანხმები", en: "Somewhat disagree", score: 2 },
+        { ka: "ნეიტრალური / მიჭირს თქმა", en: "Neutral / Unsure", score: 3 },
+        { ka: "ნაწილობრივ ვეთანხმები", en: "Somewhat agree", score: 4 },
+        { ka: "სრულად ვეთანხმები", en: "Strongly agree", score: 5 }
+      ],
+      getResults: (score, isEn, scores) => {
+        const sc = Array.isArray(scores) && scores.length === 20 ? scores : [3,3,3,3,3, 3,3,3,3,3, 3,3,3,3,3, 3,3,3,3,3];
+        const sBody = sc.slice(0, 5).reduce((a, b) => a + b, 0);
+        const sWork = sc.slice(5, 10).reduce((a, b) => a + b, 0);
+        const sContact = sc.slice(10, 15).reduce((a, b) => a + b, 0);
+        const sFuture = sc.slice(15, 20).reduce((a, b) => a + b, 0);
+        const total = sBody + sWork + sContact + sFuture || 60;
+
+        let pBody = Math.round((sBody / total) * 100);
+        let pWork = Math.round((sWork / total) * 100);
+        let pContact = Math.round((sContact / total) * 100);
+        let pFuture = 100 - (pBody + pWork + pContact);
+
+        const spheres = [
+          { key: 'body', ka: "სხეული და ჯანმრთელობა", en: "Body & Health", pct: pBody, raw: sBody, color: "#10B981", icon: "🌿" },
+          { key: 'work', ka: "საქმიანობა და მიღწევა", en: "Work & Achievement", pct: pWork, raw: sWork, color: "#E58348", icon: "💼" },
+          { key: 'contact', ka: "კონტაქტები და ურთიერთობები", en: "Contacts & Relationships", pct: pContact, raw: sContact, color: "#3B82F6", icon: "🤝" },
+          { key: 'future', ka: "მომავალი და ფანტაზია / საზრისი", en: "Future & Meaning", pct: pFuture, raw: sFuture, color: "#8B5CF6", icon: "🔮" }
+        ];
+
+        const sorted = [...spheres].sort((a, b) => b.pct - a.pct);
+        const dominant = sorted[0];
+        const depleted = sorted[3];
+
+        const title = isEn
+          ? `Balance Model Profile (${dominant.en} Dominant)`
+          : `ცხოვრების ბალანსის პროფილი (დომინანტი: ${dominant.ka})`;
+
+        const desc = isEn
+          ? `According to Nossrat Peseschkian's Positive Psychotherapy Balance Model, optimal mental well-being aims for ~25% harmonious distribution across all 4 spheres. Your assessment indicates your primary energy share (${dominant.pct}%) is invested in "${dominant.en}", while "${depleted.en}" receives the lowest share (${depleted.pct}%), creating an energetic imbalance.`
+          : `ნოსრატ პეზეშკიანის პოზიტიური ფსიქოთერაპიის ბალანსის მოდელის მიხედვით, ჯანსაღი მდგომარეობისას სასიცოცხლო ენერგია თანაბრად (~25%) ნაწილდება 4-ვე სფეროზე. თქვენს შემთხვევაში ენერგიის ყველაზე დიდი წილი (${dominant.pct}%) მიმართულია სფეროზე: „${dominant.ka}“, ხოლო ყველაზე ნაკლები (${depleted.pct}%) ეთმობა სფეროს: „${depleted.ka}“, რაც ქმნის ენერგეტიკულ დისბალანსს.`;
+
+        const rec = isEn ? [
+          `Dominant Sphere (${dominant.pct}%): "${dominant.en}" is your primary coping and resource area, but over-reliance can drain reserves.`,
+          `Depleted Sphere (${depleted.pct}%): "${depleted.en}" requires mindful attention and scheduled time to restore holistic balance.`,
+          `Specialist Alignment: Book a consultation with Lali Badridze (President of the Georgian Association for Positive Psychotherapy & WAPP Trainer) to work on harmonizing your 4 life dimensions.`
+        ] : [
+          `დომინანტური სფერო (${dominant.pct}%): „${dominant.ka}“ — თქვენი მთავარი რესურსია, თუმცა მასზე ზედმეტმა გადართვამ შესაძლოა გადაღლა გამოიწვიოს.`,
+          `დეფიციტური სფერო (${depleted.pct}%): „${depleted.ka}“ — საჭიროებს გააზრებულ გააქტიურებასა და დროის გამოყოფას, რათა აღდგეს ფსიქოლოგიური ჰომეოსტაზი.`,
+          `რეკომენდებული სპეციალისტი: ლალი ბადრიძე (პოზიტიური ფსიქოთერაპიის WAPP ეროვნული ტრენერი და ბალანსის მოდელის წამყვანი ექსპერტი).`
+        ];
+
+        return {
+          title,
+          desc,
+          rec,
+          spheres,
+          dominant,
+          depleted,
+          isBalance: true
+        };
       }
     }
   };
@@ -374,13 +585,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressPercent = ((currentQuestionIndex + 1) / totalQuestions) * 100;
     testProgressFill.style.width = `${progressPercent}%`;
 
-    testCategoryBadge.textContent = isEn ? test.nameEn : test.name;
+    const qData = test.questions[currentQuestionIndex];
+
+    if (currentTestKey === 'balance' && qData.blockKa) {
+      testCategoryBadge.textContent = isEn 
+        ? `${qData.blockEn} (${(currentQuestionIndex % 5) + 1}/5)`
+        : `${qData.blockKa} (${(currentQuestionIndex % 5) + 1}/5)`;
+      const timeEst = document.querySelector('.test-time-est');
+      if (timeEst) timeEst.textContent = isEn ? "⏱ ~4-5 mins" : "⏱ დაახლოებით 4-5 წუთი";
+    } else {
+      testCategoryBadge.textContent = isEn ? test.nameEn : test.name;
+      const timeEst = document.querySelector('.test-time-est');
+      if (timeEst) timeEst.textContent = isEn ? "⏱ ~2 mins" : "⏱ დაახლოებით 2 წუთი";
+    }
+
     testQuestionCounter.textContent = isEn 
       ? `Question ${currentQuestionIndex + 1} / ${totalQuestions}` 
       : `კითხვა ${currentQuestionIndex + 1} / ${totalQuestions}`;
 
     // Question Prompt
-    const qData = test.questions[currentQuestionIndex];
     testQuestionText.textContent = isEn ? qData.en : qData.ka;
 
     // Render Options
@@ -414,18 +637,76 @@ document.addEventListener('DOMContentLoaded', () => {
   function showTestResults() {
     const test = testData[currentTestKey];
     const totalScore = testScores.reduce((a, b) => a + b, 0);
-    const maxScore = test.questions.length * 3;
+    const maxScore = test.questions.length * (currentTestKey === 'balance' ? 5 : 3);
     const isEn = currentLanguage === 'en';
-    const resultObj = test.getResults(totalScore, isEn);
+    const resultObj = test.getResults(totalScore, isEn, testScores);
 
     testQuestionArea.style.display = 'none';
     testResultArea.style.display = 'block';
 
-    document.getElementById('resultScoreNum').textContent = totalScore;
-    const maxScoreEl = document.getElementById('resultScoreMax') || document.querySelector('.result-score-max');
-    if (maxScoreEl) {
-      maxScoreEl.textContent = maxScore;
+    const visualArea = document.getElementById('balanceVisualArea');
+
+    if (currentTestKey === 'balance' && resultObj.spheres) {
+      document.getElementById('resultScoreNum').textContent = '100';
+      const maxScoreEl = document.getElementById('resultScoreMax') || document.querySelector('.result-score-max');
+      if (maxScoreEl) maxScoreEl.textContent = '%';
+      const scoreLabel = document.getElementById('resultScoreLabel');
+      if (scoreLabel) scoreLabel.textContent = isEn ? "Balance" : "ბალანსი";
+
+      if (visualArea) {
+        visualArea.style.display = 'block';
+        visualArea.innerHTML = `
+          <div class="balance-bars-card">
+            <h4 class="balance-bars-heading">${isEn ? "Energy Distribution Across 4 Dimensions (Target: ~25% each):" : "ენერგიის განაწილება 4 სფეროში (სასურველია ~25% თითოეულში):"}</h4>
+            <div class="balance-bars-list">
+              ${resultObj.spheres.map(s => `
+                <div class="balance-bar-row">
+                  <div class="balance-bar-header">
+                    <span class="balance-bar-name">
+                      <span class="balance-bar-icon">${s.icon}</span> ${isEn ? s.en : s.ka}
+                    </span>
+                    <span class="balance-bar-pct" style="color: ${s.color}; font-weight: 700;">${s.pct}%</span>
+                  </div>
+                  <div class="balance-bar-track">
+                    <div class="balance-bar-fill fill-${s.key}" style="width: ${Math.max(s.pct, 4)}%; background: ${s.color};"></div>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+            <div class="balance-summary-chips">
+              <span class="balance-chip chip-dominant">
+                <strong>${isEn ? "Dominant Sphere:" : "დომინანტი:"}</strong> ${isEn ? resultObj.dominant.en : resultObj.dominant.ka} (${resultObj.dominant.pct}%)
+              </span>
+              <span class="balance-chip chip-depleted">
+                <strong>${isEn ? "Depleted Sphere:" : "დეფიციტი:"}</strong> ${isEn ? resultObj.depleted.en : resultObj.depleted.ka} (${resultObj.depleted.pct}%)
+              </span>
+            </div>
+          </div>
+        `;
+      }
+
+      // Pre-select Lali Badridze for Balance Model consultation
+      const bookBtn = testResultArea.querySelector('.open-booking-btn');
+      if (bookBtn) {
+        bookBtn.onclick = (e) => {
+          e.preventDefault();
+          openBookingModalWith('ლალი ბადრიძე', 'ინდივიდუალური ფსიქოთერაპია');
+        };
+      }
+    } else {
+      if (visualArea) visualArea.style.display = 'none';
+      document.getElementById('resultScoreNum').textContent = totalScore;
+      const maxScoreEl = document.getElementById('resultScoreMax') || document.querySelector('.result-score-max');
+      if (maxScoreEl) maxScoreEl.textContent = maxScore;
+      const scoreLabel = document.getElementById('resultScoreLabel');
+      if (scoreLabel) scoreLabel.textContent = isEn ? "Score" : "ქულა";
+
+      const bookBtn = testResultArea.querySelector('.open-booking-btn');
+      if (bookBtn) {
+        bookBtn.onclick = null;
+      }
     }
+
     document.getElementById('resultTitle').textContent = resultObj.title;
     document.getElementById('resultDesc').textContent = resultObj.desc;
 
@@ -929,6 +1210,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "test_tab_anxiety": "შფოთვის ტესტი (GAD-7)",
         "test_tab_depression": "დეპრესიის შეფასება (PHQ-9)",
         "test_tab_burnout": "ემოციური გადაწვა (Burnout)",
+        "test_tab_balance": "ბალანსის მოდელი (4 სფერო)",
         "test_duration": "⏱ დაახლოებით 2 წუთი",
         "test_subtext": "აირჩიეთ ერთი პასუხი, რომელიც ყველაზე უკეთ აღწერს თქვენს მდგომარეობას:",
         "score_label": "ქულა",
@@ -1104,6 +1386,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "test_tab_anxiety": "GAD-7 Anxiety",
         "test_tab_depression": "PHQ-9 Depression",
         "test_tab_burnout": "Burnout Test",
+        "test_tab_balance": "Balance Model (4 Dimensions)",
         "test_duration": "Takes only 2-3 minutes",
         "test_disclaimer": "Confidential • Not a formal medical diagnosis",
         "test_subtext": "Answer truthfully based on how you felt over the past 2 weeks:",
