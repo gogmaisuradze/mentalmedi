@@ -1233,11 +1233,6 @@ document.addEventListener('DOMContentLoaded', () => {
         "about_title": "MentalMedi — მენტალური კეთილდღეობის ახალი სტანდარტი",
         "about_lead": "ჩვენ შევქმენით სივრცე, სადაც ფსიქიკური ჯანმრთელობა სტიგმის გარეშე აღიქმება. აქ თითოეულ ადამიანს ხვდება ღრმა ემპათია, პროფესიონალიზმი და თანამედროვე ევროპული სტანდარტების მომსახურება.",
         "val_1_title": "მკაცრი კონფიდენციალურობა",
-        "mob_nav_home": "მთავარი",
-        "mob_nav_services": "სერვისები",
-        "mob_nav_bot": "ბოტი",
-        "mob_nav_team": "გუნდი",
-        "mob_nav_call": "დარეკვა",
         "val_1_desc": "თქვენი მონაცემები და სესიის შინაარსი დაცულია საერთაშორისო მენტალური და პროფესიული ეთიკის სტანდარტებით.",
         "val_2_title": "მტკიცებითი მედიცინა (Evidence-Based)",
         "val_2_desc": "ვიყენებთ მხოლოდ მეცნიერულად დადასტურებულ თერაპიულ მეთოდებსა და უახლეს პროტოკოლებს.",
@@ -1404,11 +1399,6 @@ document.addEventListener('DOMContentLoaded', () => {
         "about_title": "MentalMedi — The New Standard in Mental Wellbeing",
         "about_lead": "We created a space where mental health is embraced without stigma, with deep empathy, European clinical standards, and full confidentiality.",
         "val_1_title": "Evidence-Based Practice",
-        "mob_nav_home": "Home",
-        "mob_nav_services": "Services",
-        "mob_nav_bot": "AI Bot",
-        "mob_nav_team": "Team",
-        "mob_nav_call": "Call",
         "val_1_desc": "We apply only internationally validated therapeutic methods with proven clinical efficacy.",
         "val_2_title": "Absolute Confidentiality",
         "val_2_desc": "Your medical data and personal conversations are protected with the highest privacy standards.",
@@ -1630,49 +1620,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if (headerBotTrigger) headerBotTrigger.addEventListener('click', openMentalBot);
   if (botCloseBtn) botCloseBtn.addEventListener('click', closeMentalBot);
-
-  // Mobile Bottom Nav Bot Trigger & Active State Handler
-  const mobileBotNavBtn = document.getElementById('mobileBotNavBtn');
-  if (mobileBotNavBtn) {
-    mobileBotNavBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      toggleMentalBot();
-    });
-  }
-
-  const mobileNavItems = document.querySelectorAll('.mobile-bottom-nav .mobile-nav-item:not(.mobile-nav-bot-btn)');
-  mobileNavItems.forEach(item => {
-    item.addEventListener('click', function() {
-      if (this.dataset.nav !== 'call') {
-        mobileNavItems.forEach(i => i.classList.remove('active'));
-        this.classList.add('active');
-      }
-    });
-  });
-
-  // Sync mobile bottom nav with scroll position
-  window.addEventListener('scroll', () => {
-    const scrollPos = window.scrollY + 220;
-    const sections = [
-      { id: 'specialists', nav: 'specialists' },
-      { id: 'services', nav: 'services' },
-      { id: 'hero', nav: 'hero' }
-    ];
-
-    for (const sec of sections) {
-      const el = document.getElementById(sec.id);
-      if (el && scrollPos >= el.offsetTop) {
-        mobileNavItems.forEach(item => {
-          if (item.dataset.nav === sec.nav) {
-            item.classList.add('active');
-          } else if (item.dataset.nav !== 'call') {
-            item.classList.remove('active');
-          }
-        });
-        break;
-      }
-    }
-  });
 
   if (botResetBtn) {
     botResetBtn.addEventListener('click', () => {
