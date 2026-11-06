@@ -1084,27 +1084,46 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
 
   const menuToggle = document.getElementById('menuToggle');
-  const mainNav = document.getElementById('mainNav');
+  const mobileDrawer = document.getElementById('mobileDrawer');
   const mobileDrawerBackdrop = document.getElementById('mobileDrawerBackdrop');
+  const closeMobileDrawer = document.getElementById('closeMobileDrawer');
+
+  function openMobileMenu() {
+    if (mobileDrawer) mobileDrawer.classList.add('open');
+    if (mobileDrawerBackdrop) mobileDrawerBackdrop.classList.add('active');
+    if (menuToggle) menuToggle.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMobileMenu() {
+    if (mobileDrawer) mobileDrawer.classList.remove('open');
+    if (mobileDrawerBackdrop) mobileDrawerBackdrop.classList.remove('active');
+    if (menuToggle) menuToggle.classList.remove('open');
+    document.body.style.overflow = '';
+  }
 
   function toggleMobileMenu() {
-    const isOpen = mainNav.classList.contains('open');
-    mainNav.classList.toggle('open', !isOpen);
-    mobileDrawerBackdrop.classList.toggle('active', !isOpen);
+    if (mobileDrawer && mobileDrawer.classList.contains('open')) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
   }
 
   if (menuToggle) {
     menuToggle.addEventListener('click', toggleMobileMenu);
   }
+  if (closeMobileDrawer) {
+    closeMobileDrawer.addEventListener('click', closeMobileMenu);
+  }
   if (mobileDrawerBackdrop) {
-    mobileDrawerBackdrop.addEventListener('click', toggleMobileMenu);
+    mobileDrawerBackdrop.addEventListener('click', closeMobileMenu);
   }
 
   // Close mobile drawer on navigation click
-  document.querySelectorAll('.main-nav .nav-link').forEach(link => {
+  document.querySelectorAll('.mobile-drawer-link, .mobile-drawer .open-booking-btn, .mobile-drawer-phone').forEach(link => {
     link.addEventListener('click', () => {
-      mainNav.classList.remove('open');
-      mobileDrawerBackdrop.classList.remove('active');
+      closeMobileMenu();
     });
   });
 

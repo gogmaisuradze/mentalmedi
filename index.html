@@ -25,7 +25,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   
-  <link rel="stylesheet" href="styles.css?v=4.3">
+  <link rel="stylesheet" href="styles.css?v=4.4">
 </head>
 <body>
 
@@ -75,26 +75,6 @@
           <li><a href="#blog" class="nav-link" data-i18n="nav_blog">ბლოგი</a></li>
           <li><a href="#contact" class="nav-link" data-i18n="nav_contact">კონტაქტი</a></li>
         </ul>
-
-        <div class="nav-mobile-footer">
-          <div class="nav-mobile-lang">
-            <span class="mobile-lang-label">ენა / Language:</span>
-            <button class="lang-switch-btn mobile-lang-btn" aria-label="შეცვალე ენა / Switch Language">
-              <span class="lang-current">GE</span>
-              <span class="lang-divider">/</span>
-              <span class="lang-alt">EN</span>
-            </button>
-          </div>
-          <button class="btn btn-primary btn-block open-booking-btn">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-              <line x1="16" y1="2" x2="16" y2="6"></line>
-              <line x1="8" y1="2" x2="8" y2="6"></line>
-              <line x1="3" y1="10" x2="21" y2="10"></line>
-            </svg>
-            <span data-i18n="btn_book_now">დაჯავშნე ვიზიტი</span>
-          </button>
-        </div>
       </nav>
 
       <!-- Header Action Controls -->
@@ -133,8 +113,67 @@
     </div>
   </header>
 
-  <!-- Mobile Menu Drawer Backdrop -->
+  <!-- Mobile Menu Drawer & Backdrop (Independent Body-Level Container) -->
   <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true" role="dialog" aria-label="ნავიგაცია">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <div class="logo-mark" title="MentalMedi — მენტალური ცენტრი">
+          <img src="logo_emblem.png" alt="MentalMedi" class="brand-logo-img" width="30" height="30" style="width: 30px; height: 30px; max-width: 30px; max-height: 30px; object-fit: contain; display: block;">
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">Mental<span>Medi</span></span>
+          <span class="logo-subtitle" data-i18n="tagline">მენტალური ცენტრი</span>
+        </div>
+      </div>
+      <button class="mobile-drawer-close" id="closeMobileDrawer" aria-label="მენიუს დახურვა">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="mobile-drawer-body">
+      <ul class="mobile-drawer-list">
+        <li><a href="#services" class="mobile-drawer-link" data-i18n="nav_services">სერვისები</a></li>
+        <li><a href="#specialists" class="mobile-drawer-link" data-i18n="nav_specialists">სპეციალისტები</a></li>
+        <li><a href="#tests" class="mobile-drawer-link mobile-drawer-highlight" data-i18n="nav_tests">ტესტები <span class="badge-mini">Quiz</span></a></li>
+        <li><a href="#about" class="mobile-drawer-link" data-i18n="nav_about">ჩვენს შესახებ</a></li>
+        <li><a href="#pricing" class="mobile-drawer-link" data-i18n="nav_pricing">ფასები</a></li>
+        <li><a href="#blog" class="mobile-drawer-link" data-i18n="nav_blog">ბლოგი</a></li>
+        <li><a href="#contact" class="mobile-drawer-link" data-i18n="nav_contact">კონტაქტი</a></li>
+      </ul>
+
+      <div class="mobile-drawer-footer">
+        <div class="mobile-drawer-lang-row">
+          <span class="mobile-lang-label">ენა / Language:</span>
+          <button class="lang-switch-btn mobile-lang-btn" aria-label="შეცვალე ენა / Switch Language">
+            <span class="lang-current">GE</span>
+            <span class="lang-divider">/</span>
+            <span class="lang-alt">EN</span>
+          </button>
+        </div>
+
+        <button class="btn btn-primary btn-block open-booking-btn">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span data-i18n="btn_book_now">დაჯავშნე ვიზიტი</span>
+        </button>
+
+        <a href="tel:+995598324020" class="mobile-drawer-phone">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          +995 598 32 40 20
+        </a>
+      </div>
+    </div>
+  </aside>
 
   <!-- Hero Section -->
   <section class="hero-section" id="hero">
@@ -1877,6 +1916,6 @@
     </div>
   </div>
 
-  <script src="app.js?v=4.3"></script>
+  <script src="app.js?v=4.4"></script>
 </body>
 </html>
